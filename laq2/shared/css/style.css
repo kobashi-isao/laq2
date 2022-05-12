@@ -1,0 +1,150 @@
+/*@media (min-width: 768px) {
+  .container, .container-md, .container-sm {
+    max-width: none;
+  }
+}
+@media (min-width: 992px) {
+  .container, .container-lg, .container-md, .container-sm {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1100px;
+  }
+}*/
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.btn {
+  border-radius: 0;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+html,body {
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1C1C1C;
+}
+
+main img {
+  max-width: 100%;
+}
+
+.f-athelas { /* Athelas Regular */
+  font-family: athelas, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.f-tenmin { /* 貂明朝 / Ten Mincho Regular  */
+  font-family: ten-mincho, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.f-nimbus { /* Nimbus Sans Bold  */
+  font-family: nimbus-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+main {
+  margin-top: 139px;
+  /* debug  */
+  min-height: 900px;
+}
+
+/* header  */
+nav.nav-site {
+  padding: 0;
+  background: #fff;
+}
+.nav-site .navbar-brand {
+  padding-left: 35px;
+}
+.head-copy {
+  text-align: center;
+  margin: 0 auto;
+  width: auto;
+  font-size: 12px;
+}
+.header-btn .btn {
+  font-family: athelas, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.navbar .btn-buy {
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+}
+.navbar .btn-menu {
+  margin-right: -15px;
+  font-size: 20px;
+}
+
+.nav-site .header-btn .btn {
+  height: 100px;
+  width: 140px;
+}
+
+@-webkit-keyframes hvr-back-pulse {
+    50% {
+        background-color: rgba(0,0,0,.75)
+    }
+}
+@keyframes hvr-back-pulse {
+    50% {
+        background-color: rgba(0,0,0,.75)
+    }
+}
+@keyframes hvr-back-pulse2 {
+    50% {
+        background-color: rgba(255,255,255,.75)
+    }
+}
+.navbar .btn-buy.hvr-back-pulse:active,
+.navbar .btn-buy.hvr-back-pulse:focus,
+.navbar .btn-buy.hvr-back-pulse:hover {
+   background-color: #fff;
+   color: #000;
+}
+.navbar .btn-menu.hvr-back-pulse:active,
+.navbar .btn-menu.hvr-back-pulse:focus,
+.navbar .btn-menu.hvr-back-pulse:hover {
+  animation-name: hvr-back-pulse2;
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar .btn.hvr-back-pulse:active,
+.navbar .btn.hvr-back-pulse:focus {
+  animation-name: none;
+}
+
+
+/* content  */
+
+/* footer  */
+footer {
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 767px) {
+}
+@media (max-width: 360px) {
+}
