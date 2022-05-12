@@ -1,0 +1,20 @@
+
+/* slider */
+.bx-wrapper {
+  border: none;
+  box-shadow: none;
+  background: none;
+  margin-bottom: 0;
+}
+.t-slider .slide-inner {
+  text-align: center;
+  /*height: 80vh;*/
+  height: calc(100vh - 100px);
+  position: relative;
+}
+.slide-item .sl-bg {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  height: calc(100vh - 100px);
+}

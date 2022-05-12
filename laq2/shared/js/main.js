@@ -1,32 +1,20 @@
-var LAQtw = {};
+let LAQtw = {};
 LAQtw.init = function(){
-  var self =this;
+  let self =this;
   self.header = $('header');
   self.main = $('main');
   self.topOffset = self.header.find('.navbar.fixed-top').height()
     +self.main.find('#top-menu').height()+10;
 
-  let topSlide = self.main.find('.t-slider');
-  if (topSlide.length > 0){
-    topSlide.bxSlider({
-      auto: true,
-      speed: 2000,
-      mode: 'fade',
-      infiniteLoop:true,
-      pager:false,
-      controls:false,
-      autoControls: false
-    });
-  }
 
   // link a name scroll
   $('a[href^="#"]').on('click', function() {
     let speed = 500;
     let href= $(this).attr("href");
     if (href.length == 1 && (href == "#" || href == "")) {return true;}
-    var target = $(href == "#" || href == "" ? 'html' : href);
+    let target = $(href == "#" || href == "" ? 'html' : href);
     if (target.length == 0) return false;
-    var position = target.offset().top - self.topOffset;
+    let position = target.offset().top - self.topOffset;
     $('body,html').animate({scrollTop:position}, speed, 'swing');
     if (href == '#top-page') return false;
     return true;
@@ -35,15 +23,15 @@ LAQtw.init = function(){
   self.goTopBtnOnBottom = false;
   $(window).scroll(function(){
     let windHeight = $(window).height();
-    var goTopBtn = $('#gotop-btn');
-    var scrollTop = $(document).scrollTop();
+    let goTopBtn = $('#gotop-btn');
+    let scrollTop = $(document).scrollTop();
     if (scrollTop <= 500) {
       goTopBtn.fadeOut(400);
     } else if (goTopBtn.css("display") == 'none' && !self.goTopBtnOnBottom) {
       goTopBtn.fadeIn(500);
     }
     if (self.isSmp) {
-      var bottomLimit = $('footer').position().top;
+      let bottomLimit = $('footer').position().top;
       if ((scrollTop+windHeight) > bottomLimit && !self.goTopBtnOnBottom) {
         goTopBtn.fadeOut(400);
         self.goTopBtnOnBottom = true;
