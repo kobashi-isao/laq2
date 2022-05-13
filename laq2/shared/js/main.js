@@ -3,8 +3,7 @@ LAQtw.init = function(){
   let self =this;
   self.header = $('header');
   self.main = $('main');
-  self.topOffset = self.header.find('.navbar.fixed-top').height()
-    +self.main.find('#top-menu').height()+10;
+  self.topOffset = self.header.find('.navbar.fixed-top').height()+10;
 
 
   // link a name scroll
@@ -20,38 +19,72 @@ LAQtw.init = function(){
     return true;
   });
 
-  self.goTopBtnOnBottom = false;
-  $(window).scroll(function(){
-    let windHeight = $(window).height();
-    let goTopBtn = $('#gotop-btn');
-    let scrollTop = $(document).scrollTop();
-    if (scrollTop <= 500) {
-      goTopBtn.fadeOut(400);
-    } else if (goTopBtn.css("display") == 'none' && !self.goTopBtnOnBottom) {
-      goTopBtn.fadeIn(500);
-    }
-    if (self.isSmp) {
-      let bottomLimit = $('footer').position().top;
-      if ((scrollTop+windHeight) > bottomLimit && !self.goTopBtnOnBottom) {
-        goTopBtn.fadeOut(400);
-        self.goTopBtnOnBottom = true;
-      } else if ((scrollTop+windHeight) < bottomLimit && self.goTopBtnOnBottom) {
-        goTopBtn.fadeIn(400);
-        self.goTopBtnOnBottom = false;
-      }
-    }
-  })
+  // nav menu toggle
+  self.initNavMenuToggle();
 
-  // scroll reveal
-  ScrollReveal().reveal('.scro', {
-    delay: 100, // アニメーション開始までの時間
-    duration: 1000, // アニメーション完了にかかる時間
-    origin: 'bottom', // 要素がどの方向から来るか
-    distance: '160px', // 移動する距離
-    reset: false // フレームインの度に動かすか
-  });
+  // self.goTopBtnOnBottom = false;
+  // $(window).scroll(function(){
+  //   let windHeight = $(window).height();
+  //   let goTopBtn = $('#gotop');
+  //   let scrollTop = $(document).scrollTop();
+  //   if (scrollTop <= 500) {
+  //     goTopBtn.fadeOut(400);
+  //   } else if (goTopBtn.css("display") == 'none' && !self.goTopBtnOnBottom) {
+  //     goTopBtn.fadeIn(500);
+  //   }
+  //   if (self.isSmp) {
+  //     let bottomLimit = $('footer').position().top;
+  //     if ((scrollTop+windHeight) > bottomLimit && !self.goTopBtnOnBottom) {
+  //       goTopBtn.fadeOut(400);
+  //       self.goTopBtnOnBottom = true;
+  //     } else if ((scrollTop+windHeight) < bottomLimit && self.goTopBtnOnBottom) {
+  //       goTopBtn.fadeIn(400);
+  //       self.goTopBtnOnBottom = false;
+  //     }
+  //   }
+  // })
+
 
 }
+LAQtw.initNavMenuToggle = function() {
+  let self = this;
+  let headerBtn = self.header.find('.header-btn');
+  let navMenuTgg = self.header.find('.nav-menu-tgg');
+  let opened = 'opened';
+  headerBtn.find('.btn').on('click', function(){
+    let thisBtn = $(this);
+    let menuTarget = thisBtn.data('target');
+    navMenuTgg.fadeOut();
+    let thisMenu = null;
+    navMenuTgg.each(function(){
+      let _navMenu = $(this);
+      if (_navMenu.data('type') === menuTarget) {
+        thisMenu = _navMenu
+      }
+    })
+    if (thisMenu === null) return;
+
+    if (thisBtn.hasClass(opened)) {
+      thisBtn.removeClass(opened);
+      thisMenu.fadeOut();
+    } else {
+      thisBtn.addClass(opened);
+      thisMenu.fadeIn();
+    }
+    thisBtn.blur();
+    return false;
+  })
+
+  $(document).on('click',function(e) {
+    if(navMenuTgg.is(':visible') &&
+      !$(e.target).closest('.nav-menu-tgg').length &&
+      !$(e.target).closest('.header-btn').length) {
+      headerBtn.find('.btn').removeClass(opened);
+      navMenuTgg.fadeOut();
+    }
+  });
+}
+
 LAQtw.isSmp = function() {
   let ua = navigator.userAgent;
   if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
