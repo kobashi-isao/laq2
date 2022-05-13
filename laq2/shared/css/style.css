@@ -132,8 +132,23 @@ nav.nav-site {
 
 
 /* content  */
-.t-e {
+.ext-l {
+  display: inline-block;
+  position: relative;
 }
+.ext-l:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -24px;
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-image: url(../img/common/btn_arrow_right_up.svg);
+  width: 12px;
+  height: 12px;
+}
+
 
 /* footer  */
 footer {
@@ -148,6 +163,59 @@ footer .f-inner {
   padding:190px 60px 40px;
 }
 
+footer .foo-link .l-item {
+  margin-bottom: 40px;
+}
+footer .foo-link .l1 {
+  font-family: athelas, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 26px;
+}
+footer .foo-link .l-item .sub {
+  font-size: 12px;
+  line-height: 24px;
+  margin-top: 18px;
+  margin-bottom: -4px;
+}
+.foo-link .l-contact:after {
+  top: 7px;
+  right: -40px;
+}
+.foo-link .l-item2 {
+  padding-top: 50px;
+}
+.l-item2 .l-instagram {
+  position: relative;
+  padding-right: 55px;
+}
+.l-item2 .l-instagram:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-image: url(../img/common/icon_instagram.svg);
+  width: 16px;
+  height: 16px;
+}
+.foo-link .l-item2 .share {
+  margin: 18px 0 40px;
+}
+.l-item2 .share>a,.l-item2 .share>span {
+  display: inline-block;
+}
+.l-item2 .share>span {
+  margin-right: 38px;
+}
+.l-item2 .share>.ic-tw {
+  margin-right: 20px;
+}
+
+
 footer .f-btm {
   margin-top: 80px;
   font-size: 10px;
@@ -161,8 +229,8 @@ footer .f-btm {
   display: inline-block;
 }
 .f-btm .corp-site a:after {
-  content: "";
-  position: absolute;
+  top: 2px;
+  right: -20px;
 }
 
 @media (max-width: 1199px) {
