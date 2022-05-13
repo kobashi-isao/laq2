@@ -1,3 +1,6 @@
+.sec-top-h {
+  position: relative;
+}
 
 /* slider */
 .bx-wrapper {
@@ -17,4 +20,23 @@
   background-position: 50%;
   background-size: cover;
   height: calc(100vh - 100px);
+}
+.topics-box {
+  position: absolute;
+  left: 75px;
+  bottom: 34px;
+  color: #fff;
+}
+
+.topics-box .t {
+  font-family: athelas, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 14px;
+}
+.topics-box a {
+  color: #fff;
+  font-size: 14px;
 }

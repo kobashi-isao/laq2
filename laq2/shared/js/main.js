@@ -68,6 +68,7 @@ LAQtw.initNavMenuToggle = function() {
       thisBtn.removeClass(opened);
       thisMenu.fadeOut();
     } else {
+      headerBtn.find('.btn').removeClass(opened);
       thisBtn.addClass(opened);
       thisMenu.fadeIn();
     }
