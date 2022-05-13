@@ -242,7 +242,19 @@ main .sec {
   position: relative;
   margin-bottom: 80px;
 }
-.row-feature .cont {
+.row-feature .en-t {
+  position: absolute;
+  top: 8px;
+  left: -80px;
+  writing-mode: vertical-lr;
+  font-family: athelas, serif;
+  line-height: 24px;
+  vertical-align: middle;
+}
+.row-feature .en-t>span {
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
 }
 .row-feature .cont .t {
   font-family: athelas, serif;
@@ -266,8 +278,137 @@ main .sec {
 /* line up */
 
 .sec-lineup .sec-cont {
-  /*padding-left: 80px;*/
 }
 .sec-lineup .row-tt {
   padding-left: 65px;
+}
+
+.sec-lineup .lineup-cont {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.lineup-cont .overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  background: transparent;
+  z-index: 50;
+}
+.lineup-cont .overlay.prev {
+  left: 0;
+}
+.lineup-cont .overlay.next {
+  right: 0;
+}
+.sl-lineup .sli {
+  margin-right:80px;
+}
+.lu-box {
+  position: relative;
+  display: block;
+  color: #000;
+}
+.sli .lu-box:hover,.sli .lu-box:visited {
+  text-decoration: none;
+  color: #000;
+}
+.lu-box .thumb {
+  position: relative;
+  display: table;
+  overflow: hidden;
+  /*margin-bottom: 30px;*/
+}
+.lu-box .thumb .bg {
+  transition:0.8s all;
+}
+.lu-box .thumb:hover .bg {
+  transform:scale(1.2,1.2);
+  transition:0.8s all;
+}
+.lu-box .thumb .cp {
+  position: absolute;
+  top: 0;
+  left: 38px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.lu-box .thumb .cp span {
+  display: inline-block;
+  font-size: 30px;
+  line-height: 48px;
+
+  font-family: athelas, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.lu-box .title {
+  font-family: athelas, serif;
+  position: relative;
+  height: 100px;
+  padding-left: 120px;
+  margin-bottom: 20px;
+}
+.lu-box .title .n {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 90px;
+  line-height: 100px;
+}
+.lu-box .title .st {
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 14px;
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+.lu-box .title .name {
+  font-size: 24px;
+}
+.lu-box .desc {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+.lu-box .v-more {
+  text-align: right;
+  font-size: 20px;
+  line-height: 22px;
+  font-family: athelas, serif;
+}
+.lu-box .v-more span {
+  position: relative;
+  display: inline-block;
+  padding-right: 136px;
+}
+.lu-box .v-more span:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50%;
+  background-image: url(../img/common/btn_arrow_right.svg);
+  width: 120px;
+  height: 14px;
+}
+.lineup-sl-prog {
+  margin: 82px auto;
+}
+.howto-cont {
+  padding: 0 65px;
+}
+.howto-box {
+  border: 1px solid #000;
+  padding: 40px 160px;
+}
+.howto-box .thumb {
+  text-align: right;
+}
+.howto-box .thumb img {
+  max-width: 320px;
 }
