@@ -132,9 +132,37 @@ nav.nav-site {
 
 
 /* content  */
+.t-e {
+}
 
 /* footer  */
 footer {
+  background: #212121;
+  color: #fff;
+}
+footer a,footer a:hover,
+footer a:active,footer a:visited {
+  color: #fff;
+}
+footer .f-inner {
+  padding:190px 60px 40px;
+}
+
+footer .f-btm {
+  margin-top: 80px;
+  font-size: 10px;
+  line-height: 15px;
+}
+.f-btm .corp-site {
+  margin-bottom: 15px;
+}
+.f-btm .corp-site a {
+  position: relative;
+  display: inline-block;
+}
+.f-btm .corp-site a:after {
+  content: "";
+  position: absolute;
 }
 
 @media (max-width: 1199px) {
