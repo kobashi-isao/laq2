@@ -256,6 +256,34 @@ footer a,footer a:hover,
 footer a:active,footer a:visited {
   color: #fff;
 }
+footer .f-visual {
+  position: relative;
+  text-align: center;
+  font-family: athelas, serif;
+  color: #fff;
+  background-image: url(../img/common/bg_footer@2x.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  height: 400px;
+}
+/*.f-visual .bg {
+  max-width: 100%;
+}*/
+.f-visual .txt {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 3.9px;
+}
 footer .f-inner {
   position: relative;
   padding:190px 60px 40px;

@@ -50,6 +50,12 @@ LAQtop.init = function() {
     ]
   })
   lineupSlick.slick('slickNext');
+  $('.lineup-cont .overlay.prev').on('click', function(){
+    lineupSlick.slick('slickPrev');
+  })
+  $('.lineup-cont .overlay.next').on('click', function(){
+    lineupSlick.slick('slickNext');
+  })
 
 }
 $(function(){ LAQtop.init() })
