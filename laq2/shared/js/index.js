@@ -1,7 +1,7 @@
 let LAQtop = {};
 LAQtop.init = function() {
   let self = this;
-  
+
   let topSlide = $('.t-slider');
   if (topSlide.length > 0){
     topSlide.bxSlider({
@@ -15,5 +15,7 @@ LAQtop.init = function() {
       autoControls: false
     });
   }
+
+  // sec feature scroll
 }
 $(function(){ LAQtop.init() })

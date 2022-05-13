@@ -22,6 +22,9 @@ LAQtw.init = function(){
   // nav menu toggle
   self.initNavMenuToggle();
 
+  // scroll bg
+  self.initScrollBgColor();
+
   // self.goTopBtnOnBottom = false;
   // $(window).scroll(function(){
   //   let windHeight = $(window).height();
@@ -43,7 +46,6 @@ LAQtw.init = function(){
   //     }
   //   }
   // })
-
 
 }
 LAQtw.initNavMenuToggle = function() {
@@ -83,6 +85,27 @@ LAQtw.initNavMenuToggle = function() {
       headerBtn.find('.btn').removeClass(opened);
       navMenuTgg.fadeOut();
     }
+  });
+}
+
+LAQtw.initScrollBgColor = function() {
+  let self = this;
+  let scrTarget = $('.scroll-bg');
+  let onBg ='on-bg';
+  if (scrTarget.length == 0) return;
+
+  $(window).scroll(function(){
+    let scrollTop = $(document).scrollTop();
+    scrTarget.each(function(){
+      let _target = $(this);
+      let targetLimit = _target.position().top
+        - self.topOffset - 50;
+      if (!_target.hasClass(onBg) && scrollTop > targetLimit) {
+        _target.addClass(onBg);
+      } else if (_target.hasClass(onBg) && scrollTop < targetLimit) {
+        _target.removeClass(onBg);
+      }
+    })
   });
 }
 
