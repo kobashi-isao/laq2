@@ -262,3 +262,12 @@ main .sec {
 .row-feature .thumb {
   margin-left: -15px;
 }
+
+/* line up */
+
+.sec-lineup .sec-cont {
+  /*padding-left: 80px;*/
+}
+.sec-lineup .row-tt {
+  padding-left: 65px;
+}
