@@ -514,3 +514,96 @@ main .sec {
 .sec-faq .inn {
   padding: 0 66px;
 }
+.sec-faq .row-tt {
+  position: relative;
+  text-align: center;
+}
+.sec-faq .row-tt h2 {
+  font-family: athelas, serif;
+}
+.sec-faq .row-tt:before {
+  content: "";
+  position: absolute;
+  background-position: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/index/faq/img_question_mark.svg);
+  width: 106px;
+  height: 168px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.sec-faq .faq-cont {
+  margin-bottom: 60px;
+}
+.faq-cont .qa-box {
+  position: relative;
+  border-top: 1px solid #000;
+  padding: 30px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.faq-cont .qa-box:last-child {
+  border-bottom: 1px solid #000;
+}
+.qa-box .qa-q, .qa-box .qa-a {
+  position: relative;
+}
+.qa-box .qa-a {
+  margin-top: 40px;
+}
+.qa-box .qa-q .txt {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.qa-box .h {
+  font-family: athelas, serif;
+  font-size: 24px;
+  line-height: 26px;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+.qa-box .btn-tgg {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  padding: 0;
+  right: 0;
+  top: 4px;
+}
+.qa-box .btn-tgg .minus {
+  display: none;
+}
+.qa-box .txt {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: justify;
+}
+.sec-faq .v-more {
+  font-family: athelas, serif;
+  font-size: 20px;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  padding-right: 145px;
+}
+.sec-faq .v-more:hover {
+  color: #000;
+  text-decoration: none;
+}
+.sec-faq .v-more span:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50%;
+  background-image: url(../img/common/btn_arrow_right.svg);
+  width: 120px;
+  height: 14px;
+}
