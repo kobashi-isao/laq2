@@ -1,18 +1,44 @@
 let LAQtop = {};
 LAQtop.init = function() {
   let self = this;
+  self.slideSpeed = 1200;
+  self.slidePause = 4000;
 
   let topSlide = $('.t-slider');
   if (topSlide.length > 0){
     topSlide.bxSlider({
       auto: true,
-      speed:1200,
-      pause:4000,
+      speed:self.slideSpeed,
+      pause:self.slidePause,
       mode: 'fade',
       infiniteLoop:true,
       pager:false,
       controls:false,
-      autoControls: false
+      autoControls: false,
+      stopAuto:false,
+      onSliderLoad: function(index) {
+        if (index === 0) {
+          self.runCopyAnimate(1)
+        }
+      },
+      onSlideNext: function(element) {
+        let slItem = $(element);
+        if (slItem.find('.s01').length > 0) {
+          self.runCopyAnimate(1);
+        }
+        if (slItem.find('.s02').length > 0) {
+          self.runCopyAnimate(2);
+        }
+        if (slItem.find('.s03').length > 0) {
+          self.runCopyAnimate(3);
+        }
+        if (slItem.find('.s04').length > 0) {
+          self.runCopyAnimate(4);
+        }
+      },
+      onSlidePrev: function(element) {
+        // console.log('on slider prev : '+index);
+      }
     });
   }
 
@@ -57,26 +83,7 @@ LAQtop.init = function() {
   $('.lineup-cont .overlay.next').on('click', function(){
     lineupSlick.slick('slickNext');
   })
-
-  // faq qa 
-  let faq = $('main .faq-cont');
-  faq.find('.qa-a').slideUp(100);
-  faq.find('.qa-box .btn-tgg').on('click', function(){
-    let _this = $(this);
-    let _plus = _this.find('.plus');
-    let _min = _this.find('.minus');
-    let ans = _this.parents('.qa-box').find('.qa-a');
-    if (_plus.is(':visible')) {
-      _plus.hide();
-      _min.show();
-      ans.slideDown();
-    } else {
-      _plus.show();
-      _min.hide();
-      ans.slideUp();
-    }
-  })
-
+  // line up prev,next mouse event
   let ulCtrlMouse = lineupCont.find('#lu-ctrl-mouse');
   let ulOverlay = lineupCont.find('.overlay');
   let ulOverlayNext = lineupCont.find('.overlay.next');
@@ -106,39 +113,46 @@ LAQtop.init = function() {
         "top":y+"px",
         "left":x+"px"
       });
-    },120);//カーソルより遅れる時間を指定
+    },120); //カーソルより遅れる時間を指定
+  })
+
+
+  // faq qa 
+  let faq = $('main .faq-cont');
+  faq.find('.qa-a').slideUp(100);
+  faq.find('.qa-box .btn-tgg').on('click', function(){
+    let _this = $(this);
+    let _plus = _this.find('.plus');
+    let _min = _this.find('.minus');
+    let ans = _this.parents('.qa-box').find('.qa-a');
+    if (_plus.is(':visible')) {
+      _plus.hide();
+      _min.show();
+      ans.slideDown();
+    } else {
+      _plus.show();
+      _min.hide();
+      ans.slideUp();
+    }
   })
 
 }
+LAQtop.runCopyAnimate = function(target) {
+  let self = this;
+  let topSlide = $('.t-slider');
+  let CLASSNAME = "visibled";
+  let TIMEOUT = self.slidePause - 500;
+  let slCopyTarget = topSlide.find('.s0'+target+' .t-copy .tl');
 
-// $(function(){
-  
-//   //カーソル要素の指定
-//   var cursor=$("#cursor");
-//   //ちょっと遅れてついてくるストーカー要素の指定  
-//   var stalker=$("#stalker");
-  
-//   //mousemoveイベントでカーソル要素を移動させる
-//   $(document).on("mousemove",function(e){
-//     //カーソルの座標位置を取得
-//     var x=e.clientX;
-//     var y=e.clientY;
-//     //カーソル要素のcssを書き換える用
-//     cursor.css({
-//       "opacity":"1",
-//       "top":y+"px",
-//       "left":x+"px"
-//     });
-//     //ストーカー要素のcssを書き換える用    
-//     setTimeout(function(){
-//       stalker.css({
-//         "opacity":"1",
-//         "top":y+"px",
-//         "left":x+"px"
-//       });
-//     },140);//カーソルより遅れる時間を指定
-    
-//   });
-// });
+  let hideTarget = ((target-1)==0) ? 4 : (target-1);
+  topSlide.find('.s0'+hideTarget+' .t-copy .tl').removeClass(CLASSNAME);
+
+  setTimeout(() => {
+    slCopyTarget.addClass(CLASSNAME);
+    // setTimeout(() => {
+    //   slCopyTarget.removeClass(CLASSNAME);
+    // }, TIMEOUT);
+  }, self.slideSpeed/2);
+}
 
 $(function(){ LAQtop.init() })

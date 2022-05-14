@@ -48,12 +48,79 @@
   color: #fff;
   top: 28%;
 }
-.s02 .sl-cont .t-copy {
+.s02 .sl-cont .t-copy,
+.s03 .sl-cont .t-copy {
   font-size: 36px;
   line-height:60px;
 }
+.s03 .sl-cont,
+.s04 .sl-cont {
+  color: #fff;
+}
+.s04 .sl-cont {
+  top: 38%;
+}
+
+/* top slide text animation */
+.t-copy .tl {
+  display: flex;
+  overflow: hidden;
+}
+.s01 .t-copy .tl {
+  justify-content: center;
+}
+.t-copy .tl span {
+  display: block;
+  transform: translate(0, -105%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+.t-copy .tl.visibled span {
+  transform: translate(0, 0);
+}
+
+.t-copy .tl span:nth-child(2) {
+  transition-delay: 0.06s;
+}
+.t-copy .tl span:nth-child(3) {
+  transition-delay: 0.12s;
+}
+.t-copy .tl span:nth-child(4) {
+  transition-delay: 0.18s;
+}
+.t-copy .tl span:nth-child(5) {
+  transition-delay: 0.24s;
+}
+.t-copy .tl span:nth-child(6) {
+  transition-delay: 0.30s;
+}
+.t-copy .tl span:nth-child(7) {
+  transition-delay: 0.36s;
+}
+.t-copy .tl span:nth-child(8) {
+  transition-delay: 0.42s;
+}
+.t-copy .tl span:nth-child(9) {
+  transition-delay: 0.48s;
+}
+.t-copy .tl span:nth-child(10) {
+  transition-delay: 0.54s;
+}
+.t-copy .tl span:nth-child(11) {
+  transition-delay: 0.6s;
+}
+.t-copy .tl span:nth-child(12) {
+  transition-delay: 0.66s;
+}
+.t-copy .tl span:nth-child(13) {
+  transition-delay: 0.72s;
+}
+.t-copy .tl span:nth-child(14) {
+  transition-delay: 0.78s;
+}
 
 
+/* head topic */
 .topics-box {
   position: absolute;
   left: 75px;
