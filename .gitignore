@@ -1,3 +1,7 @@
 !.gitkeep
 .DS_Store
 Thumbs.db
+
+default.conf
+docker-compose.yml
+Dockerfile
