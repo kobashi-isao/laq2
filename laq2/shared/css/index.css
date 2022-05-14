@@ -1,3 +1,6 @@
+h1,h2,h3 {
+  margin-bottom: 0;
+}
 .sec-top-h {
   position: relative;
   min-height: calc(100vh - 90px);;
@@ -147,7 +150,7 @@ main .sec {
 }
 
 .row-tt {
-  margin-bottom: 45px;
+  margin-bottom: 50px;
 }
 .row-tt .sub-e {
   margin-bottom: 18px;
@@ -401,6 +404,9 @@ main .sec {
 .sec-lineup .row-tt {
   padding-left: 65px;
 }
+.sec-lineup .row-tt h2 {
+  font-family: athelas, serif;
+}
 
 .sec-lineup .lineup-cont {
   position: relative;
@@ -622,7 +628,7 @@ main .sec {
   font-family: athelas, serif;
 }
 .l-insta a {
-  font-family: nimbus-sans, sans-serif;s
+  font-family: nimbus-sans, sans-serif;
   font-weight: 200;
   font-size: 20px;
   color: #fff;
@@ -760,19 +766,16 @@ main .sec {
   .qa-box .txt {
     width: 80%;
   }
-  .sec-how-to-buy .shop-list a {
-    height: 300px;
-  }
-  .shop-list .rakuten img,
-  .shop-list .yahoo-sp img {
-    max-width: 60%;
-  }
-  .shop-list .amazon img {
-    max-width: 70%;
-  }
 }
 
 @media (max-width: 992px) {
+  .topics-box {
+    left: 30px;
+  }
+  .t-slider .slide-inner,
+  .slide-item .sl-bg {
+    height: calc(100vh - 89px);
+  }
   .sec-concept .c-ill.i01 img,
   .sec-concept .c-ill.i02 img,
   .sec-concept .c-ill.i03 img {
@@ -817,6 +820,190 @@ main .sec {
 }
 
 @media (max-width: 767px) {
+  .t-slider .slide-inner,
+  .slide-item .sl-bg {
+    height: calc(100vh - 79px);
+  }
+  .topics-box {
+    left: 20px;
+    bottom: 30px;
+  }
+  .topics-box a {
+    font-size: 12px;
+  }
+  .sl-cont .t-copy {
+    font-size: 26px;
+    line-height: 38px;
+  }
+  .slide-inner .sl-cont {
+    top: 4%;
+  }
+  .s01 .sl-cont {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .s01 .sl-cont .logo-name {
+    margin-top: 15px;
+  }
+  .s01 .sl-cont .logo-name .nt {
+    margin-top: 10px;
+  }
+
+  .row-tt h2 {
+    font-size: 30px;
+    line-height: 52px;
+  }
+
+  main .sec-concept {
+    padding: 220px 0;
+  }
+  .sec-concept .c-ill.i01 img,
+  .sec-concept .c-ill.i02 img {
+    max-width: 110px;
+  }
+  .sec-concept .c-ill.i03 img {
+    max-width: 160px;
+  }
+  .sec-concept .c-ill.i01 {
+    top: 80px;
+    left: 15px;
+  }
+  .sec-concept .c-ill.i02 {
+    top: 47%;
+    right: 15px;
+  }
+  .sec-concept .c-ill.i03 {
+    bottom: 32%;
+    left: 10%;
+  }
+  .l-about {
+    margin-top: 170px;
+  }
+  .slide-cont {
+    margin-top: 170px;
+  }
+  .sl-photos ul li img {
+    max-width: 188px;
+  }
+  .sl-text {
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: -30px;
+  }
+  .sec-feature .row-tt {
+    margin-bottom: 70px;
+  }
+  .sec-feature .row-tt h2 {
+    font-size: 36px;
+    line-height: 60px;
+  }
+  .sec-feature .row-tt h2 .n {
+    font-size: 50px;
+  }
+
+  .row-feature .en-t {
+    position: relative;
+    writing-mode: unset;
+    left: auto;
+    top: auto;
+  }
+  .row-feature .en-t>span {
+    font-size: 20px;
+    vertical-align: unset;
+    margin-bottom: 20px;
+  }
+  .row-feature .cont .t {
+    margin-bottom: 15px;
+  }
+  .row-feature .txt {
+    margin-bottom: 20px;
+  }
+
+  .sec-lineup .row-tt {
+    padding-left: 5px;
+  }
+  .sl-lineup .sli {
+    margin-right: 20px;
+  }
+  .lu-box .title {
+    height: auto;
+    padding-left: 0;
+    margin-bottom: 8px;
+  }
+  .lu-box .title .n {
+    position: relative;
+    font-size: 42px;
+    line-height: 50px;
+  }
+  .lu-box .title .st {
+    padding-top: 10px;
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  .lu-box .title .name {
+    font-size: 18px;
+  }
+  .lu-box .desc {
+    font-size: 12px;
+  }
+  .lu-box .v-more {
+    font-size: 12px;
+    text-align: left;
+  }
+  .lu-box .v-more span {
+    padding-right: 126px;
+  }
+  .lu-box .v-more span:after {
+    top: 6px;
+    width: 110px;
+    height: 10px;
+  }
+
+  .howto-box {
+    padding: 70px 20px;
+  }
+  .l-howto {
+    margin-bottom: 50px;
+  }
+  .l-howto .inn .v-more {
+    font-size: 20px;
+  }
+
+  main .sec-lifewith {
+    padding: 120px 0;
+  }
+  .sec-lifewith .row-tt {
+    margin-bottom: 40px;
+  }
+  .sec-lifewith .l-insta {
+    padding-top: 0;
+    text-align: center!important;
+  }
+  .l-insta a {
+    margin-top: 24px;
+    margin-left: 0;
+    width: 92%;
+  }
+  .sec-faq .row-tt {
+    margin-bottom: 90px;
+  }
+  .faq-cont .qa-box {
+    padding: 30px 0;
+    line-height: 30px;
+  }
+  .qa-box .h {
+    position: relative;
+    top: -14px;
+    left: 8px;
+  }
+  .qa-box .txt {
+    width: 84%;
+    margin: 0;
+  }
+  .qa-box .btn-tgg {
+    top: 16px;
+  }
 }
 @media (max-width: 360px) {
 }

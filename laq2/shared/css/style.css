@@ -417,6 +417,16 @@ footer .f-btm {
   .f-inner #gotop {
     right: 20px;
   }
+  .sec-how-to-buy .shop-list a {
+    height: 300px;
+  }
+  .shop-list .rakuten img,
+  .shop-list .yahoo-sp img {
+    max-width: 60%;
+  }
+  .shop-list .amazon img {
+    max-width: 70%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -446,6 +456,133 @@ footer .f-btm {
 }
 
 @media (max-width: 767px) {
+  .nav-center,
+  .nav-site .header-btn .btn-buy {
+    display: none;
+  }
+  .nav-site .navbar-brand {
+    padding-left: 20px;
+  }
+  .nav-site .navbar-brand img {
+    max-width: 136px;
+  }
+  .nav-site .header-btn .btn {
+    height: 80px;
+    width: 100px;
+  }
+  .navbar .btn-menu {
+    margin-right: 0;
+  }
+  .nav-menu-tgg {
+    top: 80px;
+  }
+  .nav-menu-tgg.main-menu {
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+  }
+  .main-menu .inn {
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 0 50px;
+    justify-content: unset;
+  }
+
+  main {
+    margin-top: 79px;
+  }
+
+  main .sec-how-to-buy {
+    background: #212121;
+    padding-bottom: 160px;
+  }
+  .sec-how-to-buy .ht-head {
+    padding-top: 150px;
+    padding-bottom: 40px;
+  }
+  .sec-how-to-buy .ht-head .row-tt {
+    margin-bottom: 0;
+  }
+  .sec-how-to-buy .shop-list>.row>div {
+    padding: 0 20px;
+  }
+  .sec-how-to-buy .shop-list a {
+    height: 280px;
+  }
+  .shop-list .rakuten img {
+    max-width: 120px;
+  }
+  .shop-list .amazon img {
+    max-width: 180px;
+  }
+  .shop-list .yahoo-sp img {
+    max-width: 220px;
+  }
+
+  footer .f-visual {
+    height: 600px;
+  }
+  .f-visual .txt {
+    display: block;
+    text-align: center;
+    align-items: unset;
+    justify-content: unset;
+    font-size: 30px;
+    line-height: 45px;
+    top: 100px;
+  }
+  footer .f-inner {
+    padding: 110px 40px 40px;
+  }
+  footer .col-logo {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  footer .f-col-link1 {
+    display: none;
+  }
+  footer .foo-link .l1 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .foo-link .l-item2 {
+    padding-top: 0;
+  }
+  .f-col-link2 .share {
+    display: none;
+  }
+  .l-item2 .l-instagram {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 26px;
+    padding-right: 45px;
+  }
+  .l-item2 .l-instagram:after {
+    width: 25px;
+    height: 25px;
+  }
+  .l-item2 .l-policy {
+    display: inline-block;
+    margin-top: 40px;
+  }
+  footer .share-sp {
+    margin-top: 40px;
+    text-align: center;
+  }
+  footer .share-sp .t {
+    font-family: athelas, serif;
+    margin-bottom: 20px;
+  }
+  .share-sp a img {
+    width: 58px;
+  }
+  .share-sp .ic-fb {
+    margin-left: 36px;
+  }
+
+  footer .f-btm {
+    margin-top: 50px;
+    text-align: center;
+  }
 }
 @media (max-width: 360px) {
 }

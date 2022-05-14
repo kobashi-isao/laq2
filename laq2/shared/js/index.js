@@ -1,6 +1,7 @@
 let LAQtop = {};
 LAQtop.init = function() {
   let self = this;
+  self.isSmp = LAQtw.isSmp;
   self.slideSpeed = 1200;
   self.slidePause = 4000;
   new WOW().init();
@@ -72,12 +73,14 @@ LAQtop.init = function() {
         breakpoint:768,
         settings: {
           slidesToShow: 1,
-          centerPadding:'30px'
+          centerPadding:'20px'
         }
       }
     ]
   })
-  lineupSlick.slick('slickNext');
+  if (!self.isSmp) {
+    lineupSlick.slick('slickNext');
+  }
   $('.lineup-cont .overlay.prev').on('click', function(){
     lineupSlick.slick('slickPrev');
   })

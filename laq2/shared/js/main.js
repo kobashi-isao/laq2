@@ -1,6 +1,7 @@
 let LAQtw = {};
 LAQtw.init = function(){
   let self =this;
+  self.isSmp = self.isSmp();
   self.header = $('header');
   self.main = $('main');
   self.topOffset = self.header.find('.navbar.fixed-top').height()+10;
