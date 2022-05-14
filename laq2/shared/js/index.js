@@ -3,6 +3,7 @@ LAQtop.init = function() {
   let self = this;
   self.slideSpeed = 1200;
   self.slidePause = 4000;
+  new WOW().init();
 
   let topSlide = $('.t-slider');
   if (topSlide.length > 0){
