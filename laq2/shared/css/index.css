@@ -13,14 +13,14 @@
 .t-slider .slide-inner {
   text-align: center;
   /*height: 80vh;*/
-  height: calc(100vh - 100px);
+  height: calc(100vh - 99px);
   position: relative;
 }
 .slide-item .sl-bg {
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 99px);
 }
 
 .sl-cont {
@@ -747,4 +747,76 @@ main .sec {
   background-image: url(../img/common/btn_arrow_right.svg);
   width: 120px;
   height: 14px;
+}
+
+@media (max-width: 1199px) {
+
+  .row-feature .en-t {
+    left: -40px;
+  }
+  .howto-box {
+    padding: 40px;
+  }
+  .qa-box .txt {
+    width: 80%;
+  }
+  .sec-how-to-buy .shop-list a {
+    height: 300px;
+  }
+  .shop-list .rakuten img,
+  .shop-list .yahoo-sp img {
+    max-width: 60%;
+  }
+  .shop-list .amazon img {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  .sec-concept .c-ill.i01 img,
+  .sec-concept .c-ill.i02 img,
+  .sec-concept .c-ill.i03 img {
+    max-width: 180px;
+  }
+  .row-feature .thumb {
+    margin-left: 0;
+  }
+  .sl-lineup .sli {
+    margin-right: 40px;
+  }
+  .lu-box .thumb .cp {
+    left: 28px;
+  }
+  .lu-box .thumb .cp span {
+    font-size: 20px;
+    line-height: 34px;
+  }
+  .lu-box .title {
+    padding-left: 90px;
+  }
+  .lu-box .title .n {
+    font-size: 70px;
+  }
+  .lu-box .title .st {
+    padding-top: 20px;
+  }
+  .lu-box .title .name {
+    font-size: 20px;
+  }
+  .lineup-cont .overlay {
+    display: none;
+  }
+  .howto-cont,
+  .sec-faq .inn,
+  .sec-lifewith .head {
+    padding: 0;
+  }
+  .howto-box .thumb img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+}
+@media (max-width: 360px) {
 }

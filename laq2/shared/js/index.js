@@ -65,7 +65,7 @@ LAQtop.init = function() {
       {
         breakpoint:993,
         settings: {
-          centerPadding:'40px'
+          centerPadding:'60px'
         }
       },
       {

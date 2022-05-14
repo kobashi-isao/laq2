@@ -414,10 +414,35 @@ footer .f-btm {
 }
 
 @media (max-width: 1199px) {
+  .f-inner #gotop {
+    right: 20px;
+  }
 }
 
 @media (max-width: 992px) {
+  .nav-site .navbar-brand {
+    padding-left: 0;
+  }
+  .nav-site .navbar-brand img {
+    max-width: 190px;
+  }
+  .nav-site .header-btn .btn {
+    height: 90px;
+    width: 120px;
+  }
+  .nav-menu-tgg {
+    top: 90px;
+  }
+  main {
+    margin-top: 89px;
+  }
 
+  footer .f-inner {
+    padding: 160px 30px 40px;
+  }
+  footer .a-logo img {
+    max-width: 80%;
+  }
 }
 
 @media (max-width: 767px) {
