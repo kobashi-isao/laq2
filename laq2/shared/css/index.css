@@ -292,7 +292,7 @@ main .sec {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 200px;
+  width: 25%;
   background: transparent;
   z-index: 50;
   cursor: pointer;
@@ -302,6 +302,26 @@ main .sec {
 }
 .lineup-cont .overlay.next {
   right: 0;
+}
+#lu-ctrl-mouse {
+  display: none;
+  position: fixed;
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+#lu-ctrl-mouse.next {
+  background-image: url(../img/index/line_up/btn_next.svg);
+}
+#lu-ctrl-mouse.prev {
+  background-image: url(../img/index/line_up/btn_prev.svg);
 }
 .sl-lineup .sli {
   margin-right:80px;
@@ -400,6 +420,8 @@ main .sec {
 .lineup-sl-prog {
   padding: 82px 0;
 }
+
+
 .howto-cont {
   padding: 0 65px;
 }

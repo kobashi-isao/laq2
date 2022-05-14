@@ -17,7 +17,8 @@ LAQtop.init = function() {
   }
 
   // line up slick 
-  let lineupSlick = LAQtw.main.find('.sl-lineup').slick({
+  let lineupCont = LAQtw.main.find('.lineup-cont');
+  let lineupSlick = lineupCont.find('.sl-lineup').slick({
     dots:false,
     centerMode: true,
     centerPadding: '80px',
@@ -76,5 +77,68 @@ LAQtop.init = function() {
     }
   })
 
+  let ulCtrlMouse = lineupCont.find('#lu-ctrl-mouse');
+  let ulOverlay = lineupCont.find('.overlay');
+  let ulOverlayNext = lineupCont.find('.overlay.next');
+  let ulOverlayPrev = lineupCont.find('.overlay.prev');
+  ulOverlayNext.on('mouseover',function(e){
+    ulCtrlMouse.fadeIn();
+    ulCtrlMouse.addClass('next');
+  })
+  ulOverlayPrev.on('mouseover',function(e){
+    ulCtrlMouse.fadeIn();
+    ulCtrlMouse.addClass('prev');
+  })
+  ulOverlay.on('mouseout', function(e){
+    ulCtrlMouse.fadeOut();
+    ulCtrlMouse.removeClass('prev');
+    ulCtrlMouse.removeClass('next');
+  })
+  ulOverlay.on('mousemove', function(e){
+    //カーソルの座標位置を取得
+    let x=e.clientX;
+    let y=e.clientY;
+    
+    //ストーカー要素のcssを書き換える用    
+    setTimeout(function(){
+      ulCtrlMouse.css({
+        "opacity":"1",
+        "top":y+"px",
+        "left":x+"px"
+      });
+    },120);//カーソルより遅れる時間を指定
+  })
+
 }
+
+// $(function(){
+  
+//   //カーソル要素の指定
+//   var cursor=$("#cursor");
+//   //ちょっと遅れてついてくるストーカー要素の指定  
+//   var stalker=$("#stalker");
+  
+//   //mousemoveイベントでカーソル要素を移動させる
+//   $(document).on("mousemove",function(e){
+//     //カーソルの座標位置を取得
+//     var x=e.clientX;
+//     var y=e.clientY;
+//     //カーソル要素のcssを書き換える用
+//     cursor.css({
+//       "opacity":"1",
+//       "top":y+"px",
+//       "left":x+"px"
+//     });
+//     //ストーカー要素のcssを書き換える用    
+//     setTimeout(function(){
+//       stalker.css({
+//         "opacity":"1",
+//         "top":y+"px",
+//         "left":x+"px"
+//       });
+//     },140);//カーソルより遅れる時間を指定
+    
+//   });
+// });
+
 $(function(){ LAQtop.init() })
