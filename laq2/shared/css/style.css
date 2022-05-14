@@ -246,6 +246,55 @@ nav.nav-site {
   height: 12px;
 }
 
+.sec-how-to-buy .ht-head {
+  margin: 0 -15px;
+}
+.sec-how-to-buy .ht-head {
+  color: #fff;
+  background: #212121;
+  padding-top: 90px;
+  padding-bottom: 60px;
+}
+.sec-how-to-buy .ht-head .row-tt {
+  text-align: center;
+}
+.ht-head .row-tt h2 {
+  font-family: athelas, serif;
+}
+.ht-head .row-tt h2 .n {
+  font-size: 48px;
+}
+.ht-head .row-tt .st {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.sec-how-to-buy .shop-list>.row>div {
+  padding: 0;
+}
+.sec-how-to-buy .shop-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  text-align: center;
+  background: #fff;
+}
+.sec-how-to-buy .shop-list a.rakuten {
+  background: #BF0000;
+}
+.shop-list .rakuten img {
+  max-width: 172px;
+}
+.sec-how-to-buy .shop-list a.amazon {
+  background: #232F3E;
+}
+.shop-list .amazon img {
+  max-width: 256px;
+}
+.shop-list .yahoo-sp img {
+  max-width: 296px;
+}
 
 /* footer  */
 footer {
