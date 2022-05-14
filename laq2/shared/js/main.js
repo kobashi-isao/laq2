@@ -26,27 +26,6 @@ LAQtw.init = function(){
   // scroll bg
   self.initScrollBgColor();
 
-  // self.goTopBtnOnBottom = false;
-  // $(window).scroll(function(){
-  //   let windHeight = $(window).height();
-  //   let goTopBtn = $('#gotop');
-  //   let scrollTop = $(document).scrollTop();
-  //   if (scrollTop <= 500) {
-  //     goTopBtn.fadeOut(400);
-  //   } else if (goTopBtn.css("display") == 'none' && !self.goTopBtnOnBottom) {
-  //     goTopBtn.fadeIn(500);
-  //   }
-  //   if (self.isSmp) {
-  //     let bottomLimit = $('footer').position().top;
-  //     if ((scrollTop+windHeight) > bottomLimit && !self.goTopBtnOnBottom) {
-  //       goTopBtn.fadeOut(400);
-  //       self.goTopBtnOnBottom = true;
-  //     } else if ((scrollTop+windHeight) < bottomLimit && self.goTopBtnOnBottom) {
-  //       goTopBtn.fadeIn(400);
-  //       self.goTopBtnOnBottom = false;
-  //     }
-  //   }
-  // })
 
 }
 LAQtw.initNavMenuToggle = function() {
@@ -56,6 +35,7 @@ LAQtw.initNavMenuToggle = function() {
   let opened = 'opened';
   headerBtn.find('.btn').on('click', function(){
     let thisBtn = $(this);
+    thisBtn.blur();
     let menuTarget = thisBtn.data('target');
     navMenuTgg.fadeOut();
     let thisMenu = null;
@@ -75,7 +55,6 @@ LAQtw.initNavMenuToggle = function() {
       thisBtn.addClass(opened);
       thisMenu.fadeIn();
     }
-    thisBtn.blur();
     return false;
   })
 

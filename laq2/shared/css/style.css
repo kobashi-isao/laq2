@@ -1,18 +1,3 @@
-/*@media (min-width: 768px) {
-  .container, .container-md, .container-sm {
-    max-width: none;
-  }
-}
-@media (min-width: 992px) {
-  .container, .container-lg, .container-md, .container-sm {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 1100px;
-  }
-}*/
 
 .flex {
   display: flex;
@@ -138,8 +123,6 @@ nav.nav-site {
    background-color: #fff;
    color: #000;
 }
-.navbar .btn-menu.hvr-back-pulse:active,
-.navbar .btn-menu.hvr-back-pulse:focus,
 .navbar .btn-menu.hvr-back-pulse:hover {
   animation-name: hvr-back-pulse2;
   background-color: #000;
@@ -490,11 +473,59 @@ footer .f-btm {
     width: 100%;
     background: rgba(0, 0, 0, .7);
   }
-  .main-menu .inn {
+  .nav-site .main-menu .inn {
     width: 100%;
     height: calc(100vh - 80px);
     padding: 0 50px;
     justify-content: unset;
+    position: relative;
+  }
+  .nav-site .main-menu ul {
+    margin-bottom: 130px;
+  }
+  .nav-site .main-menu .how-buy-content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  .nav-site .how-buy-content .t {
+    font-family: athelas, serif;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .nav-site .row-buy {
+    background: #fff;
+    margin: 0;
+  }
+  .nav-site .row-buy>div {
+    padding: 0;
+  }
+  .nav-site .row-buy a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    text-align: center;
+    background: #fff;
+  }
+  .nav-site .row-buy img {
+    max-width: 100%;
+  }
+  .nav-site .row-buy .rakuten {
+    background: #BF0000;
+  }
+  .nav-site .row-buy .rakuten img {
+    max-width: 45px;
+  }
+  .nav-site .row-buy .amazon {
+    background: #232F3E;
+  }
+  .nav-site .row-buy .amazon img {
+    max-width: 66px
+  }
+  .nav-site .row-buy .yahoo-sp img {
+    max-width: 84px;
   }
 
   main {
