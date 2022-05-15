@@ -33,6 +33,11 @@ LAQtw.initNavMenuToggle = function() {
   let headerBtn = self.header.find('.header-btn');
   let navMenuTgg = self.header.find('.nav-menu-tgg');
   let opened = 'opened';
+
+  if (self.isSmp || self.isTablet()) {
+    headerBtn.find('.btn').removeClass('hvr-back-pulse');
+  }
+
   headerBtn.find('.btn').on('click', function(){
     let thisBtn = $(this);
     thisBtn.blur();
@@ -92,6 +97,13 @@ LAQtw.initScrollBgColor = function() {
 LAQtw.isSmp = function() {
   let ua = navigator.userAgent;
   if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
+    return true;
+  }
+  return false;
+}
+LAQtw.isTablet = function() {
+  let ua = navigator.userAgent;
+  if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0 ){
     return true;
   }
   return false;
