@@ -1,0 +1,235 @@
+.mv.faq {
+  background-image: url(/shared/img/faq/mv_faq_pc.png);
+}
+
+.faq .contents {
+  margin: 80px auto;
+  display: flex;
+  width: 1280px;
+}
+.faq .submenu {
+  width: 240px;
+  margin: 80px 80px 0 0;
+}
+.faq .submenu ul{
+  list-style-type: none;
+  font-size: 12px;
+}
+.faq .submenu li a{
+  color: #717171;
+}
+.faq .submenu li a:hover{
+  color: #000;
+  text-decoration: none;
+}
+.faq .main-contents {
+  display: block;
+  width: 960px;
+}
+.faq .texts-area {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 280px;
+}
+
+.faq .faq-texts {
+  font-size: 20px;
+  letter-spacing: 1.4px;
+}
+
+.faq .text-box:not(:last-child) {
+  margin-bottom: 80px;
+}
+
+.faq h2{
+  margin-top: 80px;
+}
+
+.faq .text-box p {
+  line-height: 41px;
+}
+
+.faq .texts-area .container {
+  position: absolute;
+  top: 0;
+}
+
+.faq .texts-area .img-area {
+  margin-top: 483px;
+  padding: 10px;
+}
+
+.faq .title-area {
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.faq .text-padding {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.faq .block-area {
+  display: flex;
+  position: relative;
+  line-height: 36px;
+  margin-bottom: 300px;
+}
+
+.faq .block-area .text-box p {
+  margin-bottom: 30px;
+}
+
+.faq .block-area .text-block-1 {
+  position: absolute;
+  width: 42%;
+  top: 6%;
+  left: 35px;
+  margin-bottom: 0;
+  min-width: 330px;
+}
+
+.faq .block-area .text-block-2 {
+  position: absolute;
+  width: 40%;
+  right: 8%;
+  bottom: 10%;
+  margin-bottom: 0;
+  min-width: 316px;
+}
+
+.faq .h3 {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 70px 0;
+  letter-spacing: 2.74px;
+}
+/********** QAリスト **********/
+.cp_qa *, .cp_qa *:after, .cp_qa *:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.cp_qa{
+  margin-top: 40px;
+  border-bottom: 1px solid;
+  font-size: 14px;
+}
+.cp_qa .cp_actab {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  color: #1b2538;
+  border-top: 1px solid;
+}
+.cp_qa .cp_actab input {
+  position: absolute;
+  opacity: 0;
+}
+/* 質問 */
+.cp_qa .cp_actab label {
+  font-weight: normal;
+  line-height: 1.6em;
+  position: relative;
+  display: block;
+  margin: 0 0 0 0;
+  padding: 1em 2em 1em 5em;
+  cursor: pointer;
+  text-indent: 1em;
+  border-radius: 0.5em;
+}
+.cp_qa .cp_actab label::before {
+  font-family: athelas, serif;
+  font-size: 1.5em;
+  margin-left: -2em;
+  padding-right: 0.5em;
+  content: 'Q';
+}
+.cp_qa .cp_actab label:hover {
+  transition: all 0.3s;
+  opacity: 0.5;
+}
+/* --質問の＋アイコン */
+.cp_qa .cp_actab label::after {
+  font-size: 1.7em;
+  font-weight: normal;
+  line-height: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content:url(/shared/img/index/faq/btn_plus.svg); 
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  -webkit-transition: transform 0.4s;
+          transition: transform 0.4s;
+}
+/* 答え */
+.cp_qa .cp_actab .cp_actab-content {
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0 0 0 5em;
+  -webkit-transition: max-height 0.2s;
+          transition: max-height 0.2s;
+  border-radius: 0 0 0.5em 0.5em;
+}
+.cp_qa .cp_actab .cp_actab-content::before {
+  font-family: serif;
+  font-size: 1.5em;
+  position: absolute;
+  margin: 0.4em 0 0 -1em;
+  padding: 0;
+  content: 'A';
+}
+.cp_qa .cp_actab .cp_actab-content p {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+/* 質問を開いた時の仕様 */
+/* --答えの高さ */
+.cp_qa .cp_actab input:checked ~ .cp_actab-content {
+  max-height: 1000px;
+}
+/* 質問をクリックした時のアイコンの動き */
+.cp_qa .cp_actab input:checked ~ label {
+  color: #333;
+  border-radius: 0.5em 0.5em 0 0;
+}
+/* 質問をクリックした時の+の動き */
+.cp_qa .cp_actab input[type=checkbox]:checked + label::after {
+  content:url(/shared/img/index/faq/btn_minus.svg); 
+/*  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%; */
+}
+
+@media (max-width: 767px) {
+   .faq .contents {
+    display: block;
+    width: 100%;
+  }
+  .faq .submenu {
+    width: 90%;
+    margin: 0 40px 0 0;
+    padding: 10px;
+  } 
+  .faq .main-contents {
+    display: block;
+    width: 100%;
+  }
+  .faq h2{
+    margin: 20px 10px;
+  }
+  .cp_qa .cp_actab label{
+    padding: 1em 3em 1em 4em;
+  }
+  .cp_qa .cp_actab .cp_actab-content{
+    padding: 0 0 0 3.5em;
+  }
+  .cp_qa{
+    margin-bottom: 60px;
+  }
+}
