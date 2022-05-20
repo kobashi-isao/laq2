@@ -1,0 +1,601 @@
+.mv.howto {
+  background-image: url(/shared/img/howto/mv_howto_pc.jpg);
+}
+
+.howto br.sp {
+    display: none;
+}
+
+.howto .ft_noto {
+  font-family: noto-sans-cjk-jp, sans-serif;
+}
+
+.howto_lead_column {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.howto_lead_column h3 {
+  font-size: 36px;
+}
+
+.howto_acc_column .howto_all_in {
+  background: #F2EEE9;
+}
+
+.howto_acc_column .howto_water {
+  background: #9BBAC4;
+}
+
+.howto_acc_column .howto_shoe {
+  background: #B0C2B5;
+}
+
+.howto_acc_header {
+  cursor: pointer;
+	transition: all 0.60s ease 0s;
+}
+
+.howto_acc_header:hover {
+  opacity: 0.4;
+}
+
+.howto_acc_header .inner {
+  margin: 0 auto;
+  max-width: 1180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 240px;
+}
+
+.howto_acc_column .howto_all_in .howto_acc_header .inner {
+  padding-left: 280px;
+  background: url(../img/howto/img_illust_all.png) no-repeat 60px center;
+  background-size: 147px auto;
+}
+
+.howto_acc_column .howto_water .howto_acc_header .inner {
+  padding-left: 250px;
+  background: url(../img/howto/img_illust_water.png) no-repeat 10px center;
+  background-size: 188px auto;
+}
+
+.howto_acc_column .howto_shoe .howto_acc_header .inner {
+  padding-left: 270px;
+  background: url(../img/howto/img_illust_shoe.png) no-repeat 30px center;
+  background-size: 170px auto;
+}
+
+.howto_acc_header h2 {
+  font-size: 48px;
+  text-align: center;
+}
+
+.howto_acc_header h2 span {
+  margin-top: 25px;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.howto_acc_header .btn_acc {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.howto_acc_header .btn_acc::before,
+.howto_acc_header .btn_acc::after {
+  position: absolute;
+  content: '';
+  width: 80px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 1px;
+  background: #000;
+	transition: all 0.25s ease 0s;
+}
+
+.howto_acc_header .btn_acc::after {
+  transform: rotate(-90deg);
+}
+
+.howto_acc_column li.open .howto_acc_header .btn_acc::after {
+  transform: rotate(0deg);
+}
+
+@media (max-width: 992px) {
+
+  .howto br.sp {
+    display: block;
+  }
+
+  .howto_lead_column {
+    height: 300px;
+  }
+
+  .howto_lead_column h3 {
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  .howto_lead_column h3 br {
+    display: block;
+  }
+
+  .howto_acc_header:hover {
+    opacity: inherit;
+  }
+  
+  .howto_acc_header .inner {
+    padding: 50px 0;
+    max-width: inherit;
+    display: block;
+    min-height: 380px;
+  }
+  
+  .howto_acc_column .howto_all_in .howto_acc_header .inner {
+    padding-left: 0;
+    background: url(../img/howto/img_illust_all.png) no-repeat center 50px;
+    background-size: 70px auto;
+  }
+  
+  .howto_acc_column .howto_water .howto_acc_header .inner {
+    padding-left: 0;
+    background: url(../img/howto/img_illust_water.png) no-repeat center 50px;
+    background-size: 70px auto;
+  }
+  
+  .howto_acc_column .howto_shoe .howto_acc_header .inner {
+    padding-left: 0;
+    background: url(../img/howto/img_illust_shoe.png) no-repeat center 50px;
+    background-size: 70px auto;
+  }
+  
+  .howto_acc_header h2 {
+    margin: 80px 0 30px;
+    font-size: 36px;
+  }
+  
+  .howto_acc_header h2 span {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .howto_acc_header .btn_acc {
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .howto_acc_header .btn_acc::before,
+  .howto_acc_header .btn_acc::after {
+    width: 60px;
+  }
+
+}
+
+.howto_acc_body {
+  padding-bottom: 230px;
+  display: none;
+}
+
+.howto_acc_body .inner {
+  margin: 0 auto;
+  padding: 60px 0 0;
+  max-width: 1120px;
+}
+
+.howto_use {
+  margin: 0 0 80px;
+  display: flex;
+}
+
+.howto_use figure {
+  margin: 0 80px 0 0;
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.howto_use .howto_use_text_box {
+  width: 100%;
+}
+
+.howto_use h3 {
+  margin: 0 0 40px;
+  font-size: 30px;
+}
+
+.howto_use h4 {
+  margin: 0 0 30px;
+  font-size: 20px;
+}
+
+.howto_use ol {
+  margin: 0 0 50px;
+  list-style-type: none;
+}
+
+.howto_use ol li {
+  margin: 0 0 7px;
+  font-size: 16px;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.howto_use p {
+  font-size: 16px;
+  line-height: 2.0;
+}
+
+.howto_shoe .howto_use .howto_use_text_box {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.howto_use .attention_box {
+  padding: 25px 10px 25px 35px;
+  border: 1px solid #000;
+}
+
+.howto_use .attention_box ul {
+  padding-left: 60px;
+  list-style-type: disc;
+  background: url(../img/howto/icon_attention.svg) no-repeat 0 0px;
+  background-size: 32px 28px;
+}
+
+.howto_use .attention_box li {
+  font-size: 12px;
+}
+
+@media (max-width: 992px) {
+
+  .howto_acc_body {
+    padding-bottom: 120px;
+  }
+  
+  .howto_acc_body .inner {
+    padding: 30px 0 0;
+    max-width: inherit;
+  }
+  
+  .howto_use {
+    margin: 0 0 100px;
+    display: block;
+  }
+  
+  .howto_use figure {
+    margin: 0 40px 60px;
+    width: auto;
+  }
+  
+  .howto_use .howto_use_text_box {
+    margin: 0 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .howto_use h3 {
+    margin: 0 0 20px;
+    font-size: 24px;
+  }
+  
+  .howto_use h4 {
+    margin: 0 0 20px;
+    font-size: 18px;
+  }
+  
+  .howto_use ol {
+    margin: 0 0 50px;
+    list-style-type: none;
+  }
+  
+  .howto_use ol li {
+    margin: 0 0 15px;
+    font-size: 14px;
+  }
+  
+  .howto_use p {
+    font-size: 14px;
+    line-height: 2.0;
+  }
+  
+  .howto_shoe .howto_use .howto_use_text_box {
+    display: block;
+  }
+  
+  .howto_use .attention_box {
+    padding: 30px 10px 30px 20px;
+  }
+  
+}
+
+.howto_item {
+  margin: 0 auto 120px;
+  text-align: center;
+}
+
+.howto_item h3 {
+  font-size: 36px;
+}
+
+.howto_item h3 span {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.howto_item_column {
+  margin: 40px auto 0;
+  display: flex;
+  max-width: 1060px;
+ justify-content: space-between; 
+}
+
+.howto_item_column dl {
+  margin: 0;
+  background: rgba(255,255,255,0.8);
+  width: 483px;
+  height: 483px;
+  border-radius: 50%;
+}
+
+.howto_item_column dt {
+  margin: 90px 0 20px;
+}
+
+.howto_item_column .howto_item_item dt {
+  margin: 80px 0 0;
+}
+
+.howto_item_column dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 2.0;
+}
+
+.howto_item_column dd figure {
+  margin: 0 20px 20px;
+}
+
+.howto_item_column .howto_item_item dd figure {
+  margin-bottom: 40px;
+}
+
+.howto_item_column .howto_item_shoes {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.howto_item_column .howto_item_shoes figure {
+  margin: 0 40px 20px;
+}
+
+@media (max-width: 992px) {
+
+  .howto_item {
+    margin: 0 auto 60px;
+  }
+  
+  .howto_item h3 {
+    margin: 0 10px;
+    font-size: 24px;
+    line-height: 1.6;
+  }
+  
+  .howto_item h3 span {
+    margin-bottom: 10px;
+  }
+  
+  .howto_item_column {
+    margin: 45px 20px;
+    display: block;
+    max-width: inherit;
+  }
+
+  .howto_item_column dl {
+    margin: 0;
+    padding: 20px 0 90px;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: url(../img/howto/howto_item_column_back.png) no-repeat center 0;
+    background-size: 100% auto;
+    background-color: inherit;
+    border-radius: 0;
+  }
+
+  .howto_item_column dt {
+    margin: 0 0 20px;
+  }
+  
+  .howto_item_column .howto_item_item dt {
+    margin: 0;
+  }
+  
+  .howto_item_column dd {
+    font-size: 12px;
+  }
+  
+  .howto_item_column dd figure {
+    margin: 0 10px 20px;
+  }
+  
+  .howto_item_column .howto_item_item dd figure {
+    margin-bottom: 20px;
+  }
+
+  .howto_item_column dl.howto_item_shoes {
+    background-image: none;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  .howto_item_column .howto_item_shoes {
+    margin: 0 auto;
+    width: auto;
+  }
+  
+  .howto_item_column .howto_item_shoes figure {
+    margin: 40px 10px 0;
+  }
+
+}
+
+.howto_purchase {
+  margin: 0 auto;
+  max-width: 1280px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.howto_purchase h3 {
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+
+.howto_purchase h3 span {
+  margin-top: 10px;
+  display: block;
+  font-size: 14px;
+}
+
+.howto_purchase ul {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  list-style-type: none;
+}
+
+.howto_purchase li.link_rakuten a {
+  background: #BF0000;
+}
+
+.howto_purchase li.link_rakuten img {
+  width: 82px;
+}
+
+.howto_purchase li.link_amazon a {
+  background: #232F3E;
+}
+
+.howto_purchase li.link_amazon img {
+  width: 104px;
+}
+
+.howto_purchase li.link_yahoo a {
+  background: #fff;
+}
+
+.howto_purchase li.link_yahoo img {
+  width: 131px;
+}
+
+.howto_purchase li {
+  width: 33.3333%;
+}
+
+.howto_purchase li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+	transition: all 0.25s ease 0s;
+}
+
+.howto_purchase li a:hover {
+  opacity: 0.7;
+}
+
+.howto_purchase .howto_purchase_products {
+  width: calc(100% - 600px);
+}
+
+.howto_purchase .howto_purchase_products a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn_arrow {
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  color: #1C1C1C;
+  line-height: 1;
+  position: relative;
+  width: 120px;
+  height: 0.07em;
+  background: #1C1C1C;
+	transition: all 0.25s ease 0s;
+}
+
+.btn_arrow::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  border: 0.07em solid #1C1C1C;
+  border-left: 0;
+  border-bottom: 0;
+  transform: rotate(45deg);
+  transform-origin: top right;
+  position: absolute;
+  top: 50%;
+  right: -0.05em;
+  box-sizing: border-box;
+}
+
+a:hover .btn_arrow {
+  width: 40px;
+}
+
+
+@media (max-width: 992px) {
+
+  .howto_purchase {
+    margin: 0 40px;
+    max-width: inherit;
+    display: block;
+  }
+  
+  .howto_purchase h3 {
+    margin: 0 0 20px;
+    font-size: 30px;
+  }
+  
+  .howto_purchase h3 span {
+    margin-top: 15px;
+    display: block;
+    font-size: 14px;
+  }
+  
+  .howto_purchase ul {
+    margin: 0 0 80px;
+    display: block;
+    width: auto;
+  }
+  
+  .howto_purchase li {
+    width: 100%;
+  }
+  
+  .howto_purchase li a:hover {
+    opacity: 1;
+  }
+  
+  .howto_purchase .howto_purchase_products {
+    width: auto;
+  }
+
+  a:hover .btn_arrow {
+    width: 120px;
+  }
+
+}
