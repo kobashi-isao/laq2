@@ -105,109 +105,9 @@
   margin: 70px 0;
   letter-spacing: 2.74px;
 }
-/********** QAリスト **********/
-.cp_qa *, .cp_qa *:after, .cp_qa *:before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.cp_qa{
-  margin-top: 40px;
-  border-bottom: 1px solid;
-  font-size: 14px;
-}
-.cp_qa .cp_actab {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding: 20px 0;
-  color: #1b2538;
-  border-top: 1px solid;
-}
-.cp_qa .cp_actab input {
-  position: absolute;
-  opacity: 0;
-}
-/* 質問 */
-.cp_qa .cp_actab label {
-  font-weight: normal;
-  line-height: 1.6em;
-  position: relative;
-  display: block;
-  margin: 0 0 0 0;
-  padding: 1em 2em 1em 5em;
-  cursor: pointer;
-  text-indent: 1em;
-  border-radius: 0.5em;
-}
-.cp_qa .cp_actab label::before {
-  font-family: athelas, serif;
-  font-size: 1.5em;
-  margin-left: -2em;
-  padding-right: 0.5em;
-  content: 'Q';
-}
-.cp_qa .cp_actab label:hover {
-  transition: all 0.3s;
-  opacity: 0.5;
-}
-/* --質問の＋アイコン */
-.cp_qa .cp_actab label::after {
-  font-size: 1.7em;
-  font-weight: normal;
-  line-height: 2em;
-  position: absolute;
-  top: 0;
-  right: 0;
-  content:url(/shared/img/index/faq/btn_plus.svg); 
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  -webkit-transition: transform 0.4s;
-          transition: transform 0.4s;
-}
-/* 答え */
-.cp_qa .cp_actab .cp_actab-content {
-  position: relative;
-  overflow: hidden;
-  max-height: 0;
-  padding: 0 0 0 5em;
-  -webkit-transition: max-height 0.2s;
-          transition: max-height 0.2s;
-  border-radius: 0 0 0.5em 0.5em;
-}
-.cp_qa .cp_actab .cp_actab-content::before {
-  font-family: serif;
-  font-size: 1.5em;
-  position: absolute;
-  margin: 0.4em 0 0 -1em;
-  padding: 0;
-  content: 'A';
-}
-.cp_qa .cp_actab .cp_actab-content p {
-  margin-top: 10px;
-  padding-left: 10px;
-}
-/* 質問を開いた時の仕様 */
-/* --答えの高さ */
-.cp_qa .cp_actab input:checked ~ .cp_actab-content {
-  max-height: 1000px;
-}
-/* 質問をクリックした時のアイコンの動き */
-.cp_qa .cp_actab input:checked ~ label {
-  color: #333;
-  border-radius: 0.5em 0.5em 0 0;
-}
-/* 質問をクリックした時の+の動き */
-.cp_qa .cp_actab input[type=checkbox]:checked + label::after {
-  content:url(/shared/img/index/faq/btn_minus.svg); 
-/*  -webkit-transform: rotateZ(45deg);
-  transform: rotateZ(45deg);
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%; */
-}
 
 @media (max-width: 767px) {
-   .faq .contents {
+  .faq .contents {
     display: block;
     width: 100%;
   }
@@ -222,14 +122,5 @@
   }
   .faq h2{
     margin: 20px 10px;
-  }
-  .cp_qa .cp_actab label{
-    padding: 1em 3em 1em 4em;
-  }
-  .cp_qa .cp_actab .cp_actab-content{
-    padding: 0 0 0 3.5em;
-  }
-  .cp_qa{
-    margin-bottom: 60px;
   }
 }

@@ -26,7 +26,27 @@ LAQtw.init = function(){
   // scroll bg
   self.initScrollBgColor();
 
+  $('#js-menu-button').on('click', function() {
+    if ($(this).hasClass("opened")) {
+      $(this).text('CLOSE')
+    } else {
+      $(this).text('MENU')
+    }
+  });
 
+  $(".js-accordion-button").on("click",function(){
+    $(this).parent('.js-accordion').toggleClass("open");
+    $(this).parent('.js-accordion').find('.js-accordion-body').slideToggle(250);
+  });
+
+  $('.js-hover').on({
+    'mouseenter': function() {
+      $(this).addClass("hover");
+    },
+    'mouseleave': function() {
+      $(this).removeClass("hover");
+    }
+  })
 }
 LAQtw.initNavMenuToggle = function() {
   let self = this;
