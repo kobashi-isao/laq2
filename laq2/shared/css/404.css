@@ -1,0 +1,17 @@
+#nf main{
+  background: #FDF8F0;
+  text-align: center;
+}
+#nf h1{
+  font-family: athelas, serif;
+  font-size: 88px;
+  padding: 250px 0 40px;
+}
+
+.nf .anime-img img{
+  width: 270px;
+}
+
+@media (max-width: 767px) {
+
+}
