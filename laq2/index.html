@@ -266,11 +266,10 @@
 
 <div class="lineup-cont">
 <div class="sl-lineup">
-
   <div class="sli">
     <a class="lu-box" href="#" title="オールインシューケアスプレー">
       <div class="thumb">
-        <img src="/shared/img/index/line_up/img_1@2x.jpg" alt="" class="bg">
+        <img src="/shared/img/index/line_up/img_1@2x.jpg" alt="" class="bg" id="js-lineup-img">
         <div class="cp">
           <span>泡のちからで<br>靴のキレイを<br>スマートに叶えよう</span>
         </div>
@@ -326,11 +325,15 @@
       </div>
     </a>
   </div><!-- /sli -->
-
 </div>
-<div class="overlay prev"></div>
-<div class="overlay next"></div>
-<div id="lu-ctrl-mouse"></div>
+<div class="lu-ctrl-mouse" id="js-lineup-prev"></div>
+<div class="lu-ctrl-mouse" id="js-lineup-next"></div>
+
+<div class="scrollbar" id="js-lineup-scroll">
+  <div class="handle">
+    <div class="mousearea"></div>
+  </div>
+</div>
 </div><!-- /lineup-cont -->
 
 <div class="lineup-sl-prog">
