@@ -149,36 +149,36 @@ nav.nav-site {
   width: 140px;
 }
 
-@-webkit-keyframes hvr-back-pulse {
+@-webkit-keyframes hover-color-change {
     50% {
         background-color: rgba(0,0,0,.75)
     }
 }
-@keyframes hvr-back-pulse {
+@keyframes hover-color-change {
     50% {
         background-color: rgba(0,0,0,.75)
     }
 }
-@keyframes hvr-back-pulse2 {
+@keyframes hover-color-change2 {
     50% {
         background-color: rgba(255,255,255,.75)
     }
 }
 
-.navbar .btn-buy.hvr-back-pulse:active,
-.navbar .btn-buy.hvr-back-pulse:focus,
-.navbar .btn-buy.hvr-back-pulse:hover {
+.navbar .btn-buy.hover-color-change:active,
+.navbar .btn-buy.hover-color-change:focus,
+.navbar .btn-buy.hover-color-change:hover {
    background-color: #fff;
    color: #000;
 }
-.navbar .btn-menu.hvr-back-pulse:hover {
-  animation-name: hvr-back-pulse2;
+.navbar .btn-menu.hover-color-change:hover {
+  animation-name: hover-color-change2;
   background-color: #000;
   color: #fff;
 }
 
-.navbar .btn.hvr-back-pulse:active,
-.navbar .btn.hvr-back-pulse:focus {
+.navbar .btn.hover-color-change:active,
+.navbar .btn.hover-color-change:focus {
   animation-name: none;
 }
 

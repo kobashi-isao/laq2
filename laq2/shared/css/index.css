@@ -165,6 +165,10 @@ main .sec {
   font-style: normal;
 }
 
+.row-tt h2 .n {
+  font-size: 1.35em;
+}
+
 /* concept */
 .sec-concept {
   position: relative;
@@ -413,39 +417,51 @@ main .sec {
   margin-left: -15px;
   margin-right: -15px;
 }
-.lineup-cont .overlay {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 25%;
-  background: transparent;
-  z-index: 50;
+
+.lineup-cont .scrollbar {
+  height: 2px;
+  background: #707070;
+  line-height: 0;
+  width: 90%;
+  margin: 50px auto;
+  position: relative;
+}
+
+.lineup-cont .scrollbar .handle {
+  width: 100px;
+  height: 4px;
+  background: #000;
   cursor: pointer;
+  position: absolute;
+  margin-top: -1px;
 }
-.lineup-cont .overlay.prev {
+
+.lineup-cont .scrollbar .handle .mousearea {
+  position: absolute;
+  top: -9px;
   left: 0;
+  width: 100%;
+  height: 20px;
 }
-.lineup-cont .overlay.next {
-  right: 0;
-}
-#lu-ctrl-mouse {
-  display: none;
-  position: fixed;
+
+.lu-ctrl-mouse {
   background-size: 100%;
   background-position: 50%;
   background-repeat: no-repeat;
-
   width: 80px;
   height: 80px;
-  margin: -40px 0 0 -40px;
   z-index: 1;
-  opacity: 0;
-  pointer-events: none;
+  cursor: pointer;
+  position: absolute;
+  top: 19%;
+  display: none;
 }
-#lu-ctrl-mouse.next {
+.lu-ctrl-mouse#js-lineup-next {
+  right: 40px;
   background-image: url(../img/index/line_up/btn_next.svg);
 }
-#lu-ctrl-mouse.prev {
+.lu-ctrl-mouse#js-lineup-prev{
+  left: 40px;
   background-image: url(../img/index/line_up/btn_prev.svg);
 }
 .sl-lineup .sli {
@@ -769,6 +785,9 @@ main .sec {
 }
 
 @media (max-width: 992px) {
+  .lu-ctrl-mouse {
+    display: none !important;
+  }
   .topics-box {
     left: 30px;
   }
@@ -805,9 +824,6 @@ main .sec {
   }
   .lu-box .title .name {
     font-size: 20px;
-  }
-  .lineup-cont .overlay {
-    display: none;
   }
   .howto-cont,
   .sec-faq .inn,

@@ -51,7 +51,6 @@ LAQtop.init = function() {
     centerMode: true,
     centerPadding: '80px',
     slidesToShow: 2,
-
     arrows: false,
     autoplay: false,
     infinite:false,
@@ -78,48 +77,55 @@ LAQtop.init = function() {
       }
     ]
   })
+
+  const $beforeButton = $('.lineup-cont .lu-ctrl-mouse#js-lineup-prev');
+  const $nextButton = $('.lineup-cont .lu-ctrl-mouse#js-lineup-next');
+  const $progressBar = $('.lineup-cont #js-lineup-scroll .handle');
+
+  const $lineUpImg = $('.lineup-cont #js-lineup-img');
+
+  lineupSlick.on('beforeChange', function(_, slick){
+    const margin = parseInt(slick.options.centerPadding) / 2 + 'px';
+    const height = ($lineUpImg.height() - 80) / 2 + 'px';
+    $nextButton.css('right', margin).css('top', height);
+    $beforeButton.css('left', margin).css('top', height);
+  });
+  lineupSlick.on('afterChange', function(_, slick, currentSlide){
+    const totalCount = slick.slideCount;
+    const slidesToShow = slick.options.slidesToShow
+    currentSlide = currentSlide + 1;
+    
+    if (currentSlide < totalCount) {
+      $nextButton.fadeIn();
+    } else {
+      $nextButton.fadeOut();
+    }
+    
+    if (currentSlide / slidesToShow === 1) {
+      $beforeButton.fadeOut();
+    } else {
+      $beforeButton.fadeIn();
+    }
+
+    const width = ( slidesToShow / totalCount ) * 100;
+    const left =  slidesToShow === 1
+      ? ( 100 / totalCount ) * ((currentSlide / slidesToShow) - 1)
+      : ( 100 / totalCount ) * ((currentSlide) -2)
+    
+    $progressBar
+      .css('width', width + '%')
+      .css('left', left + '%')
+  });
+
   if (!self.isSmp) {
     lineupSlick.slick('slickNext');
   }
-  $('.lineup-cont .overlay.prev').on('click', function(){
+  $('.lineup-cont .lu-ctrl-mouse#js-lineup-prev').on('click', function(){
     lineupSlick.slick('slickPrev');
   })
-  $('.lineup-cont .overlay.next').on('click', function(){
+  $('.lineup-cont .lu-ctrl-mouse#js-lineup-next').on('click', function(){
     lineupSlick.slick('slickNext');
   })
-  // line up prev,next mouse event
-  let ulCtrlMouse = lineupCont.find('#lu-ctrl-mouse');
-  let ulOverlay = lineupCont.find('.overlay');
-  let ulOverlayNext = lineupCont.find('.overlay.next');
-  let ulOverlayPrev = lineupCont.find('.overlay.prev');
-  ulOverlayNext.on('mouseover',function(e){
-    ulCtrlMouse.fadeIn();
-    ulCtrlMouse.addClass('next');
-  })
-  ulOverlayPrev.on('mouseover',function(e){
-    ulCtrlMouse.fadeIn();
-    ulCtrlMouse.addClass('prev');
-  })
-  ulOverlay.on('mouseout', function(e){
-    ulCtrlMouse.fadeOut();
-    ulCtrlMouse.removeClass('prev');
-    ulCtrlMouse.removeClass('next');
-  })
-  ulOverlay.on('mousemove', function(e){
-    //カーソルの座標位置を取得
-    let x=e.clientX;
-    let y=e.clientY;
-    
-    //ストーカー要素のcssを書き換える用    
-    setTimeout(function(){
-      ulCtrlMouse.css({
-        "opacity":"1",
-        "top":y+"px",
-        "left":x+"px"
-      });
-    },120); //カーソルより遅れる時間を指定
-  })
-
 
   // faq qa 
   let faq = $('main .faq-cont');

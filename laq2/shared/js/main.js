@@ -35,7 +35,7 @@ LAQtw.initNavMenuToggle = function() {
   let opened = 'opened';
 
   if (self.isSmp || self.isTablet()) {
-    headerBtn.find('.btn').removeClass('hvr-back-pulse');
+    headerBtn.find('.btn').removeClass('hover-color-change');
   }
 
   headerBtn.find('.btn').on('click', function(){
@@ -84,7 +84,7 @@ LAQtw.initScrollBgColor = function() {
     scrTarget.each(function(){
       let _target = $(this);
       let targetLimit = _target.position().top
-        - self.topOffset - 50;
+        - self.topOffset - 600;
       if (!_target.hasClass(onBg) && scrollTop > targetLimit) {
         _target.addClass(onBg);
       } else if (_target.hasClass(onBg) && scrollTop < targetLimit) {
