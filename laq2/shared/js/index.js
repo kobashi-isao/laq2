@@ -128,9 +128,11 @@ LAQtop.runCopyAnimate = function(target) {
   }, self.slideSpeed/2);
 }
 
-$(function(){ LAQtop.init() })
+$(function(){ 
+  
+  LAQtop.init() 
 
-window.onload = function(){
+/* window.onload = function(){ */
   // line up slick 
   let lineupCont = LAQtw.main.find('.lineup-cont');
   let lineupSlick = lineupCont.find('.sl-lineup').slick({
@@ -216,4 +218,6 @@ window.onload = function(){
   $('.lineup-cont .lu-ctrl-mouse#js-lineup-next').on('click', function(){
     lineupSlick.slick('slickNext');
   })
-}
+/*}*/
+
+})
