@@ -824,7 +824,7 @@ footer .f-btm {
 /* 答え */
 .cp_qa .cp_actab .cp_actab-content {
   position: relative;
-  padding: 0 0 0 5em;
+  padding: 0 0 0 4.5em;
   border-radius: 0 0 0.5em 0.5em;
   display: flex;
 }
@@ -850,10 +850,13 @@ footer .f-btm {
     padding: 1em 3em 1em 4em;
   }
   .cp_qa .cp_actab .cp_actab-content{
-    padding: 0 0 0 3.5em;
+    padding: 0 2em 0 4.5em;
   }
   .cp_qa{
     margin-bottom: 60px;
+  }
+    .cp_qa .cp_actab .q-text {
+    padding: 1em 3em 1em 5em;
   }
 }
 

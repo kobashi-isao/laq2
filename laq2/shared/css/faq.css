@@ -44,6 +44,7 @@
 
 .faq h2{
   margin-top: 80px;
+  font-family: athelas, serif;
 }
 
 .faq .text-box p {
@@ -122,5 +123,15 @@
   }
   .faq h2{
     margin: 20px 10px;
+  }
+  .faq .submenu li:before{
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 2px solid;
+    border-color:  transparent transparent #565656 #565656;
+    transform: rotate(-45deg);
+    margin: 0 5px 4px 0;
   }
 }
