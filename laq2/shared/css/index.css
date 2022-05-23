@@ -18,13 +18,35 @@ h1,h2,h3 {
   /*height: 80vh;*/
   height: calc(100vh - 99px);
   position: relative;
+  transition: all 1s ease-out;
 }
 .slide-item .sl-bg {
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
   height: calc(100vh - 99px);
+  transition: all .5s ease-out;
+  transform: scale(1.01);
 }
+.slick-active .sl-bg {
+  transform: scale(1);
+  animation: animateTopSlider 1s 1 ease-out;
+}
+
+/* .slick-current .sl-bg {
+  transform: scale(1);
+} */
+
+@keyframes animateTopSlider {
+  from {
+    transform: scale(1.1) translate(0px)
+  }
+
+  to {
+    transform: scale(1) translate(0px)
+  }
+}
+
 
 .sl-cont {
   position: absolute;

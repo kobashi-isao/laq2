@@ -1,4 +1,5 @@
 let LAQtop = {};
+
 LAQtop.init = function() {
   let self = this;
   self.isSmp = LAQtw.isSmp;
@@ -7,41 +8,86 @@ LAQtop.init = function() {
   new WOW().init();
 
   let topSlide = $('.t-slider');
+
   if (topSlide.length > 0){
-    topSlide.bxSlider({
-      auto: true,
-      speed:self.slideSpeed,
-      pause:self.slidePause,
-      mode: 'fade',
-      infiniteLoop:true,
-      pager:false,
-      controls:false,
-      autoControls: false,
-      stopAuto:false,
-      onSliderLoad: function(index) {
-        if (index === 0) {
-          self.runCopyAnimate(1)
-        }
-      },
-      onSlideNext: function(element) {
-        let slItem = $(element);
-        if (slItem.find('.s01').length > 0) {
-          self.runCopyAnimate(1);
-        }
-        if (slItem.find('.s02').length > 0) {
-          self.runCopyAnimate(2);
-        }
-        if (slItem.find('.s03').length > 0) {
-          self.runCopyAnimate(3);
-        }
-        if (slItem.find('.s04').length > 0) {
-          self.runCopyAnimate(4);
-        }
-      },
-      onSlidePrev: function(element) {
-        // console.log('on slider prev : '+index);
-      }
+
+    topSlide.on('init', function(e, slick, direction){
+      const selectedSliderClassName = ".s01";
+      const prevSliderClassName = ".s0" + parseInt(slick.slideCount);
+      topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
+      topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
+      const topSlideItems = $(topSlideItemsClassStrings);
+      const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
+      topPrevSlideItems.each(function(){
+        $(this).removeClass('visibled');
+      })
+      topSlideItems.each(function(){
+        $(this).addClass('visibled');
+      })
     });
+
+    topSlide.on('beforeChange', function(e, slick, currentSlide, nextSlide){
+      // topSlide.slick('slickPause');
+      let selectedItem = nextSlide;
+      const selectedSliderClassName = ".s0" + parseInt(selectedItem + 1);
+      const prevSliderClassName = ".s0" + parseInt(selectedItem);
+      topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
+      topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
+      const topSlideItems = $(topSlideItemsClassStrings);
+      const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
+      topPrevSlideItems.each(function(){
+        $(this).removeClass('visibled');
+      })
+      topSlideItems.each(function(){
+        $(this).addClass('visibled');
+      })
+    });
+    
+    topSlide.slick({
+      dots: false,
+      infinite: true,
+      speed: 1000,
+      fade: true,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 5000,
+      accessibility: false,
+    });
+
+    // topSlide.bxSlider({
+    //   auto: true,
+    //   speed:self.slideSpeed,
+    //   pause:self.slidePause,
+    //   mode: 'fade',
+    //   infiniteLoop:true,
+    //   pager:false,
+    //   controls:false,
+    //   autoControls: false,
+    //   stopAuto:false,
+    //   onSliderLoad: function(index) {
+    //     if (index === 0) {
+    //       self.runCopyAnimate(1)
+    //     }
+    //   },
+    //   onSlideNext: function(element) {
+    //     let slItem = $(element);
+    //     if (slItem.find('.s01').length > 0) {
+    //       self.runCopyAnimate(1);
+    //     }
+    //     if (slItem.find('.s02').length > 0) {
+    //       self.runCopyAnimate(2);
+    //     }
+    //     if (slItem.find('.s03').length > 0) {
+    //       self.runCopyAnimate(3);
+    //     }
+    //     if (slItem.find('.s04').length > 0) {
+    //       self.runCopyAnimate(4);
+    //     }
+    //   },
+    //   onSlidePrev: function(element) {
+    //     // console.log('on slider prev : '+index);
+    //   }
+    // });
   }
 
   // faq qa 
