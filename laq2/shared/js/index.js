@@ -110,23 +110,24 @@ LAQtop.init = function() {
   })
 
 }
-LAQtop.runCopyAnimate = function(target) {
-  let self = this;
-  let topSlide = $('.t-slider');
-  let CLASSNAME = "visibled";
-  let TIMEOUT = self.slidePause - 500;
-  let slCopyTarget = topSlide.find('.s0'+target+' .t-copy .tl');
 
-  let hideTarget = ((target-1)==0) ? 4 : (target-1);
-  topSlide.find('.s0'+hideTarget+' .t-copy .tl').removeClass(CLASSNAME);
+// LAQtop.runCopyAnimate = function(target) {
+//   let self = this;
+//   let topSlide = $('.t-slider');
+//   let CLASSNAME = "visibled";
+//   let TIMEOUT = self.slidePause - 500;
+//   let slCopyTarget = topSlide.find('.s0'+target+' .t-copy .tl');
 
-  setTimeout(() => {
-    slCopyTarget.addClass(CLASSNAME);
-    // setTimeout(() => {
-    //   slCopyTarget.removeClass(CLASSNAME);
-    // }, TIMEOUT);
-  }, self.slideSpeed/2);
-}
+//   let hideTarget = ((target-1)==0) ? 4 : (target-1);
+//   topSlide.find('.s0'+hideTarget+' .t-copy .tl').removeClass(CLASSNAME);
+
+//   setTimeout(() => {
+//     slCopyTarget.addClass(CLASSNAME);
+//     // setTimeout(() => {
+//     //   slCopyTarget.removeClass(CLASSNAME);
+//     // }, TIMEOUT);
+//   }, self.slideSpeed/2);
+// }
 
 $(function(){ 
   
@@ -218,6 +219,7 @@ $(function(){
   $('.lineup-cont .lu-ctrl-mouse#js-lineup-next').on('click', function(){
     lineupSlick.slick('slickNext');
   })
+
 /*}*/
 
 })
