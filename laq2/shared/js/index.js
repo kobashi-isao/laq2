@@ -7,7 +7,11 @@ LAQtop.init = function() {
   self.slidePause = 4000;
   new WOW().init();
 
+
   let topSlide = $('.t-slider');
+  let topSlideNumbersTextColorArray = ['#1C1C1C','#1C1C1C','#1C1C1C','#fff'];
+  let topSlideDotsContainerText = $('.slide-dots-container span');
+  let topSlideCurrentNumber = 0;
 
   if (topSlide.length > 0){
 
@@ -18,12 +22,16 @@ LAQtop.init = function() {
       topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
       const topSlideItems = $(topSlideItemsClassStrings);
       const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
+      topSlideCurrentNumber = 0;
+      topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
+
       topPrevSlideItems.each(function(){
         $(this).removeClass('visibled');
       })
       topSlideItems.each(function(){
         $(this).addClass('visibled');
       })
+
     });
 
     topSlide.on('beforeChange', function(e, slick, currentSlide, nextSlide){
@@ -35,6 +43,9 @@ LAQtop.init = function() {
       topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
       const topSlideItems = $(topSlideItemsClassStrings);
       const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
+      topSlideCurrentNumber = selectedItem;
+      topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
+
       topPrevSlideItems.each(function(){
         $(this).removeClass('visibled');
       })

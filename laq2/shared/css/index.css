@@ -1,5 +1,5 @@
 :root {
-  --slide-dots-width: 5px;
+  --slide-dots-width: 2px;
   --slide-dots-height: 30px;
 }
 
@@ -68,13 +68,15 @@ h1,h2,h3 {
 
 .slide-dots-container span {
   font-family: athelas, serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
-  font-size: 24px;
+  font-size: 22px;
+  -webkit-transition: color .5s;
+  transition: color .5s;
 }
 
 .slide-dots-container-current-number {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .slide-dots-container-dots {
@@ -82,7 +84,7 @@ h1,h2,h3 {
 }
 
 .slide-dots-container-total-number {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .slide-dots {
