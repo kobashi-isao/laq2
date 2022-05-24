@@ -44,7 +44,7 @@ LAQtop.init = function() {
     });
     
     topSlide.slick({
-      dots: false,
+      dots: true,
       infinite: true,
       speed: 1000,
       fade: true,
@@ -52,6 +52,12 @@ LAQtop.init = function() {
       autoplay: true,
       autoplaySpeed: 5000,
       accessibility: false,
+      dotsClass: 'slide-dots',
+      appendDots: $('.slide-dots-container-dots'),
+    });
+
+    $('.slick-dots li button').on('click', function(e){
+      e.stopPropagation();
     });
 
     // topSlide.bxSlider({
