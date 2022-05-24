@@ -13,7 +13,7 @@ LAQtop.init = function() {
   let topSlideDotsContainerText = $('.slide-dots-container span');
   let topSlideDotsContainerCurrentCountText = $('.slide-dots-container-current-number span');
   let topSlideDotsContainerTotalCountText = $('.slide-dots-container-total-number span');
-  let topSlideCurrentNumber = 0;
+  let topSlideCurrentNumber;
 
   if (topSlide.length > 0){
 
@@ -24,9 +24,10 @@ LAQtop.init = function() {
       topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
       const topSlideItems = $(topSlideItemsClassStrings);
       const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
-      topSlideCurrentNumber = 0;
+      topSlideCurrentNumber = 1;
       topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
       topSlideDotsContainerTotalCountText.text(('0' + slick.slideCount).slice(-2));
+      topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
 
       topPrevSlideItems.each(function(){
         $(this).removeClass('visibled');
@@ -48,6 +49,12 @@ LAQtop.init = function() {
       const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
       topSlideCurrentNumber = selectedItem;
       topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
+      if(currentSlide >= slick.slideCount){
+        topSlideCurrentNumber = 1;
+      }else{
+        topSlideCurrentNumber = parseInt(selectedItem + 1);
+      }
+      topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
 
       topPrevSlideItems.each(function(){
         $(this).removeClass('visibled');
@@ -156,7 +163,7 @@ $(function(){
   
   LAQtop.init() 
 
-/* window.onload = function(){ */
+//window.onload = function(){
   // line up slick 
   let lineupCont = LAQtw.main.find('.lineup-cont');
   let lineupSlick = lineupCont.find('.sl-lineup').slick({
@@ -243,6 +250,6 @@ $(function(){
     lineupSlick.slick('slickNext');
   })
 
-/*}*/
+//}
 
 })
