@@ -54,6 +54,9 @@ LAQtop.init = function() {
       accessibility: false,
       dotsClass: 'slide-dots',
       appendDots: $('.slide-dots-container-dots'),
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
     });
 
     $('.slick-dots li button').on('click', function(e){

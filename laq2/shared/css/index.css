@@ -24,6 +24,7 @@ h1,h2,h3 {
   height: calc(100vh - 99px);
   position: relative;
   transition: all 1s ease-out;
+  pointer-events: none;
 }
 .slide-item .sl-bg {
   background-repeat: no-repeat;
