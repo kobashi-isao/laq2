@@ -926,7 +926,9 @@ main .sec {
     display: none !important;
   }
   .topics-box {
-    left: 30px;
+    /* left: 30px; */
+    left: 0;
+    padding: 0 30px;
   }
   .t-slider .slide-inner,
   .slide-item .sl-bg {
@@ -978,7 +980,9 @@ main .sec {
     height: calc(100vh - 79px);
   }
   .topics-box {
-    left: 20px;
+    /* left: 20px; */
+    left: 0;
+    padding: 0 20px;
     bottom: 30px;
   }
   .topics-box a {
