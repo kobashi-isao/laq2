@@ -141,7 +141,7 @@ h1,h2,h3 {
   margin: auto;
 }
 .s02 .sl-cont {
-  color: #fff;
+  /* color: #fff; */
   top: 28%;
 }
 .s02 .sl-cont .t-copy,
@@ -149,10 +149,12 @@ h1,h2,h3 {
   font-size: 36px;
   line-height:60px;
 }
+
 .s03 .sl-cont,
 .s04 .sl-cont {
-  color: #fff;
+  /* color: #fff; */
 }
+
 .s04 .sl-cont {
   top: 38%;
 }
