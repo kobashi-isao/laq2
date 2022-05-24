@@ -11,6 +11,8 @@ LAQtop.init = function() {
   let topSlide = $('.t-slider');
   let topSlideNumbersTextColorArray = ['#1C1C1C','#1C1C1C','#1C1C1C','#fff'];
   let topSlideDotsContainerText = $('.slide-dots-container span');
+  let topSlideDotsContainerCurrentCountText = $('.slide-dots-container-current-number span');
+  let topSlideDotsContainerTotalCountText = $('.slide-dots-container-total-number span');
   let topSlideCurrentNumber = 0;
 
   if (topSlide.length > 0){
@@ -24,6 +26,7 @@ LAQtop.init = function() {
       const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
       topSlideCurrentNumber = 0;
       topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
+      topSlideDotsContainerTotalCountText.text(('0' + slick.slideCount).slice(-2));
 
       topPrevSlideItems.each(function(){
         $(this).removeClass('visibled');

@@ -96,7 +96,7 @@ h1,h2,h3 {
 .slide-dots li {
   width: var(--slide-dots-width);
   height: var(--slide-dots-height);
-  background: #ccc;
+  background: #fff;
   pointer-events: none;
 }
 
