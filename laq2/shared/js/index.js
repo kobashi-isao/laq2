@@ -213,8 +213,8 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
       topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
       topSlideDotsContainerTotalCountText.text(('0' + slick.slideCount).slice(-2));
       topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
-      topPrevSlideItems.each(function(){ $(this).removeClass('visibled')})
-      topSlideItems.each(function(){ $(this).addClass('visibled')})
+      topPrevSlideItems.each(function(){ $(this).removeClass('visibled')});
+      topSlideItems.each(function(){ $(this).addClass('visibled')});
     });
 
     topSlide.on('beforeChange', function(e, slick, currentSlide, nextSlide){
@@ -233,11 +233,11 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
         const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
         const topSlideLastItemsClassStrings = topSlideLastItemsClassName + ' .sl-cont .t-copy .tl';
         const topLastSlideItems = $(topSlideLastItemsClassStrings);
-        topLastSlideItems.each(function(){ $(this).removeClass('visibled')})
+        topLastSlideItems.each(function(){ $(this).removeClass('visibled')});
       }
       topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
-      topPrevSlideItems.each(function(){$(this).removeClass('visibled')})
-      topSlideItems.each(function(){$(this).addClass('visibled')})
+      topPrevSlideItems.each(function(){$(this).removeClass('visibled')});
+      topSlideItems.each(function(){$(this).addClass('visibled')});
     });
     
     topSlide.slick({
@@ -254,6 +254,15 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
       pauseOnFocus: false,
       pauseOnHover: false,
       pauseOnDotsHover: false,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            centerMode: false,
+          }
+        },
+      ],
+
     });
 
     $('.slick-dots li button').on('click', function(e){
