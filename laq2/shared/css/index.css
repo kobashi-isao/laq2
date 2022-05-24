@@ -1,7 +1,6 @@
 :root {
   --slide-dots-width: 5px;
   --slide-dots-height: 30px;
-  --slide-dots-numbers-height: 24px;
 }
 
 h1,h2,h3 {
@@ -55,14 +54,24 @@ h1,h2,h3 {
 
 .slide-dots-container {
   position: absolute;
-  top: calc(50% - (var(--slide-dots-height) / 2 ) - var(--slide-dots-numbers-height));
+  top: 50%;
   right: 5%;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
+
+.slide-dots-container span {
+  font-family: athelas, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+
 .slide-dots-container-current-number {
   margin-bottom: 10px;
 }
@@ -150,13 +159,16 @@ h1,h2,h3 {
   display: flex;
   overflow: hidden;
 }
+
 .s01 .t-copy .tl {
   justify-content: center;
 }
+
 .t-copy .tl span {
   display: block;
-  transform: translate(0, -105%);
+  transform: translate(0, 105%);
   transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+  /* transition-delay: 0; */
 }
 
 .t-copy .tl.visibled span {
