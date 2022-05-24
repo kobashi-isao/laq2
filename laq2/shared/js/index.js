@@ -19,7 +19,7 @@ LAQtop.init = function() {
 
     topSlide.on('init', function(e, slick, direction){
       const selectedSliderClassName = ".s01";
-      const prevSliderClassName = ".s0" + parseInt(slick.slideCount);
+      const prevSliderClassName = ".s" + ('0' + parseInt(slick.slideCount)).slice(-2);
       topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
       topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
       const topSlideItems = $(topSlideItemsClassStrings);
@@ -41,19 +41,29 @@ LAQtop.init = function() {
     topSlide.on('beforeChange', function(e, slick, currentSlide, nextSlide){
       // topSlide.slick('slickPause');
       let selectedItem = nextSlide;
-      const selectedSliderClassName = ".s0" + parseInt(selectedItem + 1);
-      const prevSliderClassName = ".s0" + parseInt(selectedItem);
+      const selectedSliderClassName = ".s" + ('0' + parseInt(selectedItem + 1)).slice(-2);
+      const prevSliderClassName = ".s" + ('0' + parseInt(selectedItem)).slice(-2);
       topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
       topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
       const topSlideItems = $(topSlideItemsClassStrings);
       const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
       topSlideCurrentNumber = selectedItem;
       topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
+      
       if(currentSlide >= slick.slideCount){
         topSlideCurrentNumber = 1;
       }else{
         topSlideCurrentNumber = parseInt(selectedItem + 1);
       }
+      if(currentSlide >= (slick.slideCount - 1)){
+        const topSlideLastItemsClassName = ".s" + ('0' + parseInt(slick.slideCount)).slice(-2);
+        const topSlideLastItemsClassStrings = topSlideLastItemsClassName + ' .sl-cont .t-copy .tl';
+        const topLastSlideItems = $(topSlideLastItemsClassStrings);
+        topLastSlideItems.each(function(){
+          $(this).removeClass('visibled');
+        })
+      }
+
       topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
 
       topPrevSlideItems.each(function(){
