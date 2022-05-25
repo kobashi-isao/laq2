@@ -251,6 +251,14 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
         const topSlideLastItemsClassStrings = topSlideLastItemsClassName + ' .sl-cont .t-copy .tl';
         const topLastSlideItems = $(topSlideLastItemsClassStrings);
         topLastSlideItems.each(function(){ $(this).removeClass('visibled')});
+        const topSlideItemBGImageLast= $(topSlideLastItemsClassName + ' .sl-bg');
+        topSlideItemBGImageLast.css({
+          '-webkit-transform' : 'scale(1)',
+          '-moz-transform'    : 'scale(1)',
+          '-ms-transform'     : 'scale(1)',
+          '-o-transform'      : 'scale(1)',
+          'transform'         : 'scale(1)'
+        });
       }
       topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
       topPrevSlideItems.each(function(){$(this).removeClass('visibled')});
@@ -260,7 +268,7 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
     topSlide.slick({
       dots: true,
       infinite: true,
-      speed: 1000,
+      speed: 500,
       fade: true,
       cssEase: 'linear',
       autoplay: true,
