@@ -298,6 +298,9 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
     $('.slick-dots li button').on('click', function(e){
       e.stopPropagation();
     });
-  }
+    // $(window).on('resize orientationchange', function() {
+    //    topSlide.slick('resize');
+    // });
+    }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
