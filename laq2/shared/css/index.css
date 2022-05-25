@@ -32,10 +32,10 @@ h1,h2,h3 {
   background-size: cover;
   height: calc(100vh - 99px);
   transition: all .5s ease-out;
-  transform: scale(1.01);
+  /* transform: scale(1.01); */
 }
 .slick-active .sl-bg {
-  transform: scale(1);
+  /* transform: scale(1); */
   animation: animateTopSlider 1s 1 ease-out;
 }
 
@@ -1003,6 +1003,10 @@ main .sec {
   .s01 .sl-cont .logo-name {
     margin-top: 15px;
   }
+  .s01 .sl-cont .logo-name .logo-lead {
+    font-size: 40px;
+  }
+
   .s01 .sl-cont .logo-name .nt {
     margin-top: 10px;
   }

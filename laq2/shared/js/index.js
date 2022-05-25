@@ -222,6 +222,23 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
       let selectedItem = nextSlide;
       const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
       const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
+      const topSlideItemBGImage = $(prevSliderClassName + ' .sl-bg');
+      const topSlideItemBGImageNext = $(selectedSliderClassName + ' .sl-bg');
+      // console.log(topSlideItemBGImage.attr('class'));
+      topSlideItemBGImage.css({
+        '-webkit-transform' : 'scale(1.1)',
+        '-moz-transform'    : 'scale(1.1)',
+        '-ms-transform'     : 'scale(1.1)',
+        '-o-transform'      : 'scale(1.1)',
+        'transform'         : 'scale(1.1)'
+      });
+      topSlideItemBGImageNext.css({
+        '-webkit-transform' : 'scale(1)',
+        '-moz-transform'    : 'scale(1)',
+        '-ms-transform'     : 'scale(1)',
+        '-o-transform'      : 'scale(1)',
+        'transform'         : 'scale(1)'
+      });
       topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
       topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
       const topSlideItems = $(topSlideItemsClassStrings);
@@ -254,6 +271,11 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
       pauseOnFocus: false,
       pauseOnHover: false,
       pauseOnDotsHover: false,
+      accesibility: false,
+      draggable: false,
+      swipe: false,
+      touchMove: false,
+
       responsive: [
         {
           breakpoint: 767,
