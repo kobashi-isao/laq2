@@ -31,7 +31,7 @@ h1,h2,h3 {
   background-position: 50%;
   background-size: cover;
   height: calc(100vh - 99px);
-  transition: all .5s linear;
+  transition: all 1s linear;
   transform: scale(1.01);
 }
 .slick-active .sl-bg {
