@@ -224,6 +224,9 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
       const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
       const topSlideItemBGImage = $(prevSliderClassName + ' .sl-bg');
       const topSlideItemBGImageNext = $(selectedSliderClassName + ' .sl-bg');
+      const topSlideItemBGImageSP = $(prevSliderClassName + ' .sl-bg-sp');
+      const topSlideItemBGImageNextSP = $(selectedSliderClassName + ' .sl-bg-sp');
+
       // console.log(topSlideItemBGImage.attr('class'));
       topSlideItemBGImage.css({
         '-webkit-transform' : 'scale(1.1)',
@@ -233,6 +236,20 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
         'transform'         : 'scale(1.1)'
       });
       topSlideItemBGImageNext.css({
+        '-webkit-transform' : 'scale(1)',
+        '-moz-transform'    : 'scale(1)',
+        '-ms-transform'     : 'scale(1)',
+        '-o-transform'      : 'scale(1)',
+        'transform'         : 'scale(1)'
+      });
+      topSlideItemBGImageSP.css({
+        '-webkit-transform' : 'scale(1.1)',
+        '-moz-transform'    : 'scale(1.1)',
+        '-ms-transform'     : 'scale(1.1)',
+        '-o-transform'      : 'scale(1.1)',
+        'transform'         : 'scale(1.1)'
+      });
+      topSlideItemBGImageNextSP.css({
         '-webkit-transform' : 'scale(1)',
         '-moz-transform'    : 'scale(1)',
         '-ms-transform'     : 'scale(1)',
@@ -252,7 +269,15 @@ function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextc
         const topLastSlideItems = $(topSlideLastItemsClassStrings);
         topLastSlideItems.each(function(){ $(this).removeClass('visibled')});
         const topSlideItemBGImageLast= $(topSlideLastItemsClassName + ' .sl-bg');
+        const topSlideItemBGImageLastSP= $(topSlideLastItemsClassName + ' .sl-bg-sp');
         topSlideItemBGImageLast.css({
+          '-webkit-transform' : 'scale(1)',
+          '-moz-transform'    : 'scale(1)',
+          '-ms-transform'     : 'scale(1)',
+          '-o-transform'      : 'scale(1)',
+          'transform'         : 'scale(1)'
+        });
+        topSlideItemBGImageLastSP.css({
           '-webkit-transform' : 'scale(1)',
           '-moz-transform'    : 'scale(1)',
           '-ms-transform'     : 'scale(1)',

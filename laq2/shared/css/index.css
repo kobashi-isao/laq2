@@ -34,15 +34,19 @@ h1,h2,h3 {
   transition: all .5s ease-out;
   transform: scale(1.1);
 }
-
-.slide-item .sl-bg-sp {
+.slide-item .sl-bg {
   display: block;
 }
 
 .slide-item .sl-bg-sp {
   display: none;
 }
-.slick-active .sl-bg, .slick-active .sl-bg-sp {
+
+.slick-active .sl-bg {
+  transform: scale(1);
+  animation: animateTopSlider .5s 1 ease-out;
+}
+.slick-active .sl-bg-sp {
   transform: scale(1);
   animation: animateTopSlider .5s 1 ease-out;
 }
@@ -1026,6 +1030,10 @@ main .sec {
 
   .s01 .sl-cont .logo-name .nt {
     margin-top: 10px;
+  }
+  .s02 .sl-cont .t-copy {
+      /* color: #fff; */
+      line-height: 52px !important;
   }
 
   .row-tt h2 {
