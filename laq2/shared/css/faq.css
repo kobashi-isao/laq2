@@ -5,11 +5,11 @@
 .faq .contents {
   margin: 80px auto;
   display: flex;
-  width: 1280px;
+  width: 1000px;
 }
 .faq .submenu {
   width: 240px;
-  margin: 80px 80px 0 0;
+  margin: 80px 40px 0 0;
 }
 .faq .submenu ul{
   list-style-type: none;
@@ -24,8 +24,12 @@
 }
 .faq .main-contents {
   display: block;
-  width: 960px;
+  width: 720px;
 }
+.faq .cp_qa .cp_actab .q-text{
+  padding: 1em 5em 1em 5em;
+}
+
 .faq .texts-area {
   display: flex;
   position: relative;
@@ -114,15 +118,25 @@
   }
   .faq .submenu {
     width: 90%;
-    margin: 0 40px 0 0;
+    margin: 0 40px 0 40px;
     padding: 10px;
-  } 
+  }
+  .faq .submenu li{
+    line-height: 3em;
+  }
   .faq .main-contents {
     display: block;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   .faq h2{
     margin: 20px 10px;
+  }
+  .faq .cp_qa .cp_actab .q-text{
+    padding: 1em 5em 1em 3em;
+  }
+  .faq .cp_qa .cp_actab .cp_actab-content{
+    padding: 0 2em 0 3em;
   }
   .faq .submenu li:before{
     content: "";
