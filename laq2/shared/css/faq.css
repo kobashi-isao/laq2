@@ -14,6 +14,7 @@
 .faq .submenu ul{
   list-style-type: none;
   font-size: 12px;
+  font-family: athelas, serif;
 }
 .faq .submenu li a{
   color: #717171;
@@ -25,9 +26,6 @@
 .faq .main-contents {
   display: block;
   width: 720px;
-}
-.faq .cp_qa .cp_actab .q-text{
-  padding: 1em 5em 1em 5em;
 }
 
 .faq .texts-area {
@@ -115,6 +113,7 @@
   .faq .contents {
     display: block;
     width: 100%;
+    margin: 60px auto;
   }
   .faq .submenu {
     width: 90%;
@@ -130,13 +129,7 @@
     margin: 0 auto;
   }
   .faq h2{
-    margin: 20px 10px;
-  }
-  .faq .cp_qa .cp_actab .q-text{
-    padding: 1em 5em 1em 3em;
-  }
-  .faq .cp_qa .cp_actab .cp_actab-content{
-    padding: 0 2em 0 3em;
+    margin: 20px 10px 10px;
   }
   .faq .submenu li:before{
     content: "";

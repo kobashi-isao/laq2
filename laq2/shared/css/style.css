@@ -767,7 +767,7 @@ footer .f-btm {
           box-sizing: border-box;
 }
 .cp_qa{
-  margin-top: 40px;
+  margin-top: 10px;
   border-bottom: 1px solid;
   font-size: 14px;
 }
@@ -790,7 +790,7 @@ footer .f-btm {
   position: relative;
   display: block;
   margin: 0 0 0 0;
-  padding: 1em 2em 1em 5em;
+  padding: 1em 4em 1em 4em;
   cursor: pointer;
   text-indent: 1em;
   border-radius: 0.5em;
@@ -824,7 +824,7 @@ footer .f-btm {
 /* 答え */
 .cp_qa .cp_actab .cp_actab-content {
   position: relative;
-  padding: 0 0 0 4.5em;
+  padding: 0 0 0 3.5em;
   border-radius: 0 0 0.5em 0.5em;
   display: flex;
 }
@@ -846,20 +846,42 @@ footer .f-btm {
 }
 
 @media (max-width: 767px) {
+  .cp_qa .cp_actab{
+    padding: 0;
+  }
   .cp_qa .cp_actab label{
     padding: 1em 3em 1em 4em;
   }
   .cp_qa .cp_actab .cp_actab-content{
-    padding: 0 2em 0 4.5em;
+    display: block;
+    padding: 0em 2em 0 0em;
   }
   .cp_qa{
     margin-bottom: 60px;
   }
-    .cp_qa .cp_actab .q-text {
-    padding: 1em 3em 1em 5em;
+  .cp_qa .cp_actab .q-text {
+    padding: 1em 3em 1em 0em;
+    line-height: 1.8em;
+  }
+  .cp_qa .cp_actab .q-text::before {
+    display: block;
+    margin: 0 0 10px 0;
+    padding: 0em 0em 0em 0em;
+  }
+  .cp_qa .cp_actab .cp_actab-content::before{
+    display: block;
+    margin: 20px 0 10px 0.5em;
+    padding: 0em 0em 0em 0em;    
+  }
+  .cp_qa .cp_actab .cp_actab-content p{
+    margin-left: 0;
+    padding-left: 0;
+    line-height: 1.8em;
+  }
+  .cp_qa .cp_actab .q-text::after{
+    top: 2em;
   }
 }
-
 
 .js-accordion-body {
   display: none;
