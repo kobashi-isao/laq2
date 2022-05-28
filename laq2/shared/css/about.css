@@ -49,32 +49,92 @@
 }
 
 .about .block-area {
-  display: flex;
   position: relative;
   line-height: 36px;
   margin-bottom: 300px;
+}
+
+.about .block-area .block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .block-area .block img {
+  max-width: 100%;
+}
+
+.about .block-area .block.--first {
+  margin-bottom: 105px;
+}
+
+
+.about .block-area .block.--first .image-box {
+  width: 43%;
+}
+
+.about .block-area .block.--first .text-box {
+  margin-top: 6%;
+  width: 44%;
+}
+
+.about .block-area .block.--second {
+  flex-direction: row-reverse;
+}
+
+.about .block-area .block.--second .image-box {
+  width: 37%;
+}
+
+.about .block-area .block.--second .text-box {
+  margin-top: 6%;
+  width: 48%;
+  padding-right: 8%;
 }
 
 .about .block-area .text-box p {
   margin-bottom: 30px;
 }
 
-.about .block-area .text-block-1 {
+
+.about .block-area .h3 {
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 2.74px;
+  font-weight: unset;
   position: absolute;
-  width: 42%;
-  top: 6%;
-  left: 35px;
-  margin-bottom: 0;
-  min-width: 330px;
+  top: 38%;
+  left: -0.8rem;
+  mix-blend-mode: exclusion;
+  color: #fff;
+  letter-spacing: 10.9px;
+  margin: 0;
 }
 
-.about .block-area .text-block-2 {
-  position: absolute;
-  width: 40%;
-  right: 8%;
-  bottom: 10%;
-  margin-bottom: 0;
-  min-width: 316px;
+@media screen and (min-width: 992px) {
+  .about .block-area .block.--first {
+    margin-bottom: 65px;
+  }
+  .about .block-area .h3 {
+    font-size: 82px;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .about .block-area .block.--first {
+    margin-bottom: 105px;
+  }
+  .about .block-area .h3 {
+    font-size: 90px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about .block-area .block.--first {
+    margin-bottom: 116px;
+  }
+  .about .block-area .h3 {
+    font-size: 95px;
+  }
 }
 
 .about .h3 {
@@ -119,9 +179,32 @@
   }
 
   .about .block-area {
-    display: block;
     font-size: 20px;
     margin-bottom: 280px;
+  }
+  
+
+  .about .block-area .block {
+    display: block;
+  }
+
+  .about .block-area .block .image-box,
+  .about .block-area .block .text-box {
+    width: 100% !important;
+  }
+
+  .about .block-area .block .image-box {
+    text-align: center;
+  }
+
+  .about .block-area .h3 {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 70px 0;
+    letter-spacing: 2.74px;
+    position: relative;
+    left: 0;
+    top: 0;
   }
 
 
