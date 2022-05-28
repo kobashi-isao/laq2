@@ -114,6 +114,13 @@ main img {
   font-style: normal;
 }
 
+.f-base { /* Nimbus Sans Bold  */
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 main {
   margin-top: 99px;
   /* debug  */
