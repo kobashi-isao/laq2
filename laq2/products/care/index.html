@@ -28,7 +28,7 @@
 
 <link rel="stylesheet" href="/shared/css/style.css?2022051101">
 <link rel="stylesheet" href="/shared/css/care.css">
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 <meta property="og:locale" content="ja_JP">
 <meta property="og:type" content="website">
@@ -75,11 +75,28 @@
 <div class="sec-gotop care">
   <div class="mv care">
     <div class="container">
-      <div class="mv_text-box">
-        <h1 class="mv_texts_h1 f-athelas">ALL IN<br>SHOE CARE<br>SPRAY</h1>
-        <p class="mv_texts_text f-tenmin">オールイン<br class="sp">シューケアスプレー</p>
+      <div class="mv_text-box t-copy">
+        <h1 class="mv_texts_h1 f-athelas">
+          <div class="tl js-hopup-message"><span>A</span><span>L</span><span>L</span><span>&nbsp;I</span><span>N</span></div>
+          <div class="tl js-hopup-message"><span>S</span><span>H</span><span>O</span><span>E</span><span>&nbsp;C</span><span>A</span><span>R</span><span>E</span></div>
+          <div class="tl js-hopup-message"><span>S</span><span>P</span><span>R</span><span>A</span><span>Y</span></div>
+        </h1>
+        <div class="pc-only mv_texts_text f-tenmin">
+          <p class="tl js-hopup-message">
+            <span>オ</span><span>ー</span><span>ル</span><span>イ</span><span>ン</span>
+            <span>シ</span><span>ュ</span><span>ー</span><span>ケ</span><span>ア</span><span>ス</span><span>プ</span><span>レ</span><span>ー</span>
+          </p>
+        </div>
+        <div class="sp-only mv_texts_text f-tenmin">
+          <p class="tl js-hopup-message">
+            <span>オ</span><span>ー</span><span>ル</span><span>イ</span><span>ン</span>
+          </p>
+          <p class="tl js-hopup-message">
+            <span>シ</span><span>ュ</span><span>ー</span><span>ケ</span><span>ア</span><span>ス</span><span>プ</span><span>レ</span><span>ー</span>
+          </p>
+        </div>
       </div>
-      <div class="product_img"><div id="product_img"><img src="/shared/img/care/img_mv_package.png" alt="オールインシューケアスプレーの商品パッケージ"></div></div>
+      <div class="product_img t-copy"><div id="js-scroll-remove-item" class="tl js-hopup-message" style="opacity: 0"><span><img src="/shared/img/care/img_mv_package.png" alt="オールインシューケアスプレーの商品パッケージ"></span></div></div>
     </div>
   </div>
   <div class="contents">
@@ -87,14 +104,14 @@
       <section class="care_pr">
         <div class="care_pr_column_up">
           <div>
-            <h2>フォーマルから<br class="sp">カジュアルまで<br>革靴・合皮靴のお手入れに</h2>
-            <h2 class="eng">ALL IN<br>SHOE CARE<br>SPRAY</h2>
-            <h3>泡のちからで<br>靴のキレイを<br>スマートに叶えよう</h3>
+            <h2 class="wow animate__animated animate__fadeInUp">フォーマルから<br class="sp">カジュアルまで<br>革靴・合皮靴のお手入れに</h2>
+            <h2 class="eng wow animate__animated animate__fadeInUp">ALL IN<br>SHOE CARE<br>SPRAY</h2>
+            <h3 class="wow animate__animated animate__fadeInUp">泡のちからで<br>靴のキレイを<br>スマートに叶えよう</h3>
           </div>
           <figure><img src="/shared/img/care/img_pr01.png" alt=""></figure>
         </div>
-        <div class="care_pr_column_bottom">
-          <p><img src="/shared/img/care/text_pr.png" alt="約2分のケアで足元をいつもキレイに心地よく"></p>
+        <div class="care_pr_column_bottom" id="js-scroll-remove-position">
+          <p class="wow animate__animated animate__fadeInUp"><img src="/shared/img/care/text_pr.png" alt="約2分のケアで足元をいつもキレイに心地よく"></p>
           <figure><img src="/shared/img/care/img_pr02.jpg" alt=""></figure>
         </div>
         <div class="mq_text">
@@ -218,15 +235,40 @@
         </ul>
       </section>
 
+      <!--#include virtual="/shared/ssi/insta-area.html" -->
+
+      <div class="sec sec-faq">
+        <div class="container-fluid">
+          <div class="inn">
+            <div class="row">
+              <div class="col-12 col-md-3">
+                <div class="row-tt">
+                  <div class="sub-e">
+                    <div class="sub-e">
+                      <p class="heading-lead f-nimbus">FAQ</p>
+                    </div>
+                  </div>
+                  <h2>よくある<br class="d-block d-md-none">ご質問</h2>
+                </div>
+              </div>
+              <div class="col-12 col-md-9">
+                <!--#include virtual="/shared/ssi/inline-faq-care.html" -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 </main>
-
 <!--#include virtual="/shared/ssi/inline-footer.html" -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?2022051402"></script>
+<script>new WOW().init();</script>
 <script src="/shared/js/scrollreveal.min.js"></script>
 <script src="/shared/js/main.js?2022051101"></script>
 

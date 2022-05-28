@@ -26,6 +26,31 @@ LAQtw.init = function(){
   // scroll bg
   self.initScrollBgColor();
 
+  $('.js-hopup-message').addClass('visibled')
+
+  const $scrollRemoveItem = $('#js-scroll-remove-item');
+  if ($scrollRemoveItem.length) {
+    const removePosition = $('#js-scroll-remove-position') ?
+      $('#js-scroll-remove-position').offset().top :
+      1000000
+    
+    const itemPosition = $scrollRemoveItem.offset().top + $($scrollRemoveItem).height();
+
+    if (removePosition > itemPosition) {
+      $scrollRemoveItem.css('opacity', 1)
+    }
+  
+    $scrollRemoveItem.css('transition', '0.5s')
+    $(window).scroll(function(){
+      const itemPosition = $scrollRemoveItem.offset().top + $($scrollRemoveItem).height();
+      if (removePosition > itemPosition) {
+        $scrollRemoveItem.css('opacity', 1)
+      } else {
+        $scrollRemoveItem.css('opacity', 0)
+      }
+    });
+  }
+
   $('#js-menu-button').on('click', function() {
     if ($(this).hasClass("opened")) {
       $(this).text('CLOSE')
