@@ -841,7 +841,6 @@ footer .f-btm {
   position: relative;
   padding: 0 0 0 3.5em;
   border-radius: 0 0 0.5em 0.5em;
-  display: flex;
 }
 .cp_qa .cp_actab .cp_actab-content::before {
   font-family: serif;
@@ -849,10 +848,28 @@ footer .f-btm {
   margin: 0.4em 0 0 -1em;
   padding: 0;
   content: 'A';
+  display: inline-block;
+  vertical-align: top;
+}
+.cp_qa .cp_actab .cp_actab-content .a-text{
+  display: inline-block;
+}
+.cp_qa .cp_actab .cp_actab-content h3{
+  font-size: 1em;
+  font-weight: bold;
+  margin: 10px 0 0;
 }
 .cp_qa .cp_actab .cp_actab-content p {
   margin-top: 10px;
   padding-left: 10px;
+}
+.cp_qa .cp_actab .cp_actab-content .a-list{
+  margin:10px 0 20px 10px;
+  border: 1px solid #333;
+  padding: 20px;
+}
+.cp_qa .cp_actab .cp_actab-content ul{
+  margin-left: 20px;
 }
 
 /* 質問をクリックした時の+の動き */
@@ -862,7 +879,7 @@ footer .f-btm {
 
 @media (max-width: 767px) {
   .cp_qa .cp_actab{
-    padding: 0;
+    padding: 20px 0;
   }
   .cp_qa .cp_actab label{
     padding: 1em 3em 1em 4em;
@@ -894,7 +911,7 @@ footer .f-btm {
     line-height: 1.8em;
   }
   .cp_qa .cp_actab .q-text::after{
-    top: 2em;
+    top: 1.5em;
   }
 }
 
