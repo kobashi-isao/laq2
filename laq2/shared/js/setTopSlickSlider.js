@@ -1,9 +1,25 @@
-// export function SetTopSlickSlider(){
-//     console.log('hello!');
-// }
-export let topCssStyle;
-export let topSliderTime;//アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
-export let topSlide, topSliderBar, topSliderTick, topSliderPercentTime;
+/* 
+トップSlickズームアウト＆インジケータ
+
+有効にするには、html側のscriptタグのtype属性を"module"にする必要性がある。
+<script src="/shared/js/index.js?2022051402" type="module"></script>
+必要なjsファイルにインポートする時は、
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+import { SetTopSlickSlider } from './setTopSlickSlider.js';
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+初期化：
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+  const topSliderClassNameParams = '.t-slider'; // トップビジュアルのスライドを格納しているコンテンナを参照する時に必要
+  const topSlidePrefixStringParams = '.s'; // .s01,.s02,.s03などを参照する時に必要
+  const topSlideNumbersTextColorArrayParams = ['#1C1C1C','#1C1C1C','#1C1C1C','#fff']; //スライドが切替る時にインジケータの文字色を変更する時に参照
+  const topSlideCopyTextColorArrayParams = ['#1C1C1C','#fff','#fff','#fff']; //各スライドのコピーや商品名の文字色を変更する時に参照
+  new SetTopSlickSlider( topSliderClassNameParams, topSlidePrefixStringParams, topSlideNumbersTextColorArrayParams, topSlideCopyTextColorArrayParams); //トップビジュアルスライドの初期化
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+*/
+
+let topCssStyle;
+let topSliderTime;//アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
+let topSlide, topSliderBar, topSliderTick, topSliderPercentTime;
 
 export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextcolorarray, _topslidecopytextcolorarray){
   let sliderClassName = _sliderclassname;
@@ -17,7 +33,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
   let topSlideCurrentNumber;
   topCssStyle = getComputedStyle(document.body);
   topSliderTime = topCssStyle.getPropertyValue('--top-slider-anim-time').slice(0, -1); //アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
-
   topSliderBar = $('.slide-dots-container-slider-progress-bar');
 
   if (topSlide.length > 0){
@@ -69,32 +84,11 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         const topSlideItemBGImageSP = $(prevSliderClassName + ' .sl-bg-sp');
         const topSlideItemBGImageNextSP = $(selectedSliderClassName + ' .sl-bg-sp');
         //console.log("bc");
-        resetProgressbar();
-        startProgressbar();
+        resetIndicatorProgressbar();
+        startIndicatorProgressbar();
         topSliderBar.css({
             height: 100 + "%"
         });
-
-        // console.log("selectedSliderClassName = " + selectedSliderClassName);
-        // const topSlideItemBGImageCurrent = $(selectedSliderClassName + ' .sl-bg');
-        // const topSlideItemBGImageCurrentSP = $(selectedSliderClassName + ' .sl-bg-sp');
-
-        // console.log(topSlideItemBGImageCurrent);
-
-        // topSlideItemBGImageCurrent.css({
-        //     '-webkit-transform' : 'scale(1.05)',
-        //     '-moz-transform'    : 'scale(1.05)',
-        //     '-ms-transform'     : 'scale(1.05)',
-        //     '-o-transform'      : 'scale(1.05)',
-        //     'transform'         : 'scale(1.05)'
-        // });
-        // topSlideItemBGImageCurrentSP.css({
-        //     '-webkit-transform' : 'scale(1.05)',
-        //     '-moz-transform'    : 'scale(1.05)',
-        //     '-ms-transform'     : 'scale(1.05)',
-        //     '-o-transform'      : 'scale(1.05)',
-        //     'transform'         : 'scale(1.05)'
-        // });
 
       // console.log(topSlideItemBGImage.attr('class'));
       topSlideItemBGImage.css({
@@ -184,7 +178,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
       arrows: false,
       slidesToShow: 1,
       slidesToScroll: 1,
-
       responsive: [
         {
           breakpoint: 767,
@@ -195,17 +188,12 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
       ],
 
     });
-
     topSlide.slick('slickPause');
-    startProgressbar();
-    
+    startIndicatorProgressbar();    
     //topSlide.slick('slickPlay');
-
-
     $('.slick-dots li button').on('click', function(e){
       e.stopPropagation();
     });
-    
     //$(window).on('resize orientationchange', function() {
         // topSlide.slick('resize');
         // resetProgressbar();
@@ -215,30 +203,29 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         // });
         //location.reload();
     //});
-
     }
 }
 
 
-function startProgressbar() {
-    resetProgressbar();
+function startIndicatorProgressbar() {
+    resetIndicatorProgressbar();
     topSliderPercentTime = 0;
-    topSliderTick = setInterval(interval, 10);
+    topSliderTick = setInterval(intervalIndicator, 10);
     // console.log(topSliderTime);
 }
 
-function interval() {
+function intervalIndicator() {
     topSliderPercentTime += 1 / (Number(topSliderTime - .5) + 0.1);
     topSliderBar.css({
         height: topSliderPercentTime + "%"
     });
     if (topSliderPercentTime >= 100) {
         topSlide.slick('slickNext');
-        startProgressbar();
+        startIndicatorProgressbar();
     }
 }
 
-function resetProgressbar() {
+function resetIndicatorProgressbar() {
     topSliderBar.css({
         height: 0 + '%'
     });
