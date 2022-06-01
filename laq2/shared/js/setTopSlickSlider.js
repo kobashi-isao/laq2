@@ -2,7 +2,7 @@
 トップSlickズームアウト＆インジケータ
 
 有効にするには、html側のscriptタグのtype属性を"module"にする必要性がある。
-<script src="/shared/js/index.js?2022051402" type="module"></script>
+例）<script src="/shared/js/index.js?2022051402" type="module"></script>
 必要なjsファイルにインポートする時は、
 ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 import { SetTopSlickSlider } from './setTopSlickSlider.js';
