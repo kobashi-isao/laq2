@@ -15,7 +15,7 @@ import { SetTopSlickSlider } from './setTopSlickSlider.js';
   const topSlideCopyTextColorArrayParams = ['#1C1C1C','#fff','#fff','#fff']; //各スライドのコピーや商品名の文字色を変更する時に参照
   new SetTopSlickSlider( topSliderClassNameParams, topSlidePrefixStringParams, topSlideNumbersTextColorArrayParams, topSlideCopyTextColorArrayParams); //トップビジュアルスライドの初期化
 ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
-※setIntervalだとスマホが省エネモード時に処理が遅くなるため、requestAnimationFrameに変更
+※setIntervalだとスマホが省エネモード時に処理が遅くなるため、requestAnimationFrameに変更 (2022.6.2)
 */
 const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
