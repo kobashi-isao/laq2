@@ -27,64 +27,103 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     slideItems.each(function(i){ $(this).css('color', topSlideCopyTextColorArray[i])})
 
     topSlide.on('init', function(e, slick, direction){
-      const selectedSliderClassName = slidePrefixString + "01";
-      const prevSliderClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
-      const topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
-      const topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
-      const topSlideItems = $(topSlideItemsClassStrings);
-      const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
-      topSlideCurrentNumber = 1;
-      topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
-      topSlideDotsContainerTotalCountText.text(('0' + slick.slideCount).slice(-2));
-      topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
-      topPrevSlideItems.each(function(){ $(this).removeClass('visibled')});
-      topSlideItems.each(function(){ $(this).addClass('visibled')});
+        const selectedSliderClassName = slidePrefixString + "01";
+        const prevSliderClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
+        const topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
+        const topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
+        const topSlideItems = $(topSlideItemsClassStrings);
+        const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
+        topSlideCurrentNumber = 1;
+        topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
+        topSlideDotsContainerTotalCountText.text(('0' + slick.slideCount).slice(-2));
+        topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
+        topPrevSlideItems.each(function(){ $(this).removeClass('visibled')});
+        topSlideItems.each(function(){ $(this).addClass('visibled')});
+        const topSlideItemBGImageCurrent = $(selectedSliderClassName + ' .sl-bg');
+        const topSlideItemBGImageCurrentSP = $(selectedSliderClassName + ' .sl-bg-sp');
+        //console.log(topSlideItemsClassStrings);
+        topSlideItemBGImageCurrent.css({
+            '-webkit-transform' : 'scale(1.05) !important',
+            '-moz-transform'    : 'scale(1.05) !important',
+            '-ms-transform'     : 'scale(1.05) !important',
+            '-o-transform'      : 'scale(1.05) !important',
+            'transform'         : 'scale(1.05) !important'
+        });
+        topSlideItemBGImageCurrentSP.css({
+            '-webkit-transform' : 'scale(1.05) !important',
+            '-moz-transform'    : 'scale(1.05) !important',
+            '-ms-transform'     : 'scale(1.05) !important',
+            '-o-transform'      : 'scale(1.05) !important',
+            'transform'         : 'scale(1.05) !important'
+        });
+
     });
 
     topSlide.on('beforeChange', function(e, slick, currentSlide, nextSlide){
-      // topSlide.slick('slickPause');
-      let selectedItem = nextSlide;
-      const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
-      const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
-      const topSlideItemBGImage = $(prevSliderClassName + ' .sl-bg');
-      const topSlideItemBGImageNext = $(selectedSliderClassName + ' .sl-bg');
-      const topSlideItemBGImageSP = $(prevSliderClassName + ' .sl-bg-sp');
-      const topSlideItemBGImageNextSP = $(selectedSliderClassName + ' .sl-bg-sp');
+        // topSlide.slick('slickPause');
+        let selectedItem = nextSlide;
+        const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
+        const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
+        const topSlideItemBGImage = $(prevSliderClassName + ' .sl-bg');
+        const topSlideItemBGImageNext = $(selectedSliderClassName + ' .sl-bg');
+        const topSlideItemBGImageSP = $(prevSliderClassName + ' .sl-bg-sp');
+        const topSlideItemBGImageNextSP = $(selectedSliderClassName + ' .sl-bg-sp');
+        //console.log("bc");
+        resetProgressbar();
+        startProgressbar();
+        topSliderBar.css({
+            height: 100 + "%"
+        });
 
-      resetProgressbar();
-      startProgressbar();
-      topSliderBar.css({
-          height: 100 + "%"
-      });
+        // console.log("selectedSliderClassName = " + selectedSliderClassName);
+        // const topSlideItemBGImageCurrent = $(selectedSliderClassName + ' .sl-bg');
+        // const topSlideItemBGImageCurrentSP = $(selectedSliderClassName + ' .sl-bg-sp');
+
+        // console.log(topSlideItemBGImageCurrent);
+
+        // topSlideItemBGImageCurrent.css({
+        //     '-webkit-transform' : 'scale(1.05)',
+        //     '-moz-transform'    : 'scale(1.05)',
+        //     '-ms-transform'     : 'scale(1.05)',
+        //     '-o-transform'      : 'scale(1.05)',
+        //     'transform'         : 'scale(1.05)'
+        // });
+        // topSlideItemBGImageCurrentSP.css({
+        //     '-webkit-transform' : 'scale(1.05)',
+        //     '-moz-transform'    : 'scale(1.05)',
+        //     '-ms-transform'     : 'scale(1.05)',
+        //     '-o-transform'      : 'scale(1.05)',
+        //     'transform'         : 'scale(1.05)'
+        // });
 
       // console.log(topSlideItemBGImage.attr('class'));
       topSlideItemBGImage.css({
-        '-webkit-transform' : 'scale(1.1)',
-        '-moz-transform'    : 'scale(1.1)',
-        '-ms-transform'     : 'scale(1.1)',
-        '-o-transform'      : 'scale(1.1)',
-        'transform'         : 'scale(1.1)'
+        '-webkit-transform' : 'scale(1.05)',
+        '-moz-transform'    : 'scale(1.05)',
+        '-ms-transform'     : 'scale(1.05)',
+        '-o-transform'      : 'scale(1.05)',
+        'transform'         : 'scale(1.05)'
       });
       topSlideItemBGImageNext.css({
-        '-webkit-transform' : 'scale(1)',
-        '-moz-transform'    : 'scale(1)',
-        '-ms-transform'     : 'scale(1)',
-        '-o-transform'      : 'scale(1)',
-        'transform'         : 'scale(1)'
+        '-webkit-transform' : 'scale(1.05)',
+        '-moz-transform'    : 'scale(1.05)',
+        '-ms-transform'     : 'scale(1.05)',
+        '-o-transform'      : 'scale(1.05)',
+        'transform'         : 'scale(1.05)'
       });
       topSlideItemBGImageSP.css({
-        '-webkit-transform' : 'scale(1.1)',
-        '-moz-transform'    : 'scale(1.1)',
-        '-ms-transform'     : 'scale(1.1)',
-        '-o-transform'      : 'scale(1.1)',
-        'transform'         : 'scale(1.1)'
+        '-webkit-transform' : 'scale(1.05)',
+        '-moz-transform'    : 'scale(1.05)',
+        '-ms-transform'     : 'scale(1.05)',
+        '-o-transform'      : 'scale(1.05)',
+        'transform'         : 'scale(1.05)'
       });
       topSlideItemBGImageNextSP.css({
-        '-webkit-transform' : 'scale(1)',
-        '-moz-transform'    : 'scale(1)',
-        '-ms-transform'     : 'scale(1)',
-        '-o-transform'      : 'scale(1)',
-        'transform'         : 'scale(1)'
+        '-webkit-transform' : 'scale(1.05)',
+        '-moz-transform'    : 'scale(1.05)',
+        '-ms-transform'     : 'scale(1.05)',
+        '-o-transform'      : 'scale(1.05)',
+        'transform'         : 'scale(1.05)'
       });
       const topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
       const topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
@@ -93,26 +132,29 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
       topSlideCurrentNumber = selectedItem;
       topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
       (currentSlide >= slick.slideCount) ? topSlideCurrentNumber = 1 : topSlideCurrentNumber = parseInt(selectedItem + 1);
-      if(currentSlide >= (slick.slideCount - 1)){
+
+      if(currentSlide === (slick.slideCount - 1)){
+        //console.log("bc last");
         const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
         const topSlideLastItemsClassStrings = topSlideLastItemsClassName + ' .sl-cont .t-copy .tl';
         const topLastSlideItems = $(topSlideLastItemsClassStrings);
         topLastSlideItems.each(function(){ $(this).removeClass('visibled')});
         const topSlideItemBGImageLast= $(topSlideLastItemsClassName + ' .sl-bg');
         const topSlideItemBGImageLastSP= $(topSlideLastItemsClassName + ' .sl-bg-sp');
+        //console.log("topSlideLastItemsClassName = " + topSlideLastItemsClassName);
         topSlideItemBGImageLast.css({
-          '-webkit-transform' : 'scale(1)',
-          '-moz-transform'    : 'scale(1)',
-          '-ms-transform'     : 'scale(1)',
-          '-o-transform'      : 'scale(1)',
-          'transform'         : 'scale(1)'
+          '-webkit-transform' : 'scale(1.05)',
+          '-moz-transform'    : 'scale(1.05)',
+          '-ms-transform'     : 'scale(1.05)',
+          '-o-transform'      : 'scale(1.05)',
+          'transform'         : 'scale(1.05)'
         });
         topSlideItemBGImageLastSP.css({
-          '-webkit-transform' : 'scale(1)',
-          '-moz-transform'    : 'scale(1)',
-          '-ms-transform'     : 'scale(1)',
-          '-o-transform'      : 'scale(1)',
-          'transform'         : 'scale(1)'
+          '-webkit-transform' : 'scale(1.05)',
+          '-moz-transform'    : 'scale(1.05)',
+          '-ms-transform'     : 'scale(1.05)',
+          '-o-transform'      : 'scale(1.05)',
+          'transform'         : 'scale(1.05)'
         });
       }
       topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
@@ -155,7 +197,7 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     });
 
     topSlide.slick('slickPause');
-    startProgressbar(topSlide);
+    startProgressbar();
     
     //topSlide.slick('slickPlay');
 
@@ -163,21 +205,29 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     $('.slick-dots li button').on('click', function(e){
       e.stopPropagation();
     });
-    // $(window).on('resize orientationchange', function() {
-    //    topSlide.slick('resize');
-    // });
+    
+    //$(window).on('resize orientationchange', function() {
+        // topSlide.slick('resize');
+        // resetProgressbar();
+        // startProgressbar();
+        // topSliderBar.css({
+        //     height: 100 + "%"
+        // });
+        //location.reload();
+    //});
+
     }
 }
 
 
-export function startProgressbar() {
+function startProgressbar() {
     resetProgressbar();
     topSliderPercentTime = 0;
     topSliderTick = setInterval(interval, 10);
     // console.log(topSliderTime);
 }
 
-export function interval() {
+function interval() {
     topSliderPercentTime += 1 / (Number(topSliderTime - .5) + 0.1);
     topSliderBar.css({
         height: topSliderPercentTime + "%"
@@ -188,7 +238,7 @@ export function interval() {
     }
 }
 
-export function resetProgressbar() {
+function resetProgressbar() {
     topSliderBar.css({
         height: 0 + '%'
     });
