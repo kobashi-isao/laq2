@@ -15,7 +15,11 @@ import { SetTopSlickSlider } from './setTopSlickSlider.js';
   const topSlideCopyTextColorArrayParams = ['#1C1C1C','#fff','#fff','#fff']; //各スライドのコピーや商品名の文字色を変更する時に参照
   new SetTopSlickSlider( topSliderClassNameParams, topSlidePrefixStringParams, topSlideNumbersTextColorArrayParams, topSlideCopyTextColorArrayParams); //トップビジュアルスライドの初期化
 ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+※setIntervalだとスマホが省エネモード時に処理が遅くなるため、requestAnimationFrameに変更
 */
+const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
+let animStartTime;
 
 let topCssStyle;
 let topSliderTime;//アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
@@ -217,17 +221,24 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
 function startIndicatorProgressbar() {
     resetIndicatorProgressbar();
     topSliderPercentTime = 0;
-    topSliderTick = setInterval(intervalIndicator, 10);
+    // topSliderTick = setInterval(intervalIndicator, 10);
+    // topSliderTick = requestAnimationFrame(intervalIndicator);
+    animStartTime = Date.now();
+    intervalIndicator();
+
 }
 
 function intervalIndicator() {
-    topSliderPercentTime += 1 / (Number(topSliderTime - .5) + 0.1);
+    //topSliderPercentTime += (1 / (Number(topSliderTime) + 0.1)) + 1;
+    topSliderPercentTime = Math.min(1, (Date.now() - animStartTime) / (Number(topSliderTime) * 1000));
     topSliderBar.css({
-        height: topSliderPercentTime + "%"
+        height: (topSliderPercentTime*100) + "%"
     });
-    if (topSliderPercentTime >= 100) {
+    if (topSliderPercentTime >= 1) {
         topSlide.slick('slickNext');
         startIndicatorProgressbar();
+    }else{
+        topSliderTick = requestAnimationFrame(intervalIndicator);
     }
 }
 
@@ -235,5 +246,6 @@ function resetIndicatorProgressbar() {
     topSliderBar.css({
         height: 0 + '%'
     });
-    clearTimeout(topSliderTick);
+    //clearTimeout(topSliderTick);
+    cancelAnimationFrame(topSliderTick);
 }
