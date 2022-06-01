@@ -39,7 +39,7 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     //set font color for copies from array
     let slideInnerClasses = sliderClassName + ' .slide-inner .sl-cont';
     let slideItems = $(slideInnerClasses);
-    slideItems.each(function(i){ $(this).css('color', topSlideCopyTextColorArray[i])})
+    slideItems.each(function(i){ $(this).css('color', topSlideCopyTextColorArray[i])});
 
     topSlide.on('init', function(e, slick, direction){
         const selectedSliderClassName = slidePrefixString + "01";
@@ -80,25 +80,55 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
         const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
 
-      // console.log(topSlideItemBGImage.attr('class'));
-      const topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
-      const topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
-      const topSlideItems = $(topSlideItemsClassStrings);
-      const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
-      topSlideCurrentNumber = selectedItem;
-      topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
-      (currentSlide >= slick.slideCount) ? topSlideCurrentNumber = 1 : topSlideCurrentNumber = parseInt(selectedItem + 1);
+        // console.log(topSlideItemBGImage.attr('class'));
+        const topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
+        const topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
+        const topSlideItems = $(topSlideItemsClassStrings);
+        const topPrevSlideItems = $(topSlidePrevItemsClassStrings);
+        topSlideCurrentNumber = selectedItem;
+        topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
+        (currentSlide >= slick.slideCount) ? topSlideCurrentNumber = 1 : topSlideCurrentNumber = parseInt(selectedItem + 1);
 
-      if(currentSlide === (slick.slideCount - 1)){
-        //console.log("bc last");
-        const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
-        const topSlideLastItemsClassStrings = topSlideLastItemsClassName + ' .sl-cont .t-copy .tl';
-        const topLastSlideItems = $(topSlideLastItemsClassStrings);
-        topLastSlideItems.each(function(){ $(this).removeClass('visibled')});
-      }
-      topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
-      topPrevSlideItems.each(function(){$(this).removeClass('visibled')});
-      topSlideItems.each(function(){$(this).addClass('visibled')});
+        if(currentSlide === (slick.slideCount - 1)){
+            //console.log("bc last");
+            const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
+            const topSlideLastItemsClassStrings = topSlideLastItemsClassName + ' .sl-cont .t-copy .tl';
+            const topLastSlideItems = $(topSlideLastItemsClassStrings);
+            topLastSlideItems.each(function(){ $(this).removeClass('visibled')});
+        }
+        topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
+        topPrevSlideItems.each(function(){$(this).removeClass('visibled')});
+        topSlideItems.each(function(){$(this).addClass('visibled')});
+
+        if(currentSlide === (slick.slideCount - 1)){
+            //console.log("bc last");
+            const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
+            const topSlideItemBGImageLast= $(topSlideLastItemsClassName + ' .sl-bg');
+            const topSlideItemBGImageLastSP= $(topSlideLastItemsClassName + ' .sl-bg-sp');
+            //console.log("topSlideLastItemsClassName = " + topSlideLastItemsClassName);
+            topSlideItemBGImageLast.css({
+            '-webkit-transform' : 'scale(1.05)',
+            '-moz-transform'    : 'scale(1.05)',
+            '-ms-transform'     : 'scale(1.05)',
+            '-o-transform'      : 'scale(1.05)',
+            'transform'         : 'scale(1.05)'
+            });
+            topSlideItemBGImageLastSP.css({
+            '-webkit-transform' : 'scale(1.05)',
+            '-moz-transform'    : 'scale(1.05)',
+            '-ms-transform'     : 'scale(1.05)',
+            '-o-transform'      : 'scale(1.05)',
+            'transform'         : 'scale(1.05)'
+            });
+        }
+
+        //console.log("bc");
+        resetIndicatorProgressbar();
+        startIndicatorProgressbar();
+        topSliderBar.css({
+            height: 100 + "%"
+        });
+
     });
 
     topSlide.on('afterChange', function(e, slick, currentSlide, nextSlide){
@@ -110,65 +140,37 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         const topSlideItemBGImageNext = $(selectedSliderClassName + ' .sl-bg');
         const topSlideItemBGImageSP = $(prevSliderClassName + ' .sl-bg-sp');
         const topSlideItemBGImageNextSP = $(selectedSliderClassName + ' .sl-bg-sp');
-        //console.log("bc");
-        resetIndicatorProgressbar();
-        startIndicatorProgressbar();
-        topSliderBar.css({
-            height: 100 + "%"
-        });
 
-      // console.log(topSlideItemBGImage.attr('class'));
-      topSlideItemBGImage.css({
-        '-webkit-transform' : 'scale(1.05)',
-        '-moz-transform'    : 'scale(1.05)',
-        '-ms-transform'     : 'scale(1.05)',
-        '-o-transform'      : 'scale(1.05)',
-        'transform'         : 'scale(1.05)'
-      });
-      topSlideItemBGImageNext.css({
-        '-webkit-transform' : 'scale(1.05)',
-        '-moz-transform'    : 'scale(1.05)',
-        '-ms-transform'     : 'scale(1.05)',
-        '-o-transform'      : 'scale(1.05)',
-        'transform'         : 'scale(1.05)'
-      });
-      topSlideItemBGImageSP.css({
-        '-webkit-transform' : 'scale(1.05)',
-        '-moz-transform'    : 'scale(1.05)',
-        '-ms-transform'     : 'scale(1.05)',
-        '-o-transform'      : 'scale(1.05)',
-        'transform'         : 'scale(1.05)'
-      });
-      topSlideItemBGImageNextSP.css({
-        '-webkit-transform' : 'scale(1.05)',
-        '-moz-transform'    : 'scale(1.05)',
-        '-ms-transform'     : 'scale(1.05)',
-        '-o-transform'      : 'scale(1.05)',
-        'transform'         : 'scale(1.05)'
-      });
-      
-      
-      if(currentSlide === (slick.slideCount - 1)){
-        //console.log("bc last");
-        const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
-        const topSlideItemBGImageLast= $(topSlideLastItemsClassName + ' .sl-bg');
-        const topSlideItemBGImageLastSP= $(topSlideLastItemsClassName + ' .sl-bg-sp');
-        //console.log("topSlideLastItemsClassName = " + topSlideLastItemsClassName);
-        topSlideItemBGImageLast.css({
-          '-webkit-transform' : 'scale(1.05)',
-          '-moz-transform'    : 'scale(1.05)',
-          '-ms-transform'     : 'scale(1.05)',
-          '-o-transform'      : 'scale(1.05)',
-          'transform'         : 'scale(1.05)'
+        // console.log(topSlideItemBGImage.attr('class'));
+        topSlideItemBGImage.css({
+            '-webkit-transform' : 'scale(1.05)',
+            '-moz-transform'    : 'scale(1.05)',
+            '-ms-transform'     : 'scale(1.05)',
+            '-o-transform'      : 'scale(1.05)',
+            'transform'         : 'scale(1.05)'
         });
-        topSlideItemBGImageLastSP.css({
-          '-webkit-transform' : 'scale(1.05)',
-          '-moz-transform'    : 'scale(1.05)',
-          '-ms-transform'     : 'scale(1.05)',
-          '-o-transform'      : 'scale(1.05)',
-          'transform'         : 'scale(1.05)'
+        topSlideItemBGImageNext.css({
+            '-webkit-transform' : 'scale(1.05)',
+            '-moz-transform'    : 'scale(1.05)',
+            '-ms-transform'     : 'scale(1.05)',
+            '-o-transform'      : 'scale(1.05)',
+            'transform'         : 'scale(1.05)'
         });
-      }
+        topSlideItemBGImageSP.css({
+            '-webkit-transform' : 'scale(1.05)',
+            '-moz-transform'    : 'scale(1.05)',
+            '-ms-transform'     : 'scale(1.05)',
+            '-o-transform'      : 'scale(1.05)',
+            'transform'         : 'scale(1.05)'
+        });
+        topSlideItemBGImageNextSP.css({
+            '-webkit-transform' : 'scale(1.05)',
+            '-moz-transform'    : 'scale(1.05)',
+            '-ms-transform'     : 'scale(1.05)',
+            '-o-transform'      : 'scale(1.05)',
+            'transform'         : 'scale(1.05)'
+        });
+    
     });
 
     
