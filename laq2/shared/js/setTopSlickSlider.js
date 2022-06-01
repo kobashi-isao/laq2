@@ -19,7 +19,7 @@ import { SetTopSlickSlider } from './setTopSlickSlider.js';
 */
 const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
-let animStartTime;
+let topIndicatorAnimStartTime;
 
 let topCssStyle;
 let topSliderTime;//アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
@@ -223,14 +223,14 @@ function startIndicatorProgressbar() {
     topSliderPercentTime = 0;
     // topSliderTick = setInterval(intervalIndicator, 10);
     // topSliderTick = requestAnimationFrame(intervalIndicator);
-    animStartTime = Date.now();
+    topIndicatorAnimStartTime = Date.now();
     intervalIndicator();
 
 }
 
 function intervalIndicator() {
     //topSliderPercentTime += (1 / (Number(topSliderTime) + 0.1)) + 1;
-    topSliderPercentTime = Math.min(1, (Date.now() - animStartTime) / (Number(topSliderTime) * 1000));
+    topSliderPercentTime = Math.min(1, (Date.now() - topIndicatorAnimStartTime) / (Number(topSliderTime) * 1000));
     topSliderBar.css({
         height: (topSliderPercentTime*100) + "%"
     });
