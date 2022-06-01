@@ -56,7 +56,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         topSlideItems.each(function(){ $(this).addClass('visibled')});
         const topSlideItemBGImageCurrent = $(selectedSliderClassName + ' .sl-bg');
         const topSlideItemBGImageCurrentSP = $(selectedSliderClassName + ' .sl-bg-sp');
-        //console.log(topSlideItemsClassStrings);
         topSlideItemBGImageCurrent.css({
             '-webkit-transform' : 'scale(1.05) !important',
             '-moz-transform'    : 'scale(1.05) !important',
@@ -79,8 +78,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         let selectedItem = nextSlide;
         const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
         const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
-
-        // console.log(topSlideItemBGImage.attr('class'));
         const topSlideItemsClassStrings = selectedSliderClassName + ' .sl-cont .t-copy .tl';
         const topSlidePrevItemsClassStrings = prevSliderClassName + ' .sl-cont .t-copy .tl';
         const topSlideItems = $(topSlideItemsClassStrings);
@@ -90,7 +87,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         (currentSlide >= slick.slideCount) ? topSlideCurrentNumber = 1 : topSlideCurrentNumber = parseInt(selectedItem + 1);
 
         if(currentSlide === (slick.slideCount - 1)){
-            //console.log("bc last");
             const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
             const topSlideLastItemsClassStrings = topSlideLastItemsClassName + ' .sl-cont .t-copy .tl';
             const topLastSlideItems = $(topSlideLastItemsClassStrings);
@@ -101,11 +97,9 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         topSlideItems.each(function(){$(this).addClass('visibled')});
 
         if(currentSlide === (slick.slideCount - 1)){
-            //console.log("bc last");
             const topSlideLastItemsClassName = slidePrefixString + ('0' + parseInt(slick.slideCount)).slice(-2);
             const topSlideItemBGImageLast= $(topSlideLastItemsClassName + ' .sl-bg');
             const topSlideItemBGImageLastSP= $(topSlideLastItemsClassName + ' .sl-bg-sp');
-            //console.log("topSlideLastItemsClassName = " + topSlideLastItemsClassName);
             topSlideItemBGImageLast.css({
             '-webkit-transform' : 'scale(1.05)',
             '-moz-transform'    : 'scale(1.05)',
@@ -121,8 +115,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
             'transform'         : 'scale(1.05)'
             });
         }
-
-        //console.log("bc");
         resetIndicatorProgressbar();
         startIndicatorProgressbar();
         topSliderBar.css({
@@ -141,7 +133,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         const topSlideItemBGImageSP = $(prevSliderClassName + ' .sl-bg-sp');
         const topSlideItemBGImageNextSP = $(selectedSliderClassName + ' .sl-bg-sp');
 
-        // console.log(topSlideItemBGImage.attr('class'));
         topSlideItemBGImage.css({
             '-webkit-transform' : 'scale(1.05)',
             '-moz-transform'    : 'scale(1.05)',
@@ -175,42 +166,41 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
 
     
     topSlide.slick({
-      dots: true,
-      infinite: true,
-      fade: true,
-      cssEase: 'linear',
-      autoplay: true,
-      // speed: 500,
-      // autoplaySpeed: 5000,
-      accessibility: false,
-      dotsClass: 'slide-dots',
-      appendDots: $('.slide-dots-container-dots'),
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false,
-      accesibility: false,
-      draggable: false,
-      swipe: false,
-      touchMove: false,
-      arrows: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            centerMode: false,
-          }
-        },
-      ],
-
+        dots: false,
+        infinite: true,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        // speed: 500,
+        // autoplaySpeed: 5000,
+        // dotsClass: 'slide-dots',
+        // appendDots: $('.slide-dots-container-dots'),
+        accessibility: false,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        pauseOnDotsHover: false,
+        accesibility: false,
+        draggable: false,
+        swipe: false,
+        touchMove: false,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+            breakpoint: 767,
+            settings: {
+                centerMode: false,
+            }
+            },
+        ],
     });
     topSlide.slick('slickPause');
     startIndicatorProgressbar();    
     //topSlide.slick('slickPlay');
-    $('.slick-dots li button').on('click', function(e){
-      e.stopPropagation();
-    });
+    // $('.slick-dots li button').on('click', function(e){
+    //   e.stopPropagation();
+    // });
     //$(window).on('resize orientationchange', function() {
         // topSlide.slick('resize');
         // resetProgressbar();
@@ -228,7 +218,6 @@ function startIndicatorProgressbar() {
     resetIndicatorProgressbar();
     topSliderPercentTime = 0;
     topSliderTick = setInterval(intervalIndicator, 10);
-    // console.log(topSliderTime);
 }
 
 function intervalIndicator() {
