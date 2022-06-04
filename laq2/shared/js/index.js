@@ -31,7 +31,7 @@ LAQtop.init = function() {
 
 
 
-$(function(){ 
+window.onload = function(){ 
   
   LAQtop.init();
 
@@ -131,4 +131,4 @@ $(function(){
     lineupSlick.slick('slickNext');
   })
 
-});
+};
