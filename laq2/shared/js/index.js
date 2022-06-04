@@ -86,7 +86,6 @@ $(function(){
 
   calcButtonPosition(true);
   function calcButtonPosition (init = false) {
-    console.log(11)
     const margin = parseInt($('.lineup-cont .slick-list').css('padding-left')) / 2 + 'px';
     const height = ($lineUpImg.height() - 80) / 2 + 'px';
     $nextButton.css('right', margin).css('top', height);
