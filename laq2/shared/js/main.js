@@ -126,10 +126,11 @@ LAQtw.initScrollBgColor = function() {
 
   $(window).scroll(function(){
     let scrollTop = $(document).scrollTop();
+    const scrollHeight = self.isSmp ? 600 : 200;
     scrTarget.each(function(){
       let _target = $(this);
       let targetLimit = _target.position().top
-        - self.topOffset - 600;
+        - self.topOffset - scrollHeight;
       if (!_target.hasClass(onBg) && scrollTop > targetLimit) {
         _target.addClass(onBg);
       } else if (_target.hasClass(onBg) && scrollTop < targetLimit) {

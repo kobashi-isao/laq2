@@ -43,17 +43,19 @@ $(function(){
   new SetTopSlickSlider( topSliderClassNameParams, topSlidePrefixStringParams, topSlideNumbersTextColorArrayParams, topSlideCopyTextColorArrayParams); //トップビジュアルスライドの初期化
   /*//////////////////////////////////////////////////////////////////////// End Set top slider ////////////////////////////////////////////////////////*/
 
+  const isSmp = LAQtw.isSmp;
   // line up slick 
   let lineupCont = LAQtw.main.find('.lineup-cont');
   let lineupSlick = lineupCont.find('.sl-lineup').slick({
     dots:false,
     centerMode: true,
     centerPadding: '80px',
-    slidesToShow: 2,
+    slidesToShow: isSmp ? 1 : 2,
     arrows: false,
     autoplay: false,
     infinite:false,
     autoplaySpeed: 3000,
+    initialSlide: isSmp ? 0 : 1,
     responsive: [
       {
         breakpoint:1200,
@@ -70,7 +72,6 @@ $(function(){
       {
         breakpoint:768,
         settings: {
-          slidesToShow: 1,
           centerPadding:'20px'
         }
       }
@@ -83,12 +84,16 @@ $(function(){
 
   const $lineUpImg = $('.lineup-cont #js-lineup-img');
 
-  calcButtonPosition();
-  function calcButtonPosition () {
-    const margin = parseInt($('.slick-list').css('padding-left')) / 2 + 'px';
+  calcButtonPosition(true);
+  function calcButtonPosition (init = false) {
+    console.log(11)
+    const margin = parseInt($('.lineup-cont .slick-list').css('padding-left')) / 2 + 'px';
     const height = ($lineUpImg.height() - 80) / 2 + 'px';
     $nextButton.css('right', margin).css('top', height);
     $beforeButton.css('left', margin).css('top', height);
+    if (init) {
+      $nextButton.fadeIn();
+    }
   }
 
   // lineupSlick.on('beforeChange', function(_, slick, _, nextSlide){
@@ -120,9 +125,6 @@ $(function(){
     calcButtonPosition();
   });
 
-  if (!self.isSmp) {
-    lineupSlick.slick('slickNext');
-  }
   $('.lineup-cont .lu-ctrl-mouse#js-lineup-prev').on('click', function(){
     lineupSlick.slick('slickPrev');
   })

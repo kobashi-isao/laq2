@@ -433,12 +433,8 @@ main .sec {
   color: #fff;
 }
 
-.sec-feature .heading-lead {
-  color: #212121;
-}
 .sec-how-to-buy .heading-lead {
   -webkit-text-stroke: 1px #fff;
-  color: #212121;
 }
 
 .sec-feature.scroll-bg.on-bg {

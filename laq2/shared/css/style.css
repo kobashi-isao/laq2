@@ -14,8 +14,12 @@
   height: 100%;
 }
 
-.m-h-60per {
-  max-height: 60%;
+.m-h-90per {
+  max-height: 90%;
+}
+
+.js-bottole {
+  transition: 0.1s;
 }
 
 .btn {
@@ -78,6 +82,15 @@ a:hover .btn_arrow {
   text-align: center;
 }
 
+.text-link-thin {
+  text-decoration-thickness: 0.1rem !important;
+}
+
+.color-black {
+  color: #212121 !important;
+}
+
+
 html,body {
   font-family: noto-sans-cjk-jp, sans-serif;
   font-weight: 300;
@@ -103,6 +116,13 @@ main img {
   font-weight: 400;
   font-style: normal;
 }
+
+.f-athelas-important { /* Athelas Regular */
+  font-family: athelas, serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .f-tenmin { /* 貂明朝 / Ten Mincho Regular  */
   font-family: fot-tsukumin-pr6n,sans-serif;
   font-weight: 400;
@@ -864,6 +884,7 @@ footer .f-btm {
 .cp_qa .cp_actab .cp_actab-content p {
   margin-top: 10px;
   padding-left: 10px;
+  padding-right: 3em;
 }
 .cp_qa .cp_actab .cp_actab-content .a-list{
   margin:10px 0 20px 10px;
@@ -910,6 +931,7 @@ footer .f-btm {
   .cp_qa .cp_actab .cp_actab-content p{
     margin-left: 0;
     padding-left: 0;
+    padding-right: 0;
     line-height: 1.8em;
   }
   .cp_qa .cp_actab .q-text::after{
@@ -925,7 +947,7 @@ footer .f-btm {
   -webkit-text-stroke: 1px #666666;
   font-size: 25px;
   letter-spacing: 2.4px;
-  color: #fff;
+  color: transparent;
 }
 
 /* text-animation */
@@ -939,6 +961,10 @@ footer .f-btm {
   transform: translate(0, 105%);
   transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
   /* transition-delay: 0; */
+}
+
+.t-copy.--slow .tl span {
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1.5s;
 }
 
 .t-copy .tl.visibled span {
@@ -987,6 +1013,9 @@ footer .f-btm {
 .t-copy .tl span:nth-child(15) {
   transition-delay: 0.84s;
 }
+.t-copy .tl span:nth-child(16) {
+  transition-delay: 0.9s;
+}
 
 
 /* sec-lifewith instagram */
@@ -1012,10 +1041,6 @@ footer .f-btm {
   font-family: fot-tsukumin-pr6n,sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.sec-lifewith .heading-lead {
-  color: #F2EEE9;
 }
 .l-insta {
   padding-top: 36px;
