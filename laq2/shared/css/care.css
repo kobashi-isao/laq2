@@ -10,22 +10,6 @@
   font-family: noto-sans-cjk-jp, sans-serif;
 }
 
-.mv .product_img {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 230px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  pointer-events: none;
-  padding-top: 100px;
-}
-
 @media (max-width: 767px) {
 
   .mv.care {
@@ -43,17 +27,6 @@
 
   .care br.sp {
       display: block;
-  }
-
-  .mv .product_img {
-    left: inherit;
-    right: 0;
-    top: 86vw;
-    bottom: inherit;
-    margin: inherit;
-    width: 160px;
-    transform: rotate(-5deg);
-    padding: 0;
   }
 
 }

@@ -14,8 +14,8 @@
   height: 100%;
 }
 
-.m-h-90per {
-  max-height: 90%;
+.m-h-80per {
+  max-height: 80%;
 }
 
 .js-bottole {
@@ -760,6 +760,22 @@ footer .f-btm {
   letter-spacing: 2.0px;
 }
 
+.mv .product_img {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none;
+  padding-top: 170px
+}
+
 .sp-only {
   display: none;
 }
@@ -794,6 +810,17 @@ footer .f-btm {
 
   .mv .mv_texts_h1 {
     margin-bottom: 20px;
+  }
+
+  .mv .product_img {
+    left: inherit;
+    right: 0;
+    top: 86vw;
+    bottom: inherit;
+    margin: inherit;
+    width: 160px;
+    transform: rotate(-5deg);
+    padding: 0;
   }
 }
 
