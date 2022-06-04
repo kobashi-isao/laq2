@@ -924,7 +924,8 @@ footer .f-btm {
 
 /* 質問をクリックした時の+の動き */
 .cp_actab.js-accordion.open .q-text::after {
-  content:url(/shared/img/index/faq/btn_minus.svg); 
+  content:url(/shared/img/index/faq/btn_minus.svg);
+  top: -10px;
 }
 
 @media (max-width: 767px) {

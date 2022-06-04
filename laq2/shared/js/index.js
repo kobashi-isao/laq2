@@ -29,9 +29,26 @@ LAQtop.init = function() {
   })
 }
 
+const $beforeButton = $('.lineup-cont .lu-ctrl-mouse#js-lineup-prev');
+const $nextButton = $('.lineup-cont .lu-ctrl-mouse#js-lineup-next');
+const $lineUpImg = $('.lineup-cont #js-lineup-img');
+
+function calcButtonPosition (init = false) {
+  const margin = parseInt($('.lineup-cont .slick-list').css('padding-left')) / 2 + 'px';
+  const height = ($lineUpImg.height() - 80) / 2 + 'px';
+  $nextButton.css('right', margin).css('top', height);
+  $beforeButton.css('left', margin).css('top', height);
+  if (init) {
+    $nextButton.fadeIn();
+  }
+}
+
+window.onload = function(){
+  calcButtonPosition(true);
+}
 
 
-window.onload = function(){ 
+$(function(){ 
   
   LAQtop.init();
 
@@ -78,22 +95,7 @@ window.onload = function(){
     ]
   })
 
-  const $beforeButton = $('.lineup-cont .lu-ctrl-mouse#js-lineup-prev');
-  const $nextButton = $('.lineup-cont .lu-ctrl-mouse#js-lineup-next');
   const $progressBar = $('.lineup-cont #js-lineup-scroll .handle');
-
-  const $lineUpImg = $('.lineup-cont #js-lineup-img');
-
-  calcButtonPosition(true);
-  function calcButtonPosition (init = false) {
-    const margin = parseInt($('.lineup-cont .slick-list').css('padding-left')) / 2 + 'px';
-    const height = ($lineUpImg.height() - 80) / 2 + 'px';
-    $nextButton.css('right', margin).css('top', height);
-    $beforeButton.css('left', margin).css('top', height);
-    if (init) {
-      $nextButton.fadeIn();
-    }
-  }
 
   // lineupSlick.on('beforeChange', function(_, slick, _, nextSlide){
     lineupSlick.on('beforeChange', function(event, slick, cs, nextSlide){
@@ -131,4 +133,5 @@ window.onload = function(){
     lineupSlick.slick('slickNext');
   })
 
-};
+});
+calcButtonPosition(true);
