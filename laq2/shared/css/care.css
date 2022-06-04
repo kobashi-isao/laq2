@@ -23,6 +23,7 @@
   align-items: center;
   z-index: 1000;
   pointer-events: none;
+  padding-top: 100px;
 }
 
 @media (max-width: 767px) {
@@ -46,11 +47,13 @@
 
   .mv .product_img {
     left: inherit;
-    right: 15px;
-    top: inherit;
-    bottom: 6vw;
+    right: 0;
+    top: 86vw;
+    bottom: inherit;
     margin: inherit;
-    width: 121px;
+    width: 160px;
+    transform: rotate(-5deg);
+    padding: 0;
   }
 
 }
@@ -125,10 +128,10 @@
   position: absolute;
   content: '';
   width: 223px;
-  height: 192px;
+  height: 205px;
   top: -150px;
   right: -105px;
-  background: url(../img/care/img_illust_all.png) no-repeat;
+  background: url(../img/index/concept/anime_all-in.gif) no-repeat;
   background-size: 223px auto;
 }
 
@@ -192,7 +195,7 @@
   }
   
   .care_pr_column_bottom p {
-    margin: 0 0 90px 20vw;
+    margin: 0 0 105px 20vw;
     width: 100px;
   }
   
@@ -203,12 +206,12 @@
   
   .care_pr_column_bottom figure::after {
     width: 120px;
-    height: 105px;
-    top: -75px;
+    height: 110px;
+    top: -90px;
     right: 0;
     left: 0;
     margin: auto;
-    background: url(../img/care/img_illust_all.png) no-repeat;
+    background: url(../img/index/concept/anime_all-in.gif) no-repeat;
     background-size: 120px auto;
   }
   
@@ -399,8 +402,29 @@
   margin: 90px 0 20px;
 }
 
+.care_item_column dt {
+  margin: 100px 0 20px;
+  font-family: athelas, serif;
+  font-weight: 100;
+}
+
+.care_item_column dt span {
+  display: block;
+}
+
+.care_item_column dt span.en {
+  opacity: 0.1;
+  font-size: 60px;
+  letter-spacing: 0.1em;
+}
+
+.care_item_column dt span.jp {
+  padding-top: 3px;
+  font-size: 28px;
+}
+
 .care_item_column .care_item_item dt {
-  margin: 80px 0 0;
+  margin: 100px 0 0;
 }
 
 .care_item_column dd {
@@ -448,6 +472,10 @@
   font-size: 36px;
 }
 
+.care_item_link h4 span.n {
+  font-size: 54px;
+}
+
 .care_item_link p {
   margin: 0;
   font-size: 14px;
@@ -471,14 +499,14 @@
   }
   
   .care_item_column {
-    margin: 35px 20px 50px;
+    margin: 35px 20px 10px;
     display: block;
     max-width: inherit;
   }
 
   .care_item_column dl {
     margin: 0;
-    padding: 20px 0 90px;
+    padding: 40px 0 80px;
     position: relative;
     width: auto;
     height: auto;
@@ -492,12 +520,16 @@
     margin: 0 0 20px;
   }
   
+  .care_item_column dt {
+    margin: 0 0 30px;
+  }
+
   .care_item_column .care_item_item dt {
-    margin: 0;
+    margin: 0 0 20px;
   }
   
   .care_item_column dd {
-    font-size: 12px;
+    font-size: 14px;
   }
   
   .care_item_column dd figure {
@@ -748,9 +780,4 @@
   to {
     transform: translateX(-100%);
   }
-}
-
-
-.fade-out {
-  opacity: 0;
 }
