@@ -965,6 +965,9 @@ footer .f-btm {
   .cp_qa .cp_actab .q-text::after{
     top: 1.5em;
   }
+  .cp_actab.js-accordion.open .q-text::after {
+    top: 25px;
+  }
 }
 
 .js-accordion-body {
