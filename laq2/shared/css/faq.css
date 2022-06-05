@@ -45,8 +45,13 @@
 }
 
 .faq h2{
-  margin-top: 80px;
+  margin-top: 120px;
+  margin-bottom: 40px;
   font-family: athelas, serif;
+}
+
+.faq h2:first-child{
+  margin-top: 80px;
 }
 
 .faq .text-box p {
@@ -129,14 +134,14 @@
     margin: 0 auto;
   }
   .faq h2{
-    margin: 20px 10px 10px;
+    margin: 160px 10px 10px;
   }
   .faq .submenu li:before{
     content: "";
     display: inline-block;
     width: 8px;
     height: 8px;
-    border: 2px solid;
+    border: 1px solid;
     border-color:  transparent transparent #565656 #565656;
     transform: rotate(-45deg);
     margin: 0 5px 4px 0;
