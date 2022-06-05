@@ -1,0 +1,35 @@
+.mv.care {
+  background-image: url(/products/care/img/mv_care_pc.jpg);
+}
+.care .contents {
+  background: #F2EEE9;
+}
+
+.care .products_pr_column_bottom figure::after {
+  position: absolute;
+  content: '';
+  width: 223px;
+  height: 205px;
+  top: -150px;
+  right: -105px;
+  background: url(/shared/img/index/concept/anime_all-in.gif) no-repeat;
+  background-size: 223px auto;
+}
+
+
+@media (max-width: 767px) {
+  .care_pr_column_bottom figure::after {
+    width: 120px;
+    height: 110px;
+    top: -90px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: url(/shared/img/index/concept/anime_all-in.gif) no-repeat;
+    background-size: 120px auto;
+  }
+
+  .mv.care {
+    background-image: url(/products/care/img/mv_care_sp.jpg);
+  }
+}

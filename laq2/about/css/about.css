@@ -1,0 +1,221 @@
+.mv.about {
+  background-image: url(/about/img/mv_about_pc.png);
+}
+
+.about .contents {
+  margin-top: 240px;
+}
+
+
+.about .texts-area {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 280px;
+}
+
+.about .about-texts {
+  font-size: 20px;
+  letter-spacing: 1.4px;
+}
+
+.about .text-box:not(:last-child) {
+  margin-bottom: 80px;
+}
+
+
+.about .text-box p {
+  line-height: 41px;
+}
+
+.about .texts-area .container {
+  position: absolute;
+  top: 0;
+}
+
+.about .texts-area .img-area {
+  margin-top: 483px;
+  padding: 10px;
+}
+
+.about .title-area {
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.about .text-padding {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.about .block-area {
+  position: relative;
+  line-height: 36px;
+  margin-bottom: 300px;
+}
+
+.about .block-area .block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .block-area .block img {
+  max-width: 100%;
+}
+
+.about .block-area .block.--first {
+  margin-bottom: 105px;
+}
+
+
+.about .block-area .block.--first .image-box {
+  width: 43%;
+}
+
+.about .block-area .block.--first .text-box {
+  margin-top: 6%;
+  width: 44%;
+}
+
+.about .block-area .block.--second {
+  flex-direction: row-reverse;
+}
+
+.about .block-area .block.--second .image-box {
+  width: 37%;
+}
+
+.about .block-area .block.--second .text-box {
+  margin-top: 6%;
+  width: 48%;
+  padding-right: 8%;
+}
+
+.about .block-area .text-box p {
+  margin-bottom: 30px;
+}
+
+
+.about .block-area .h3 {
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 2.74px;
+  font-weight: unset;
+  position: absolute;
+  top: 38%;
+  left: -0.8rem;
+  mix-blend-mode: exclusion;
+  color: #fff;
+  letter-spacing: 10.9px;
+  margin: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .about .block-area .block.--first {
+    margin-bottom: 65px;
+  }
+  .about .block-area .h3 {
+    font-size: 82px;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .about .block-area .block.--first {
+    margin-bottom: 105px;
+  }
+  .about .block-area .h3 {
+    font-size: 90px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about .block-area .block.--first {
+    margin-bottom: 116px;
+  }
+  .about .block-area .h3 {
+    font-size: 95px;
+  }
+}
+
+.about .h3 {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 70px 0;
+  letter-spacing: 2.74px;
+}
+
+
+@media (max-width: 992px) {
+  .mv.about {
+    background-image: url(/about/img/mv_about_sp.png);
+  }
+
+  .about .contents {
+    margin-top: 135px;
+  }
+
+  .about .about-texts {
+    font-size: 18px;
+  }
+  .about .text-padding {
+    padding: 0;
+  }
+
+  .about .text-box:not(:last-child) {
+    margin-bottom: 70px;
+  }
+
+  .about .texts-area {
+    display: block;
+    margin-bottom: 120px;
+  }
+
+  .about .texts-area .container {
+    position: relative;
+  }
+
+  .about .texts-area .img-area {
+    margin-top: 30px;
+  }
+
+  .about .block-area {
+    font-size: 20px;
+    margin-bottom: 280px;
+  }
+  
+
+  .about .block-area .block {
+    display: block;
+  }
+
+  .about .block-area .block .image-box,
+  .about .block-area .block .text-box {
+    width: 100% !important;
+  }
+
+  .about .block-area .block .image-box {
+    text-align: center;
+  }
+
+  .about .block-area .h3 {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 70px 0;
+    letter-spacing: 2.74px;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+
+  .about .block-area .text-box p {
+    margin-bottom: 40px;
+  }
+  .about .block-area .text-block-1, .about .block-area .text-block-2 {
+    position:  initial;
+    width: 100%;
+    margin-bottom: 0;
+    min-width: initial;
+    margin-bottom: 70px;
+  }
+}

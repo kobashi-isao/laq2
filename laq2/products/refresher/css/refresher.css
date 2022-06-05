@@ -1,0 +1,147 @@
+.mv.refresher {
+  background-image: url(/products/refresher/img/mv_refresher_pc.jpg);
+}
+.refresher .contents {
+  background: #BBC9BE;
+}
+
+.refresher .products_pr_column_bottom figure::after {
+  position: absolute;
+  content: '';
+  width: 223px;
+  height: 205px;
+  top: -150px;
+  right: -105px;
+  background: url(/shared/img/index/concept/anime_shoe-care.gif) no-repeat;
+  background-size: 223px auto;
+}
+
+.howto_item_column {
+  margin: 40px auto 90px;
+  display: flex;
+  max-width: 1060px;
+ justify-content: space-between; 
+}
+
+.howto_item_column dl {
+  margin: 0;
+  background: rgba(255,255,255,0.8);
+  width: 483px;
+  height: 483px;
+  border-radius: 50%;
+}
+
+.howto_item_column dt {
+  margin: 100px 0 20px;
+  font-family: athelas, serif;
+  font-weight: 100;
+}
+
+.howto_item_column dt span {
+  display: block;
+}
+
+.howto_item_column dt span.en {
+  opacity: 0.1;
+  font-size: 60px;
+  letter-spacing: 0.1em;
+}
+
+.howto_item_column dt span.jp {
+  padding-top: 3px;
+  font-size: 28px;
+}
+
+.howto_item_column .howto_item_item dt {
+  margin: 100px 0 0;
+}
+
+.howto_item_column dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 2.0;
+}
+
+.howto_item_column dd figure {
+  margin: 0 20px 20px;
+}
+
+.howto_item_column .howto_item_item dd figure {
+  margin-bottom: 40px;
+}
+
+.howto_item_column .howto_item_shoes {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.howto_item_column .howto_item_shoes dt {
+  margin-bottom: 30px;
+}
+
+.howto_item_column .howto_item_shoes figure {
+  margin: 0 40px 20px;
+}
+
+@media (max-width: 767px) {
+  .refresher .products_pr_column_bottom figure::after {
+    width: 120px;
+    height: 110px;
+    top: -90px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: url(/shared/img/index/concept/anime_shoe-care.gif) no-repeat;
+    background-size: 120px auto;
+  }
+
+  .mv.refresher {
+    background-image: url(/products/refresher/img/mv_refresher_sp.jpg);
+  }
+  .howto_item_column {
+    margin: 45px 20px;
+    display: block;
+    max-width: inherit;
+  }
+
+  .howto_item_column dl {
+    margin: 0;
+    padding: 40px 0 70px;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: url(/howto/img/howto_item_column_back.png) no-repeat center 0;
+    background-size: 100% auto;
+    background-color: inherit;
+    border-radius: 0;
+  }
+
+  .howto_item_column dt {
+    margin: 0 0 30px;
+  }
+
+  .howto_item_column .howto_item_item dt {
+    margin: 0 0 20px;
+  }
+  
+  .howto_item_column dd {
+    font-size: 14px;
+  }
+  
+  .howto_item_column dd figure {
+    margin: 0 20px 20px;
+  }
+  
+  .howto_item_column .howto_item_item dd figure {
+    margin-bottom: 20px;
+  }
+  .howto_item_column .howto_item_shoes {
+    margin: 0 auto;
+    padding: 20vw 0 35vw;
+    width: auto;
+  }
+  
+  .howto_item_column .howto_item_shoes figure {
+    margin: 40px 10px 0;
+  }
+}

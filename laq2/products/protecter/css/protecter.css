@@ -1,0 +1,67 @@
+.mv.protecter {
+  background-image: url(/products/protecter/img/mv_pc.png);
+}
+
+.protecter .contents {
+  background: #C4CCD0;
+}
+
+.protecter .products_pr_column_bottom figure::after {
+  position: absolute;
+  content: '';
+  width: 223px;
+  height: 220px;
+  top: -150px;
+  right: -105px;
+  background: url(/shared/img/index/concept/anime_water-stain.gif) no-repeat; 
+  background-size: 223px auto;
+}
+
+.attention {
+  margin: 92px auto;
+}
+
+.attention a{
+  display: block;
+  margin: 0 auto;
+  padding: 20px 40px 20px 20px;
+  border: 1px solid #212121;
+  max-width: 640px;
+  color: #000;
+}
+
+.attention a:hover{
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.attention a span{
+  border-bottom: 1px solid #000;
+  padding-bottom: 6px;
+}
+
+.attention a::after{
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(/products/protecter/img/icon_arrow_diagonal.png) no-repeat; 
+  background-size: 20px auto;
+  margin: 2px 0 0 20px;
+}
+
+.icon_attention img{
+  width: 20px;
+  margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+  .mv.protecter {
+    background-image: url(/products/protecter/img/mv_sp.png);
+  }
+  .attention{
+    width: 90%;
+  }
+}
+
+
