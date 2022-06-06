@@ -22,7 +22,7 @@ const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnim
 let topIndicatorAnimStartTime;
 
 let topCssStyle;
-let topSliderTime;//アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
+let topSliderTime;
 let topSlide, topSliderBar, topSliderTick, topSliderPercentTime;
 
 export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextcolorarray, _topslidecopytextcolorarray){
@@ -36,11 +36,10 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
   let topSlideDotsContainerTotalCountText = $('.slide-dots-container-total-number span');
   let topSlideCurrentNumber;
   topCssStyle = getComputedStyle(document.body);
-  topSliderTime = topCssStyle.getPropertyValue('--top-slider-anim-time').slice(0, -1); //アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
+  topSliderTime = topCssStyle.getPropertyValue('--top-slider-anim-time').slice(0, -1);
   topSliderBar = $('.slide-dots-container-slider-progress-bar');
 
   if (topSlide.length > 0){
-    //set font color for copies from array
     let slideInnerClasses = sliderClassName + ' .slide-inner .sl-cont';
     let slideItems = $(slideInnerClasses);
     slideItems.each(function(i){ $(this).css('color', topSlideCopyTextColorArray[i])});
@@ -78,7 +77,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     });
 
     topSlide.on('beforeChange', function(e, slick, currentSlide, nextSlide){
-        // topSlide.slick('slickPause');
         let selectedItem = nextSlide;
         const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
         const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
