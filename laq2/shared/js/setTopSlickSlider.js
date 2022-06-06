@@ -128,7 +128,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     });
 
     topSlide.on('afterChange', function(e, slick, currentSlide, nextSlide){
-        // topSlide.slick('slickPause');
         let selectedItem = nextSlide;
         const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
         const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
@@ -175,10 +174,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         fade: true,
         cssEase: 'linear',
         autoplay: true,
-        // speed: 500,
-        // autoplaySpeed: 5000,
-        // dotsClass: 'slide-dots',
-        // appendDots: $('.slide-dots-container-dots'),
         accessibility: false,
         pauseOnFocus: false,
         pauseOnHover: false,
@@ -201,19 +196,6 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     });
     topSlide.slick('slickPause');
     startIndicatorProgressbar();    
-    //topSlide.slick('slickPlay');
-    // $('.slick-dots li button').on('click', function(e){
-    //   e.stopPropagation();
-    // });
-    //$(window).on('resize orientationchange', function() {
-        // topSlide.slick('resize');
-        // resetProgressbar();
-        // startProgressbar();
-        // topSliderBar.css({
-        //     height: 100 + "%"
-        // });
-        //location.reload();
-    //});
     }
 }
 
@@ -221,15 +203,12 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
 function startIndicatorProgressbar() {
     resetIndicatorProgressbar();
     topSliderPercentTime = 0;
-    // topSliderTick = setInterval(intervalIndicator, 10);
-    // topSliderTick = requestAnimationFrame(intervalIndicator);
     topIndicatorAnimStartTime = Date.now();
     intervalIndicator();
 
 }
 
 function intervalIndicator() {
-    //topSliderPercentTime += (1 / (Number(topSliderTime) + 0.1)) + 1;
     topSliderPercentTime = Math.min(1, (Date.now() - topIndicatorAnimStartTime) / (Number(topSliderTime) * 1000));
     topSliderBar.css({
         height: (topSliderPercentTime*100) + "%"
@@ -246,6 +225,5 @@ function resetIndicatorProgressbar() {
     topSliderBar.css({
         height: 0 + '%'
     });
-    //clearTimeout(topSliderTick);
     cancelAnimationFrame(topSliderTick);
 }
