@@ -219,3 +219,9 @@
     margin-bottom: 70px;
   }
 }
+
+@media (max-width: 767px) {
+  .about .block-area .h3{
+    font-weight: lighter;
+  }
+}

@@ -326,6 +326,10 @@
   text-align: center;
 }
 
+.howto_water .howto_item {
+  margin-bottom: 80px;
+}
+
 .howto_item h3 {
   font-size: 36px;
 }
@@ -430,7 +434,7 @@
 
   .howto_item_column dl {
     margin: 0;
-    padding: 40px 0 70px;
+    padding: 48px 0 70px;
     position: relative;
     width: auto;
     height: auto;
@@ -441,19 +445,32 @@
   }
 
   .howto_item_column dt {
-    margin: 0 0 30px;
+    margin: 0 0 20px;
+  }
+
+  .howto_item_column dt span.en {
+    font-size: 57px;
+  }
+  
+  .howto_item_column dt span.jp {
+    font-size: 24px;
   }
 
   .howto_item_column .howto_item_item dt {
     margin: 0 0 20px;
   }
-  
+
+  .howto_item_column .howto_item_shoes dt {
+    margin-bottom: 15px;
+  }
+
   .howto_item_column dd {
+    padding: 0 20px;
     font-size: 14px;
   }
   
   .howto_item_column dd figure {
-    margin: 0 20px 20px;
+    margin: 0 0 20px;
   }
   
   .howto_item_column .howto_item_item dd figure {
@@ -461,14 +478,59 @@
   }
   .howto_item_column .howto_item_shoes {
     margin: 0 auto;
-    padding: 20vw 0 35vw;
+    padding: 15vw 0 35vw;
     width: auto;
   }
   
   .howto_item_column .howto_item_shoes figure {
-    margin: 40px 10px 0;
+    margin: 15px 10px 0;
   }
 
+}
+
+.attention {
+  margin: 55px auto 0;
+}
+
+.attention a{
+  display: block;
+  margin: 0 auto;
+  padding: 20px 40px 20px 20px;
+  border: 1px solid #212121;
+  max-width: 640px;
+  color: #000;
+}
+
+.attention a:hover{
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.attention a span{
+  border-bottom: 1px solid #000;
+  padding-bottom: 6px;
+}
+
+.attention a::after{
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(/products/protecter/img/icon_arrow_diagonal.png) no-repeat; 
+  background-size: 20px auto;
+  margin: 2px 0 0 20px;
+}
+
+.icon_attention img{
+  width: 20px;
+  margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+  .attention{
+    margin: 0 auto;
+    width: 90%;
+  }
 }
 
 .howto_purchase {
