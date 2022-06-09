@@ -99,6 +99,10 @@
   animation: infinity-scroll-left 90s infinite linear 0.5s both;
 }
 
+.row-tt h2 .n {
+  font-size: 1.35em;
+}
+
 @media (max-width: 767px) {
 
   .products_pr {
@@ -170,7 +174,6 @@
 
 .products_feature {
   padding: 175px 0 110px;
-  background: #fff;
   text-align: center;
 }
 
