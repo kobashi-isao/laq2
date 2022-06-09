@@ -125,6 +125,7 @@
   }
   
   .howto_item_column dd {
+    padding: 0 20px;
     font-size: 14px;
   }
   
@@ -137,11 +138,11 @@
   }
   .howto_item_column .howto_item_shoes {
     margin: 0 auto;
-    padding: 20vw 0 35vw;
+    padding: 10vw 0 15vw;
     width: auto;
   }
   
   .howto_item_column .howto_item_shoes figure {
-    margin: 40px 10px 0;
+    margin: 15px 10px 0;
   }
 }
