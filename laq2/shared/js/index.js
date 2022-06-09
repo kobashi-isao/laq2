@@ -102,13 +102,13 @@ $(function(){
     const totalCount = slick.slideCount;
     const slidesToShow = slick.options.slidesToShow
     const currentSlide = nextSlide + 1;
-
+    
     if (currentSlide < totalCount) {
       $nextButton.fadeIn();
     } else {
       $nextButton.fadeOut();
     }
-
+    
     if (currentSlide / slidesToShow === 1) {
       $beforeButton.fadeOut();
     } else {
@@ -119,7 +119,7 @@ $(function(){
     const left =  slidesToShow === 1
       ? ( 100 / totalCount ) * ((currentSlide / slidesToShow) - 1)
       : ( 100 / totalCount ) * ((currentSlide) -2)
-
+    
     $progressBar
       .css('width', width + '%')
       .css('left', left + '%')

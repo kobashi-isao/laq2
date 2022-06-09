@@ -22,7 +22,7 @@ const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnim
 let topIndicatorAnimStartTime;
 
 let topCssStyle;
-let topSliderTime;
+let topSliderTime;//アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
 let topSlide, topSliderBar, topSliderTick, topSliderPercentTime;
 
 export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumberstextcolorarray, _topslidecopytextcolorarray){
@@ -36,10 +36,11 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
   let topSlideDotsContainerTotalCountText = $('.slide-dots-container-total-number span');
   let topSlideCurrentNumber;
   topCssStyle = getComputedStyle(document.body);
-  topSliderTime = topCssStyle.getPropertyValue('--top-slider-anim-time').slice(0, -1);
+  topSliderTime = topCssStyle.getPropertyValue('--top-slider-anim-time').slice(0, -1); //アニメーションの長さ（秒）//css変数(--top-slider-anim-time)から参照
   topSliderBar = $('.slide-dots-container-slider-progress-bar');
 
   if (topSlide.length > 0){
+    //set font color for copies from array
     let slideInnerClasses = sliderClassName + ' .slide-inner .sl-cont';
     let slideItems = $(slideInnerClasses);
     slideItems.each(function(i){ $(this).css('color', topSlideCopyTextColorArray[i])});
@@ -77,6 +78,7 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     });
 
     topSlide.on('beforeChange', function(e, slick, currentSlide, nextSlide){
+        // topSlide.slick('slickPause');
         let selectedItem = nextSlide;
         const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
         const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
@@ -126,6 +128,7 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     });
 
     topSlide.on('afterChange', function(e, slick, currentSlide, nextSlide){
+        // topSlide.slick('slickPause');
         let selectedItem = nextSlide;
         const selectedSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem + 1)).slice(-2);
         const prevSliderClassName = slidePrefixString + ('0' + parseInt(selectedItem)).slice(-2);
@@ -172,6 +175,10 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         fade: true,
         cssEase: 'linear',
         autoplay: true,
+        // speed: 500,
+        // autoplaySpeed: 5000,
+        // dotsClass: 'slide-dots',
+        // appendDots: $('.slide-dots-container-dots'),
         accessibility: false,
         pauseOnFocus: false,
         pauseOnHover: false,
@@ -194,6 +201,19 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
     });
     topSlide.slick('slickPause');
     startIndicatorProgressbar();    
+    //topSlide.slick('slickPlay');
+    // $('.slick-dots li button').on('click', function(e){
+    //   e.stopPropagation();
+    // });
+    //$(window).on('resize orientationchange', function() {
+        // topSlide.slick('resize');
+        // resetProgressbar();
+        // startProgressbar();
+        // topSliderBar.css({
+        //     height: 100 + "%"
+        // });
+        //location.reload();
+    //});
     }
 }
 
@@ -201,12 +221,15 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
 function startIndicatorProgressbar() {
     resetIndicatorProgressbar();
     topSliderPercentTime = 0;
+    // topSliderTick = setInterval(intervalIndicator, 10);
+    // topSliderTick = requestAnimationFrame(intervalIndicator);
     topIndicatorAnimStartTime = Date.now();
     intervalIndicator();
 
 }
 
 function intervalIndicator() {
+    //topSliderPercentTime += (1 / (Number(topSliderTime) + 0.1)) + 1;
     topSliderPercentTime = Math.min(1, (Date.now() - topIndicatorAnimStartTime) / (Number(topSliderTime) * 1000));
     topSliderBar.css({
         height: (topSliderPercentTime*100) + "%"
@@ -223,5 +246,6 @@ function resetIndicatorProgressbar() {
     topSliderBar.css({
         height: 0 + '%'
     });
+    //clearTimeout(topSliderTick);
     cancelAnimationFrame(topSliderTick);
 }
