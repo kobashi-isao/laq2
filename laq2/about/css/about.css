@@ -11,7 +11,7 @@
   display: flex;
   position: relative;
   justify-content: center;
-  margin-bottom: 280px;
+  margin-bottom: 290px;
 }
 
 .about .about-texts {
@@ -34,13 +34,43 @@
 }
 
 .about .texts-area .img-area {
-  margin-top: 483px;
-  padding: 10px;
+  margin-top: 493px;
+  padding: 0 10px;
+  position: relative;
+  z-index: -1;
 }
 
+.about .texts-area .img-area .img-1 {
+  position: absolute;
+  max-width: 226px;
+  width: 18%;
+  top: -3%;
+  right: 29.5%;
+}
+
+.about .texts-area .img-area .img-2 {
+  position: absolute;
+  max-width: 173px;
+  width: 14%;
+  top: 43%;
+  right: 2%;
+}
+
+.about .texts-area .img-area .img-3 {
+  position: absolute;
+  max-width: 204px;
+  width: 16%;
+  bottom: 0;
+  left: 28.5%;
+}
 .about .title-area {
   text-align: center;
   margin-bottom: 200px;
+}
+
+.about .title-area img {
+  max-width: 185px;
+  max-height: 264px;
 }
 
 .about .text-padding {
@@ -167,7 +197,7 @@
 
   .about .texts-area {
     display: block;
-    margin-bottom: 120px;
+    margin-bottom: 130px;
   }
 
   .about .texts-area .container {
@@ -176,6 +206,33 @@
 
   .about .texts-area .img-area {
     margin-top: 30px;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+
+  .about .texts-area .img-area .img-1 {
+    max-width: 103px;
+    width: 28%;
+    top: 0;
+    left: 72px;
+    right: 0;
+  }
+  
+  .about .texts-area .img-area .img-2 {
+    max-width: 79px;
+    width: 22%;
+    top: 34.5%;
+    right: 5%;
+  }
+  
+  .about .texts-area .img-area .img-3 {
+    max-width: 93px;
+    width: 26%;
+    bottom: 23%;
+    left: -2px;
   }
 
   .about .block-area {
