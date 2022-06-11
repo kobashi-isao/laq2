@@ -805,7 +805,7 @@ footer .f-btm {
   .mv .mv_text-box {
     position: absolute;
     margin: 0;
-    bottom: calc(80px + 25px - 5vh);
+    bottom: calc(160px + 25px - 5vh);
   }
 
   .mv .mv_texts_h1 {
@@ -815,7 +815,7 @@ footer .f-btm {
   .mv .product_img {
     left: inherit;
     right: 0;
-    top: 86vw;
+    top: 76vw;
     bottom: inherit;
     margin: inherit;
     width: 160px;
