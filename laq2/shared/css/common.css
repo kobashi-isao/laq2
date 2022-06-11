@@ -185,6 +185,14 @@ nav.nav-site {
   font-size: 20px;
 }
 
+.navbar .btn-menu .btn-menu-text::after {
+  content: 'MENU';
+}
+
+.navbar .btn-menu.opened .btn-menu-text::after {
+  content: 'CLOSE';
+}
+
 .nav-site .header-btn .btn {
   height: 100px;
   width: 140px;
@@ -276,6 +284,11 @@ nav.nav-site {
 .main-menu ul li {
   margin-bottom: 22px;
 }
+.main-menu ul li .ext-l:after {
+  top: 9px;
+  width: 15px;
+  height: 15px;
+}
 .main-menu a {
   color: #fff;
 }
@@ -322,7 +335,7 @@ nav.nav-site {
   content: "";
   position: absolute;
   top: 6px;
-  right: -24px;
+  margin-left: 10px;
   background-size: 100%;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -397,11 +410,14 @@ footer .f-visual {
   text-align: center;
   font-family: athelas, serif;
   color: #fff;
-  background-image: url(../img/common/bg_footer@2x.jpg);
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: cover;
   height: 400px;
+}
+
+footer .f-visual video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
 }
 /*.f-visual .bg {
   max-width: 100%;
@@ -448,7 +464,6 @@ footer .foo-link .l-item .sub {
 }
 .foo-link .l-contact:after {
   top: 7px;
-  right: -40px;
 }
 .foo-link .l-item2 {
   padding-top: 50px;
@@ -497,7 +512,6 @@ footer .f-btm {
 }
 .f-btm .corp-site a:after {
   top: 2px;
-  right: -20px;
 }
 
 @media (max-width: 1199px) {

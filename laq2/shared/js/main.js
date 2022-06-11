@@ -28,14 +28,6 @@ LAQtw.init = function(){
 
   $('.js-hopup-message').addClass('visibled')
 
-  $('#js-menu-button').on('click', function() {
-    if ($(this).hasClass("opened")) {
-      $(this).text('CLOSE')
-    } else {
-      $(this).text('MENU')
-    }
-  });
-
   $(".js-accordion-button").on("click",function(){
     $(this).parent('.js-accordion').toggleClass("open");
     $(this).parent('.js-accordion').find('.js-accordion-body').slideToggle(250);

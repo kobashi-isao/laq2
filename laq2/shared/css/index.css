@@ -858,8 +858,8 @@ main .sec {
     margin-top: 10px;
   }
   .s02 .sl-cont .t-copy {
-      /* color: #fff; */
-      line-height: 48px !important;
+    font-size: 32px;
+    line-height: 48px !important;
   }
 
   .row-tt h2 {
