@@ -1,5 +1,8 @@
 // Js to set class and style for splash section
 $(function(){
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 500);
   $('.splash').addClass('fade-in');
 
   setTimeout(() => {
