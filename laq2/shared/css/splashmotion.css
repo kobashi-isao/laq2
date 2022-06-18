@@ -39,10 +39,6 @@
   backface-visibility: hidden;
 }
 
-main {
-  overflow: inherit;
-}
-
 .slide-item .sl-cont,
 header {
   animation: fadeIn 400ms ease-in-out 5.5s both;
@@ -57,7 +53,7 @@ header {
   right: 0;
   bottom: 0;
   background-color: rgba(250,250,250,0.5);
-  z-index: 1032;
+  z-index: 1;
   animation: overlay 500ms ease-in-out 5.3s both;
 }
 

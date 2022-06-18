@@ -1,3 +1,7 @@
+header {
+  position: relative;
+  z-index: 10000;
+}
 
 .flex {
   display: flex;
