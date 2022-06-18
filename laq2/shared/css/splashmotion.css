@@ -1,7 +1,7 @@
 /* Css for intro splash */
 .intro {
   position: fixed;
-  z-index: 11;
+  z-index: 1031;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,7 +12,7 @@
 
 .splash {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -26,9 +26,68 @@
 
 .kokoro {
   width: 85%;
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
 }
 
 .logo {
   margin-bottom: 2rem;
+}
+
+.page.index {
+  transform-origin: 50% 12%;
+  animation: scaleDown 500ms ease-in-out 5.3s both;
+  backface-visibility: hidden;
+}
+
+main {
+  overflow: inherit;
+}
+
+.slide-item .sl-cont,
+header {
+  animation: fadeIn 400ms ease-in-out 5.5s both;
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(250,250,250,0.5);
+  z-index: 1032;
+  animation: overlay 500ms ease-in-out 5.3s both;
+}
+
+/* Animation splash */
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.13);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlay {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  5%, 50%, 95% {
+    opacity: 1;
+  }
 }
