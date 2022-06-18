@@ -273,7 +273,7 @@ nav.nav-site {
 .main-menu .inn {
   width: 400px;
   height: calc(100vh - 90px);
-  padding: 20px 80px;
+  padding: 20px 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -301,8 +301,8 @@ nav.nav-site {
 }
 .main-menu .sl {
   margin-top: 10px;
-  font-size: 10px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 28px;
 }
 .main-menu .sns .l1 {
   position: relative;
@@ -563,6 +563,9 @@ footer .f-btm {
 }
 
 @media (max-width: 767px) {
+  .main-menu ul li {
+    margin-bottom: 2.5vh;
+  }
   .nav-center,
   .nav-site .header-btn .btn-buy {
     display: none;
@@ -832,7 +835,7 @@ footer .f-btm {
     top: 73vw;
     bottom: inherit;
     margin: inherit;
-    width: 160px;
+    width: 150px;
     transform: rotate(-5deg);
     padding: 0;
   }
@@ -943,6 +946,7 @@ footer .f-btm {
 }
 
 @media (max-width: 767px) {
+  
   .cp_qa .cp_actab{
     padding: 20px 0;
   }

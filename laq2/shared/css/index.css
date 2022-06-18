@@ -840,7 +840,20 @@ main .sec {
     line-height: 38px;
   }
   .slide-inner .sl-cont {
-    top: 4%;
+    top: 9%;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide-inner .t-copy .tl  {
+    justify-content: center;
+    font-size: 26px;
+  }
+  .slide-inner .logo-name img {
+    margin: auto;
+  }
+  .slide-inner .logo-name .nt {
+    text-align: center;
   }
   .s01 .sl-cont {
     left: 0;
@@ -857,9 +870,24 @@ main .sec {
   .s01 .sl-cont .logo-name .nt {
     margin-top: 10px;
   }
-  .s02 .sl-cont .t-copy {
-    font-size: 32px;
-    line-height: 48px !important;
+  .s02 .sl-cont .t-copy .tl,
+  .s03 .sl-cont .t-copy .tl,
+  .s04 .sl-cont .t-copy .tl {
+    line-height: 40px !important;
+  }
+
+  .s02 .sl-cont .t-copy .tl {
+    font-size: 24px;
+  }
+
+  .s03 .sl-cont .t-copy .tl,
+  .s04 .sl-cont .t-copy .tl {
+    font-size: 28px;
+  }
+
+  .s02 .sl-cont .logo-name,
+  .s03 .sl-cont .logo-name {
+    margin-top: 12px;
   }
 
   .row-tt h2 {
