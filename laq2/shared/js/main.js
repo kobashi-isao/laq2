@@ -26,6 +26,8 @@ LAQtw.init = function(){
   // scroll bg
   self.initScrollBgColor();
 
+  self.initScrollRemoveBottle();
+
   $('.js-hopup-message').addClass('visibled')
 
   $(".js-accordion-button").on("click",function(){
@@ -87,6 +89,31 @@ LAQtw.initNavMenuToggle = function() {
   });
 }
 
+LAQtw.initScrollRemoveBottle = function() {
+  const $scrollRemoveItem = $('#js-scroll-remove-item');
+  if ($scrollRemoveItem.length) {
+    const removePosition = $('#js-scroll-remove-position') ?
+      $('#js-scroll-remove-position').offset().top :
+      1000000
+    
+    const itemPosition = $scrollRemoveItem.offset().top + $($scrollRemoveItem).height();
+
+    if (removePosition > itemPosition) {
+      $scrollRemoveItem.css('opacity', 1)
+    }
+  
+    $scrollRemoveItem.css('transition', '0.5s')
+    $(window).scroll(function(){
+      const itemPosition = $scrollRemoveItem.offset().top + $($scrollRemoveItem).height();
+      if (removePosition > itemPosition) {
+        $scrollRemoveItem.css('opacity', 1)
+      } else {
+        $scrollRemoveItem.css('opacity', 0)
+      }
+    });
+  }
+}
+
 LAQtw.initScrollBgColor = function() {
   let self = this;
   let scrTarget = $('.scroll-bg');
@@ -124,28 +151,3 @@ LAQtw.isTablet = function() {
   return false;
 }
 $(function(){ LAQtw.init(); })
-
-window.onload = function(){
-  const $scrollRemoveItem = $('#js-scroll-remove-item');
-  if ($scrollRemoveItem.length) {
-    const removePosition = $('#js-scroll-remove-position') ?
-      $('#js-scroll-remove-position').offset().top :
-      1000000
-    
-    const itemPosition = $scrollRemoveItem.offset().top + $($scrollRemoveItem).height();
-
-    if (removePosition > itemPosition) {
-      $scrollRemoveItem.css('opacity', 1)
-    }
-  
-    $scrollRemoveItem.css('transition', '0.5s')
-    $(window).scroll(function(){
-      const itemPosition = $scrollRemoveItem.offset().top + $($scrollRemoveItem).height();
-      if (removePosition > itemPosition) {
-        $scrollRemoveItem.css('opacity', 1)
-      } else {
-        $scrollRemoveItem.css('opacity', 0)
-      }
-    });
-  }
-}
