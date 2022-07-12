@@ -56,8 +56,12 @@ export function SetTopSlickSlider(_sliderclassname, _slideprefix, _topslidenumbe
         topSlideDotsContainerText.css('color', topSlideNumbersTextColorArray[topSlideCurrentNumber]);
         topSlideDotsContainerTotalCountText.text(('0' + slick.slideCount).slice(-2));
         topSlideDotsContainerCurrentCountText.text(('0' + topSlideCurrentNumber).slice(-2));
-        topPrevSlideItems.each(function(){ $(this).removeClass('visibled')});
-        topSlideItems.each(function(){ $(this).addClass('visibled')});
+
+        setTimeout(function () {
+            topPrevSlideItems.each(function () { $(this).removeClass('visibled') });
+            topSlideItems.each(function () { $(this).addClass('visibled') });
+        }, 1500);
+
         const topSlideItemBGImageCurrent = $(selectedSliderClassName + ' .sl-bg');
         const topSlideItemBGImageCurrentSP = $(selectedSliderClassName + ' .sl-bg-sp');
         topSlideItemBGImageCurrent.css({

@@ -22,7 +22,7 @@ h1,h2,h3 {
 .t-slider .slide-inner {
   text-align: center;
   /*height: 80vh;*/
-  height: calc(100vh - 99px);
+  height: 100vh;
   position: relative;
   /* transition: all var(--top-slider-anim-time) linear; */
   pointer-events: none;
@@ -31,7 +31,7 @@ h1,h2,h3 {
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
-  height: calc(100vh - 99px);
+  height: 100vh;
   transition: all var(--top-slider-anim-time) linear;/*ease-out*/
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -770,7 +770,7 @@ main .sec {
   }
   .t-slider .slide-inner,
   .slide-item .sl-bg, .slide-item .sl-bg-sp {
-    height: calc(100vh - 89px);
+    height: 100vh;
   }
   .sec-concept .c-ill.i01 img,
   .sec-concept .c-ill.i02 img,
@@ -815,7 +815,7 @@ main .sec {
 @media (max-width: 767px) {
   .t-slider .slide-inner,
   .slide-item .sl-bg, .slide-item .sl-bg-sp {
-    height: calc(100vh - 79px);
+    height: 100vh;
     transition: all 1s ease-out;
   }
 
@@ -840,7 +840,7 @@ main .sec {
     line-height: 38px;
   }
   .slide-inner .sl-cont {
-    top: 9%;
+    top: 16%;
     left: 0;
     width: 100%;
   }

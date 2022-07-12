@@ -56,8 +56,10 @@ $(function(){
   const topSliderClassNameParams = '.t-slider'; // トップビジュアルのスライドを格納しているコンテンナを参照する時に必要
   const topSlidePrefixStringParams = '.s'; // .s01,.s02,.s03などを参照する時に必要
   const topSlideNumbersTextColorArrayParams = ['#1C1C1C','#1C1C1C','#1C1C1C','#fff']; //スライドが切替る時にインジケータの文字色を変更する時に参照
-  const topSlideCopyTextColorArrayParams = ['#1C1C1C','#fff','#fff','#fff']; //各スライドのコピーや商品名の文字色を変更する時に参照
-  new SetTopSlickSlider( topSliderClassNameParams, topSlidePrefixStringParams, topSlideNumbersTextColorArrayParams, topSlideCopyTextColorArrayParams); //トップビジュアルスライドの初期化
+  const topSlideCopyTextColorArrayParams = ['#1C1C1C', '#fff', '#fff', '#fff']; //各スライドのコピーや商品名の文字色を変更する時に参照
+  setTimeout(function () {
+    new SetTopSlickSlider(topSliderClassNameParams, topSlidePrefixStringParams, topSlideNumbersTextColorArrayParams, topSlideCopyTextColorArrayParams); //トップビジュアルスライドの初期化
+  }, 4000);
   /*//////////////////////////////////////////////////////////////////////// End Set top slider ////////////////////////////////////////////////////////*/
 
   const isSmp = LAQtw.isSmp;

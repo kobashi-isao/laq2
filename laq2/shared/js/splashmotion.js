@@ -11,6 +11,5 @@ $(function(){
 
   setTimeout(() => {
     $('.intro').css('top', '-100vh');
-    $('#overlay').css('top', '-100vh');
   }, 4000);
 });

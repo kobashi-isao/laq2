@@ -1012,7 +1012,7 @@ footer .f-btm {
 .t-copy .tl span {
   display: block;
   transform: translate(0, 105%);
-  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s;
   /* transition-delay: 0; */
 }
 
