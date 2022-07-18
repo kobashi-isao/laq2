@@ -1,5 +1,5 @@
 .mv.protecter {
-  background-image: url(/products/protecter/img/mv_pc.png);
+  background-image: url(/products/protecter/img/mv_pc.jpg);
 }
 
 .protecter .contents {
@@ -57,7 +57,7 @@
 
 @media (max-width: 767px) {
   .mv.protecter {
-    background-image: url(/products/protecter/img/mv_sp.png);
+    background-image: url(/products/protecter/img/mv_sp.jpg);
   }
   .attention{
     width: 90%;
