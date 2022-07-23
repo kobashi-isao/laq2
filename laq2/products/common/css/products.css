@@ -124,7 +124,7 @@
   }
 
   .products_pr_column_up h2 {
-    font-size: 22px;
+    font-size: 16px;
     line-height: 1.6;
   }
   
@@ -135,7 +135,7 @@
   }
   
   .products_pr_column_up h3 {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.8;
   }
   
@@ -700,6 +700,7 @@
 
   .products_lineup li.product_care .lineup_box {
     background-size: 210px auto;
+    background-position: right 30% bottom 14px;
   }
   
   .products_lineup li.product_water .lineup_box {
@@ -708,7 +709,7 @@
   
   .products_lineup li.product_shoe .lineup_box {
     background-size: 250px auto;
-    background-position: right bottom -10px;
+    background-position: right 23% bottom 0px;
   }
   
   .products_lineup li .lineup_box {

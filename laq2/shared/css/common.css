@@ -597,7 +597,7 @@ footer .f-btm {
   .nav-site .main-menu .inn {
     width: 100%;
     height: calc(100vh - 80px);
-    padding: 0 50px;
+    padding: 17px 50px 0px;
     justify-content: unset;
     position: relative;
   }

@@ -84,7 +84,7 @@ h1,h2,h3 {
 
 .slide-dots-container {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 50px);
   right: 5%;
   z-index: 10;
   display: flex;
@@ -158,10 +158,13 @@ h1,h2,h3 {
 }
 
 .sl-cont {
-  position: absolute;
-  top: 32%;
-  left: 12%;
   text-align: left;
+  position: absolute;
+  left: 12%;
+  top: calc(50% + 50px);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
 .sl-cont .t-copy {
   font-size: 30px;
@@ -181,7 +184,7 @@ h1,h2,h3 {
 }
 .s02 .sl-cont {
   /* color: #fff; */
-  top: 28%;
+  /* top: 28%; */
 }
 .s02 .sl-cont .t-copy,
 .s03 .sl-cont .t-copy {
@@ -195,7 +198,7 @@ h1,h2,h3 {
 }
 
 .s04 .sl-cont {
-  top: 38%;
+  /* top: 38%; */
 }
 
 /* top slide text animation */
@@ -843,6 +846,9 @@ main .sec {
     top: 16%;
     left: 0;
     width: 100%;
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
   }
 
   .slide-inner .t-copy .tl  {
