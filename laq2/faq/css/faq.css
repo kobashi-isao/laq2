@@ -1,20 +1,27 @@
+main {
+  overflow: visible;
+}
+
 .mv.faq {
   background-image: url(/faq/img/mv_faq_pc.jpg);
 }
 
 .faq .contents {
-  margin: 80px auto;
+  margin: 70px auto;
   display: flex;
   width: 1000px;
 }
 .faq .submenu {
   width: 240px;
-  margin: 80px 40px 0 0;
+  margin: 50px 40px 0 0;
 }
 .faq .submenu ul{
   list-style-type: none;
   font-size: 12px;
   font-family: athelas, serif;
+}
+.faq .submenu li{
+  margin-bottom: 20px;
 }
 .faq .submenu li a{
   color: #717171;
@@ -46,12 +53,12 @@
 
 .faq h2{
   margin-top: 120px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-family: athelas, serif;
 }
 
 .faq h2:first-child{
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .faq .text-box p {
@@ -114,6 +121,13 @@
   letter-spacing: 2.74px;
 }
 
+@media (min-width: 768px) {
+  .faq .submenu ul{
+    position: sticky;
+    top: 220px;
+  }
+}
+
 @media (max-width: 767px) {
   .mv.faq {
     background-image: url(/faq/img/mv_faq_sp.jpg);
@@ -130,6 +144,7 @@
   }
   .faq .submenu li{
     line-height: 3em;
+    margin-bottom: 10px;
   }
   .faq .main-contents {
     display: block;
